@@ -46,3 +46,15 @@
 @media(max-width:1099px),(max-height:819px){.scroll-story-active .hero-scroll-meter{display:none}.scroll-story-active .motion-copy{translate:0 calc(var(--hero-copy-y)*.25);opacity:calc(1 - var(--hero-exit)*.3)}.scroll-story-active .photo-sculpture{transform:rotate(var(--hero-photo-rotate)) scale(calc(1 + var(--hero-progress)*.08))}}
 @media(max-width:760px){.scroll-story-active .motion-copy h1{font-size:clamp(52px,12.7vw,94px)}.scroll-story-active .intro-layout h2,.scroll-story-active .stage-heading h2,.scroll-story-active .story-content h2,.scroll-story-active .journey-intro h2,.scroll-story-active .motion-cta h2{clip-path:none;translate:0 calc((1 - var(--scene-intro))*20px)}.scroll-story-active .system-tile,.scroll-story-active .editorial-photo{translate:0 calc((1 - var(--item-progress))*22px);rotate:none;clip-path:none;opacity:1}.scroll-story-active .story-photo{clip-path:none}.scroll-story-active .motion-cta{border-radius:55px 55px 0 0}}
 }
+
+/* Every beat has a local playhead, with the directory assembling row by row. */
+@media(prefers-reduced-motion:no-preference){
+.scroll-story-active .directory-side{translate:0 calc((1 - var(--scene-intro,1))*36px);opacity:calc(.55 + var(--scene-intro,1)*.45)}
+.scroll-story-active .directory-grid>a{--item-progress:1;translate:0 calc((1 - var(--item-progress))*32px);scale:calc(.94 + var(--item-progress)*.06);opacity:calc(.5 + var(--item-progress)*.5);transition:background .2s,border-color .2s}
+.scroll-story-active .directory-grid>a:focus-visible{translate:none;scale:1;opacity:1}
+.scroll-story-active .editorial-caption{translate:0 calc((1 - var(--item-progress))*24px);opacity:calc(.45 + var(--item-progress)*.55)}
+.scroll-story-active .editorial-photo:focus-visible .editorial-caption{translate:none;opacity:1}
+.scroll-story-active .sequence-word{transform:none}
+.scroll-story-active .photo-sculpture,.scroll-story-active .motion-copy,.scroll-story-active .editorial-photo,.scroll-story-active .story-photo{transition:none}
+@media(max-width:760px){.scroll-story-active .directory-grid>a{translate:0 calc((1 - var(--item-progress))*12px);opacity:1;scale:1}}
+}

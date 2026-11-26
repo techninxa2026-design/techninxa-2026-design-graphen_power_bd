@@ -20,7 +20,13 @@ const circuit=Array.from(hero?.querySelectorAll<SVGPathElement>('[data-circuit]'
 const circuitLengths=circuit.map(p=>p.getTotalLength());
 const storyPath=home?.querySelector<SVGPathElement>('[data-scroll-circuit]');
 const storyLength=storyPath?.getTotalLength()||0;
-const records=sceneEls.map(el=>({el,kind:el.dataset.scrollScene||'',items:Array.from(el.querySelectorAll<HTMLElement>(el.dataset.scrollScene==='systems'?'.system-tile':el.dataset.scrollScene==='equipment'?'.editorial-photo':el.dataset.scrollScene==='engineering'?'.story-list>span':'.never-match'))}));
+const records=sceneEls.map(el=>({el,kind:el.dataset.scrollScene||''}));
+// Each beat has its own viewport travel. A long product section cannot finish its animation
+// before the images or directory actually reach the viewport.
+const beats=Array.from(home?.querySelectorAll<HTMLElement>('.intro-layout,.system-ribbon,.journey-intro,.stage-heading,.photo-editorial,.directory-shell,.story-content,.story-visual,.motion-cta-inner')||[]).map(el=>({
+ el,items:Array.from(el.querySelectorAll<HTMLElement>('.system-tile,.editorial-photo,.directory-grid>a,.story-list>span'))
+}));
+function layoutTop(el:HTMLElement){let top=0;let n:HTMLElement|null=el;while(n){top+=n.offsetTop;n=n.offsetParent as HTMLElement|null;}return top-window.scrollY;}
 let frame=0;
 let enabled=false;
 function set(el:HTMLElement|undefined|null,key:string,v:number|string){el?.style.setProperty(key,String(v));}
@@ -29,6 +35,7 @@ function update(){
  const vh=innerHeight;
  // Read geometry once, then write styles; no per-item layout reads during animation.
  const bounds=records.map(r=>({r,b:r.el.getBoundingClientRect()}));
+ const beatBounds=beats.map(beat=>({beat,top:layoutTop(beat.el),items:beat.items.map((el,i)=>({el,i,top:layoutTop(el)}))}));
  const hb=track?.getBoundingClientRect();
  const heroHeight=hero?.offsetHeight||vh;
  const pinned=large.matches&&track?.classList.contains('hero-pinned');
@@ -52,9 +59,18 @@ function update(){
   const intro=ease(range(progress,.06,.7));
   set(r.el,'--scene-progress',progress);set(r.el,'--scene-intro',intro);
   if(b.bottom<0||b.top>vh)continue;
-  r.items.forEach((el,i)=>{const t=ease(range(progress,.10+i*.10,.52+i*.10));set(el,'--item-progress',t);});
   if(r.kind==='equipment'){const travel=clamp((vh-b.top)/(b.height+vh));set(r.el,'--equipment-travel',travel);}
   if(r.kind==='engineering'&&storyPath){const t=ease(range(progress,.12,.88));storyPath.style.strokeDasharray=String(storyLength);storyPath.style.strokeDashoffset=String(storyLength*(1-t));}
+ }
+ for(const {beat,top,items} of beatBounds){
+  const p=ease(clamp((vh*.96-top)/(vh*.60)));
+  set(beat.el,'--scene-intro',p);
+  for(const {el,i,top:it} of items){
+   if(el.hidden)continue;
+   const delay=(i%3)*vh*.065;
+   const t=ease(clamp((vh*.96-it-delay)/(vh*.48)));
+   set(el,'--item-progress',t);
+  }
  }
 }
 function queue(){if(enabled&&!frame)frame=requestAnimationFrame(update);}
@@ -65,7 +81,8 @@ function reset(){
  if(wave&&originalWave)wave.setAttribute('d',originalWave);
  for(const el of [...circuit,...(storyPath?[storyPath]:[])]){el.style.removeProperty('stroke-dasharray');el.style.removeProperty('stroke-dashoffset');}
  matrix.forEach(el=>el.style.removeProperty('--dot-wave'));
- records.forEach(({el,items})=>{for(const k of ['--scene-progress','--scene-intro','--equipment-travel'])el.style.removeProperty(k);items.forEach(i=>i.style.removeProperty('--item-progress'));});
+ records.forEach(({el})=>{for(const k of ['--scene-progress','--scene-intro','--equipment-travel'])el.style.removeProperty(k);});
+ beats.forEach(({el,items})=>{el.style.removeProperty('--scene-intro');items.forEach(i=>i.style.removeProperty('--item-progress'));});
 }
 function sync(){
  if(!home||!hero||!track||reduced.matches){reset();return;}
@@ -76,5 +93,7 @@ if(home){
  reduced.addEventListener('change',sync);large.addEventListener('change',sync);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)queue();});
  window.addEventListener('pageshow',sync);
+ home.addEventListener('click',()=>queue());
+ if('ResizeObserver' in window){const resize=new ResizeObserver(queue);resize.observe(home);}
  sync();
 }
