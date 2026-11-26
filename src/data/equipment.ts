@@ -7,7 +7,7 @@ export const equipment=[
     "familyName": "Transformers",
     "group": "Electrical",
     "asset": "transformer",
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-transformers.pdf",
     "number": "01.01"
   },
   {
@@ -17,7 +17,7 @@ export const equipment=[
     "familyName": "Transformers",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-transformers.pdf",
     "number": "01.02"
   },
   {
@@ -27,7 +27,7 @@ export const equipment=[
     "familyName": "Transformers",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-transformers.pdf",
     "number": "01.03"
   },
   {
@@ -37,7 +37,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.01"
   },
   {
@@ -47,7 +47,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.02"
   },
   {
@@ -57,7 +57,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.03"
   },
   {
@@ -67,7 +67,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.04"
   },
   {
@@ -77,7 +77,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.05"
   },
   {
@@ -87,7 +87,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.06"
   },
   {
@@ -97,7 +97,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": "panel",
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.07"
   },
   {
@@ -107,7 +107,7 @@ export const equipment=[
     "familyName": "Electrical panels",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-electrical-panels.pdf",
     "number": "02.08"
   },
   {
@@ -117,7 +117,7 @@ export const equipment=[
     "familyName": "Cable tray systems",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray-Catalouge.pdf",
+    "source": "/catalogues/graphene-cable-trays.pdf",
     "number": "03.01"
   },
   {
@@ -127,7 +127,7 @@ export const equipment=[
     "familyName": "Cable tray systems",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray-Catalouge.pdf",
+    "source": "/catalogues/graphene-cable-trays.pdf",
     "number": "03.02"
   },
   {
@@ -137,7 +137,7 @@ export const equipment=[
     "familyName": "Cable tray systems",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray-Catalouge.pdf",
+    "source": "/catalogues/graphene-cable-trays.pdf",
     "number": "03.03"
   },
   {
@@ -147,7 +147,7 @@ export const equipment=[
     "familyName": "Cable tray systems",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray-Catalouge.pdf",
+    "source": "/catalogues/graphene-cable-trays.pdf",
     "number": "03.04"
   },
   {
@@ -157,7 +157,7 @@ export const equipment=[
     "familyName": "Cable tray systems",
     "group": "Electrical",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray-Catalouge.pdf",
+    "source": "/catalogues/graphene-cable-trays.pdf",
     "number": "03.05"
   },
   {
@@ -167,7 +167,7 @@ export const equipment=[
     "familyName": "Busbar trunking",
     "group": "Electrical",
     "asset": null,
-    "source": "https://gersan.com.tr/en/product-category/busbar-systems/",
+    "source": "/catalogues/graphene-busbar-trunking.pdf",
     "number": "04.01"
   },
   {
@@ -177,7 +177,7 @@ export const equipment=[
     "familyName": "Busbar trunking",
     "group": "Electrical",
     "asset": null,
-    "source": "https://gersan.com.tr/en/product-category/busbar-systems/",
+    "source": "/catalogues/graphene-busbar-trunking.pdf",
     "number": "04.02"
   },
   {
@@ -187,7 +187,7 @@ export const equipment=[
     "familyName": "Busbar trunking",
     "group": "Electrical",
     "asset": null,
-    "source": "https://gersan.com.tr/en/product-category/busbar-systems/",
+    "source": "/catalogues/graphene-busbar-trunking.pdf",
     "number": "04.03"
   },
   {
@@ -197,7 +197,7 @@ export const equipment=[
     "familyName": "Busbar trunking",
     "group": "Electrical",
     "asset": null,
-    "source": "https://gersan.com.tr/en/product-category/busbar-systems/",
+    "source": "/catalogues/graphene-busbar-trunking.pdf",
     "number": "04.04"
   },
   {
@@ -207,7 +207,7 @@ export const equipment=[
     "familyName": "Busbar trunking",
     "group": "Electrical",
     "asset": "busLow",
-    "source": "https://gersan.com.tr/en/product-category/busbar-systems/",
+    "source": "/catalogues/graphene-busbar-trunking.pdf",
     "number": "04.05"
   },
   {
@@ -217,7 +217,7 @@ export const equipment=[
     "familyName": "Busbar trunking",
     "group": "Electrical",
     "asset": "busMedium",
-    "source": "https://gersan.com.tr/en/product-category/busbar-systems/",
+    "source": "/catalogues/graphene-busbar-trunking.pdf",
     "number": "04.06"
   },
   {
@@ -227,7 +227,7 @@ export const equipment=[
     "familyName": "Busbar trunking",
     "group": "Electrical",
     "asset": "busHigh",
-    "source": "https://gersan.com.tr/en/product-category/busbar-systems/",
+    "source": "/catalogues/graphene-busbar-trunking.pdf",
     "number": "04.07"
   },
   {
@@ -237,7 +237,7 @@ export const equipment=[
     "familyName": "Generators",
     "group": "Electrical",
     "asset": null,
-    "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
+    "source": "/catalogues/graphene-generators.pdf",
     "number": "05.01"
   },
   {
@@ -247,7 +247,7 @@ export const equipment=[
     "familyName": "Generators",
     "group": "Electrical",
     "asset": null,
-    "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
+    "source": "/catalogues/graphene-generators.pdf",
     "number": "05.02"
   },
   {
@@ -257,7 +257,7 @@ export const equipment=[
     "familyName": "Generators",
     "group": "Electrical",
     "asset": null,
-    "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
+    "source": "/catalogues/graphene-generators.pdf",
     "number": "05.03"
   },
   {
@@ -267,7 +267,7 @@ export const equipment=[
     "familyName": "Generators",
     "group": "Electrical",
     "asset": "genSmall",
-    "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
+    "source": "/catalogues/graphene-generators.pdf",
     "number": "05.04"
   },
   {
@@ -277,7 +277,7 @@ export const equipment=[
     "familyName": "Generators",
     "group": "Electrical",
     "asset": "gen1600",
-    "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
+    "source": "/catalogues/graphene-generators.pdf",
     "number": "05.05"
   },
   {
@@ -287,7 +287,7 @@ export const equipment=[
     "familyName": "Generators",
     "group": "Electrical",
     "asset": "gen2000",
-    "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
+    "source": "/catalogues/graphene-generators.pdf",
     "number": "05.06"
   },
   {
@@ -297,7 +297,7 @@ export const equipment=[
     "familyName": "Generators",
     "group": "Electrical",
     "asset": "gen4000",
-    "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
+    "source": "/catalogues/graphene-generators.pdf",
     "number": "05.07"
   },
   {
@@ -307,7 +307,7 @@ export const equipment=[
     "familyName": "Air compressors",
     "group": "Mechanical",
     "asset": "compressor",
-    "source": "https://www.atlascopco.com/en-bd/compressors/products",
+    "source": "/catalogues/graphene-air-compressors.pdf",
     "number": "06.01"
   },
   {
@@ -317,7 +317,7 @@ export const equipment=[
     "familyName": "Air compressors",
     "group": "Mechanical",
     "asset": "oilFree",
-    "source": "https://www.atlascopco.com/en-bd/compressors/products",
+    "source": "/catalogues/graphene-air-compressors.pdf",
     "number": "06.02"
   },
   {
@@ -327,7 +327,7 @@ export const equipment=[
     "familyName": "Air compressors",
     "group": "Mechanical",
     "asset": "dryer",
-    "source": "https://www.atlascopco.com/en-bd/compressors/products",
+    "source": "/catalogues/graphene-air-compressors.pdf",
     "number": "06.03"
   },
   {
@@ -337,7 +337,7 @@ export const equipment=[
     "familyName": "Air compressors",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.atlascopco.com/en-bd/compressors/products",
+    "source": "/catalogues/graphene-air-compressors.pdf",
     "number": "06.04"
   },
   {
@@ -347,7 +347,7 @@ export const equipment=[
     "familyName": "Vacuum pumps",
     "group": "Mechanical",
     "asset": "vacuum",
-    "source": "https://www.atlascopco.com/en-bd/vacuum-solutions",
+    "source": "/catalogues/graphene-vacuum-pumps.pdf",
     "number": "07.01"
   },
   {
@@ -357,7 +357,7 @@ export const equipment=[
     "familyName": "Vacuum pumps",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.atlascopco.com/en-bd/vacuum-solutions",
+    "source": "/catalogues/graphene-vacuum-pumps.pdf",
     "number": "07.02"
   },
   {
@@ -367,7 +367,7 @@ export const equipment=[
     "familyName": "Vacuum pumps",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.atlascopco.com/en-bd/vacuum-solutions",
+    "source": "/catalogues/graphene-vacuum-pumps.pdf",
     "number": "07.03"
   },
   {
@@ -377,7 +377,7 @@ export const equipment=[
     "familyName": "Heat exchangers",
     "group": "Thermal",
     "asset": "plate",
-    "source": "https://www.thermofin.de/en/products/",
+    "source": "/catalogues/graphene-heat-exchangers.pdf",
     "number": "08.01"
   },
   {
@@ -387,7 +387,7 @@ export const equipment=[
     "familyName": "Heat exchangers",
     "group": "Thermal",
     "asset": "dry",
-    "source": "https://www.thermofin.de/en/products/",
+    "source": "/catalogues/graphene-heat-exchangers.pdf",
     "number": "08.02"
   },
   {
@@ -397,7 +397,7 @@ export const equipment=[
     "familyName": "Heat exchangers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.thermofin.de/en/products/",
+    "source": "/catalogues/graphene-heat-exchangers.pdf",
     "number": "08.03"
   },
   {
@@ -407,7 +407,7 @@ export const equipment=[
     "familyName": "Heat exchangers",
     "group": "Thermal",
     "asset": "evap",
-    "source": "https://www.thermofin.de/en/products/",
+    "source": "/catalogues/graphene-heat-exchangers.pdf",
     "number": "08.04"
   },
   {
@@ -417,7 +417,7 @@ export const equipment=[
     "familyName": "Heat exchangers",
     "group": "Thermal",
     "asset": "cond",
-    "source": "https://www.thermofin.de/en/products/",
+    "source": "/catalogues/graphene-heat-exchangers.pdf",
     "number": "08.05"
   },
   {
@@ -427,7 +427,7 @@ export const equipment=[
     "familyName": "Heat exchangers",
     "group": "Thermal",
     "asset": "coil",
-    "source": "https://www.thermofin.de/en/products/",
+    "source": "/catalogues/graphene-heat-exchangers.pdf",
     "number": "08.06"
   },
   {
@@ -437,7 +437,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": "round",
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.01"
   },
   {
@@ -447,7 +447,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.02"
   },
   {
@@ -457,7 +457,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": "rect",
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.03"
   },
   {
@@ -467,7 +467,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.04"
   },
   {
@@ -477,7 +477,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.05"
   },
   {
@@ -487,7 +487,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": "round",
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.06"
   },
   {
@@ -497,7 +497,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.07"
   },
   {
@@ -507,7 +507,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.08"
   },
   {
@@ -517,7 +517,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.09"
   },
   {
@@ -527,7 +527,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.10"
   },
   {
@@ -537,7 +537,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.11"
   },
   {
@@ -547,7 +547,7 @@ export const equipment=[
     "familyName": "Cooling towers",
     "group": "Thermal",
     "asset": null,
-    "source": "https://www.powerbreezebd.com/products/",
+    "source": "/catalogues/graphene-cooling-towers.pdf",
     "number": "09.12"
   },
   {
@@ -557,7 +557,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": "helical",
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.01"
   },
   {
@@ -567,7 +567,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.02"
   },
   {
@@ -577,7 +577,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.03"
   },
   {
@@ -587,7 +587,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.04"
   },
   {
@@ -597,7 +597,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.05"
   },
   {
@@ -607,7 +607,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.06"
   },
   {
@@ -617,7 +617,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": "planet",
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.07"
   },
   {
@@ -627,7 +627,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": "gearMotor",
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.08"
   },
   {
@@ -637,7 +637,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": "worm",
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.09"
   },
   {
@@ -647,7 +647,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": "constant",
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.10"
   },
   {
@@ -657,7 +657,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": "variable",
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.11"
   },
   {
@@ -667,7 +667,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.12"
   },
   {
@@ -677,7 +677,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.13"
   },
   {
@@ -687,7 +687,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.14"
   },
   {
@@ -697,7 +697,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.15"
   },
   {
@@ -707,7 +707,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.16"
   },
   {
@@ -717,7 +717,7 @@ export const equipment=[
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
     "asset": "altra",
-    "source": "https://www.premium-transmission.com/",
+    "source": "/catalogues/graphene-mechanical-transmission.pdf",
     "number": "10.17"
   },
   {
@@ -727,7 +727,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.01"
   },
   {
@@ -737,7 +737,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.02"
   },
   {
@@ -747,7 +747,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.03"
   },
   {
@@ -757,7 +757,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": "fanSmoke",
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.04"
   },
   {
@@ -767,7 +767,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.05"
   },
   {
@@ -777,7 +777,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.06"
   },
   {
@@ -787,7 +787,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": "fanEx",
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.07"
   },
   {
@@ -797,7 +797,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.08"
   },
   {
@@ -807,7 +807,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.09"
   },
   {
@@ -817,7 +817,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.10"
   },
   {
@@ -827,7 +827,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.11"
   },
   {
@@ -837,7 +837,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.12"
   },
   {
@@ -847,7 +847,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.13"
   },
   {
@@ -857,7 +857,7 @@ export const equipment=[
     "familyName": "Ventilation systems",
     "group": "Thermal",
     "asset": null,
-    "source": "https://venco.com.tr/all-products/?lang=en",
+    "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.14"
   },
   {
@@ -867,7 +867,7 @@ export const equipment=[
     "familyName": "Industrial tools",
     "group": "Mechanical",
     "asset": "tool",
-    "source": "https://www.atlascopco.com/en-bd/itba/products",
+    "source": "/catalogues/graphene-industrial-tools.pdf",
     "number": "12.01"
   },
   {
@@ -877,7 +877,7 @@ export const equipment=[
     "familyName": "Industrial tools",
     "group": "Mechanical",
     "asset": "tool",
-    "source": "https://www.atlascopco.com/en-bd/itba/products",
+    "source": "/catalogues/graphene-industrial-tools.pdf",
     "number": "12.02"
   },
   {
@@ -887,7 +887,7 @@ export const equipment=[
     "familyName": "Industrial tools",
     "group": "Mechanical",
     "asset": null,
-    "source": "https://www.atlascopco.com/en-bd/itba/products",
+    "source": "/catalogues/graphene-industrial-tools.pdf",
     "number": "12.03"
   }
 ];

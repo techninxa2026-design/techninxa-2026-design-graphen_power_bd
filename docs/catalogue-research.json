@@ -1,0 +1,137 @@
+{
+  "source": "https://www.powerbreezebd.com/products/",
+  "notice": "Internal provenance only. Do not distribute competitor catalogues as Graphene documents. Confirm all specifications with suppliers before commercial use.",
+  "records": {
+    "transformers": {
+      "links": [
+        [
+          "Transformer catalogue",
+          "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Transformers-Cataloge-Web.pdf"
+        ]
+      ],
+      "note": "The reference spells the power transformer standard FEC 60076 but identifies IEC 60076 for distribution transformers. Confirm the intended standard and rating.",
+      "brand": "Powerbreeze reference"
+    },
+    "electrical-panels": {
+      "links": [
+        [
+          "Panel catalogue",
+          "https://drive.google.com/file/d/1_4nZO5VcVNEHk8F8vb1Ms365prrJ58wp/view?usp=sharing"
+        ]
+      ],
+      "note": "",
+      "brand": "Powerbreeze reference"
+    },
+    "cable-trays": {
+      "links": [
+        [
+          "Cable tray catalogue PDF",
+          "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray-Catalouge.pdf"
+        ]
+      ],
+      "note": "",
+      "brand": "Powerbreeze reference"
+    },
+    "busbar-trunking": {
+      "links": [
+        [
+          "Gersan manufacturer",
+          "https://gersan.com.tr/"
+        ]
+      ],
+      "note": "",
+      "brand": "Gersan Electric / Turkey"
+    },
+    "generators": {
+      "links": [
+        [
+          "mtu diesel portfolio",
+          "https://www.mtu-solutions.com/seai/en/applications/power-generation/power-generation-products/diesel-generator-sets.html"
+        ],
+        [
+          "mtu Series 4000",
+          "https://www.mtu-solutions.com/trmea/en/applications/power-generation/power-generation-products/diesel-generator-sets/series/4000.html"
+        ]
+      ],
+      "note": "The headline starts at 50 kVA, but the first listed series starts at 30 kVA. Manufacturer Series 4000 data independently lists 1,600–4,000 kVA at 50 Hz. Confirm duty and actual model.",
+      "brand": "mtu / Rolls-Royce Power Systems"
+    },
+    "air-compressors": {
+      "links": [
+        [
+          "Atlas Copco GA series",
+          "https://www.atlascopco.com/en-bd/compressors/products/air-compressor/rotary-screw-compressor/ga-series"
+        ],
+        [
+          "Compressor catalogue",
+          "https://www.atlascopco.com/content/dam/atlas-copco/compressor-technique/industrial-air/documents/brochures/CT%20Catalogue_Full.pdf"
+        ]
+      ],
+      "note": "",
+      "brand": "Atlas Copco"
+    },
+    "vacuum-pumps": {
+      "links": [
+        [
+          "Atlas Copco GHS vacuum pumps",
+          "https://www.atlascopco.com/en-bd/vacuum-solutions/products/oil-sealed-vacuum-pumps/oil-sealed-screw-pumps/ghs-vsd-plus-402-1002"
+        ],
+        [
+          "Dry screw vacuum pumps",
+          "https://www.atlascopco.com/en-bd/vacuum-solutions/products/dry-vacuum-pumps/dry-screw-vacuum-pumps"
+        ]
+      ],
+      "note": "",
+      "brand": "Atlas Copco"
+    },
+    "heat-exchangers": {
+      "links": [],
+      "note": "The reference mentions independent TÜV certification of Thermowave's testing procedure; this is not a Graphene certification.",
+      "brand": "Thermowave / Thermofin"
+    },
+    "cooling-towers": {
+      "links": [
+        [
+          "Genius GPT catalogue PDF",
+          "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Genius-GPT-catalogue.pdf"
+        ]
+      ],
+      "note": "",
+      "brand": "Genius / Malaysia"
+    },
+    "mechanical-transmission": {
+      "links": [
+        [
+          "Manufacturer profile PDF",
+          "https://www.premium-transmission.com/downloads/Company%20profile_Premium%20Transmission.pdf"
+        ]
+      ],
+      "note": "",
+      "brand": "Premium Transmission"
+    },
+    "ventilation": {
+      "links": [
+        [
+          "VENCO product catalogue",
+          "https://venco.com.tr/?lang=en"
+        ]
+      ],
+      "note": "",
+      "brand": "VENCO / Turkey"
+    },
+    "industrial-tools": {
+      "links": [
+        [
+          "Atlas Copco industrial tools",
+          "https://www.atlascopco.com/en-bd/itba/products"
+        ],
+        [
+          "Reference tools catalogue",
+          "https://drive.google.com/file/d/179HJjS1kUOYkMM_PHKdF0OaSW98tj8b_/view?usp=share_link"
+        ]
+      ],
+      "note": "",
+      "brand": "Atlas Copco Tools & Assembly Systems"
+    }
+  }
+}

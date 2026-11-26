@@ -20,16 +20,6 @@ export const assets:Record<string,EquipmentImage>={
     "kind": "Reference photograph",
     "fit": "contain"
   },
-  "tray": {
-    "src": "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray.png",
-    "alt": "Cable tray catalogue cover",
-    "credit": "Powerbreeze",
-    "source": "https://www.powerbreezebd.com/products/",
-    "width": 0,
-    "height": 0,
-    "kind": "Catalogue cover",
-    "fit": "contain"
-  },
   "busHigh": {
     "src": "https://gersan.com.tr/wp-content/uploads/2025/06/yuksek-guc-busbar.png",
     "alt": "Gersan GS Compact high-power busbar cross sections",
@@ -321,7 +311,7 @@ export const assets:Record<string,EquipmentImage>={
     "fit": "contain"
   }
 };
-const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","cable-trays":"tray","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"rect","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool"};
+const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"rect","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool"};
 export const photos:Record<string,EquipmentImage>=Object.fromEntries(Object.entries(familyAssets).map(([family,key])=>[family,assets[key]]));
 export const heroPhoto="https://www.powerbreezebd.com/wp-content/uploads/2023/01/product-page.jpg";
 export const source="https://www.powerbreezebd.com/products/";

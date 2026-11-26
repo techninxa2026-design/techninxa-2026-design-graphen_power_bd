@@ -6,6 +6,7 @@ import '../styles/experience.css';
 import '../styles/theme.css';
 import '../styles/choreography.css';
 import '../styles/gallery.css';
+import '../styles/cursor.css';
 import ThemePanel from '../components/ThemePanel.astro';
 import {heroPhoto} from '../data/photos';
 import { products, groups } from '../data/catalog';
@@ -38,6 +39,7 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObser
 </script>
 <script>
 import '../lib/experience';
+import '../lib/cursor';
 document.querySelectorAll<HTMLImageElement>('.tile-photo img').forEach(img=>{function fail(){img.hidden=true;const parent=img.closest('.tile-photo');parent?.classList.add('image-failed');const msg=parent?.querySelector<HTMLElement>('.tile-unavailable');if(msg)msg.hidden=false;}img.addEventListener('error',fail);if(img.complete&&!img.naturalWidth)fail();});
 </script>
 </body></html>

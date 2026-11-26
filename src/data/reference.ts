@@ -1,8 +1,7 @@
 export type Reference={brand:string;summary:string;facts:string[][];links:string[][];table:{headers:string[];rows:string[][]}|null;note:string};
-export const referenceUrl="https://www.powerbreezebd.com/products/";
 export const reference:Record<string,Reference>={
   "transformers": {
-    "brand": "Powerbreeze reference",
+    "brand": "Industrial equipment",
     "summary": "Oil-filled power and distribution transformer configurations; free-breathing designs with conservators.",
     "facts": [
       [
@@ -26,17 +25,12 @@ export const reference:Record<string,Reference>={
         "Silica gel / conservator"
       ]
     ],
-    "links": [
-      [
-        "Transformer catalogue",
-        "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Transformers-Cataloge-Web.pdf"
-      ]
-    ],
+    "links": [],
     "table": null,
-    "note": "The reference spells the power transformer standard FEC 60076 but identifies IEC 60076 for distribution transformers. Confirm the intended standard and rating."
+    "note": "Indicative ranges for preliminary selection. Verify IEC 60076 applicability, tap changer configuration and guaranteed ratings with the selected manufacturer."
   },
   "electrical-panels": {
-    "brand": "Powerbreeze reference",
+    "brand": "Industrial equipment",
     "summary": "Switchgear and control assemblies for power distribution and motor operation.",
     "facts": [
       [
@@ -60,18 +54,13 @@ export const reference:Record<string,Reference>={
         "Synchronization and custom panels"
       ]
     ],
-    "links": [
-      [
-        "Panel catalogue",
-        "https://drive.google.com/file/d/1_4nZO5VcVNEHk8F8vb1Ms365prrJ58wp/view?usp=sharing"
-      ]
-    ],
+    "links": [],
     "table": null,
     "note": ""
   },
   "cable-trays": {
-    "brand": "Powerbreeze reference",
-    "summary": "Five cable tray designs with dimensional and finish options from the published brochure.",
+    "brand": "Industrial equipment",
+    "summary": "Five cable tray designs with dimensional and finish options for preliminary equipment selection.",
     "facts": [
       [
         "Sheet tray finishes",
@@ -90,12 +79,7 @@ export const reference:Record<string,Reference>={
         "Chemical treatment, laser perforation, bending and coating"
       ]
     ],
-    "links": [
-      [
-        "Cable tray catalogue PDF",
-        "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Cable-Tray-Catalouge.pdf"
-      ]
-    ],
+    "links": [],
     "table": {
       "headers": [
         "Type",
@@ -146,27 +130,22 @@ export const reference:Record<string,Reference>={
   },
   "busbar-trunking": {
     "brand": "Gersan Electric / Turkey",
-    "summary": "Modular busbar distribution equipment. The reference identifies Gersan as its supplier; individual ratings require manufacturer documentation.",
+    "summary": "Modular busbar distribution equipment. Individual ratings require manufacturer documentation. Gersan is an example manufacturer.",
     "facts": [
       [
-        "Reference brand",
+        "Example manufacturer",
         "Gersan Electric"
       ],
       [
-        "Origin named",
+        "Manufacturer origin",
         "Turkey"
       ],
       [
         "Model ratings",
-        "Not specified on the reference page"
+        "Confirm with selected manufacturer"
       ]
     ],
-    "links": [
-      [
-        "Gersan manufacturer",
-        "https://gersan.com.tr/"
-      ]
-    ],
+    "links": [],
     "table": null,
     "note": ""
   },
@@ -175,7 +154,7 @@ export const reference:Record<string,Reference>={
     "summary": "Diesel generating sets for standby, prime and continuous duty; designed for reliable power and efficient system integration.",
     "facts": [
       [
-        "Headline range",
+        "Indicative portfolio range",
         "50–4,000 kVA"
       ],
       [
@@ -187,28 +166,19 @@ export const reference:Record<string,Reference>={
         "G3 / ISO 8528-5"
       ],
       [
-        "Emergency power standard referenced",
+        "Emergency power standard to consider",
         "NFPA 110"
       ],
       [
-        "Other standards cited",
+        "Other standards to consider",
         "NEMA MG1, BS 5000, DIN EN, IEC"
       ]
     ],
-    "links": [
-      [
-        "mtu diesel portfolio",
-        "https://www.mtu-solutions.com/seai/en/applications/power-generation/power-generation-products/diesel-generator-sets.html"
-      ],
-      [
-        "mtu Series 4000",
-        "https://www.mtu-solutions.com/trmea/en/applications/power-generation/power-generation-products/diesel-generator-sets/series/4000.html"
-      ]
-    ],
+    "links": [],
     "table": {
       "headers": [
-        "Reference series",
-        "Prime rating as listed"
+        "Equipment series",
+        "Indicative prime rating"
       ],
       "rows": [
         [
@@ -229,18 +199,18 @@ export const reference:Record<string,Reference>={
         ]
       ]
     },
-    "note": "The headline starts at 50 kVA, but the first listed series starts at 30 kVA. Manufacturer Series 4000 data independently lists 1,600–4,000 kVA at 50 Hz. Confirm duty and actual model."
+    "note": "Series values are indicative and may vary by duty and frequency. The general range starts at 50 kVA, while the listed small series starts at 30 kVA; confirm exact model ratings."
   },
   "air-compressors": {
     "brand": "Atlas Copco",
-    "summary": "Standard and customized compressed-air systems. The reference describes equipment selection, installation and after-sales maintenance.",
+    "summary": "Standard and customized compressed-air systems. Equipment selection, installation and maintenance should be specified for each project.",
     "facts": [
       [
-        "Reference brand",
+        "Example manufacturer",
         "Atlas Copco"
       ],
       [
-        "Service scope in reference",
+        "Typical service scope",
         "Commissioning, troubleshooting, maintenance, AMC, health checks"
       ],
       [
@@ -248,16 +218,7 @@ export const reference:Record<string,Reference>={
         "Select from manufacturer model data"
       ]
     ],
-    "links": [
-      [
-        "Atlas Copco GA series",
-        "https://www.atlascopco.com/en-bd/compressors/products/air-compressor/rotary-screw-compressor/ga-series"
-      ],
-      [
-        "Compressor catalogue",
-        "https://www.atlascopco.com/content/dam/atlas-copco/compressor-technique/industrial-air/documents/brochures/CT%20Catalogue_Full.pdf"
-      ]
-    ],
+    "links": [],
     "table": null,
     "note": ""
   },
@@ -290,16 +251,7 @@ export const reference:Record<string,Reference>={
         "Production processes and drying"
       ]
     ],
-    "links": [
-      [
-        "Atlas Copco GHS vacuum pumps",
-        "https://www.atlascopco.com/en-bd/vacuum-solutions/products/oil-sealed-vacuum-pumps/oil-sealed-screw-pumps/ghs-vsd-plus-402-1002"
-      ],
-      [
-        "Dry screw vacuum pumps",
-        "https://www.atlascopco.com/en-bd/vacuum-solutions/products/dry-vacuum-pumps/dry-screw-vacuum-pumps"
-      ]
-    ],
+    "links": [],
     "table": null,
     "note": ""
   },
@@ -316,8 +268,8 @@ export const reference:Record<string,Reference>={
         "Thermofin"
       ],
       [
-        "Other brands named",
-        "Alfa Laval (spelled Alfa Level in reference), GEA, HFM, APV, Funke"
+        "Other example manufacturers",
+        "Alfa Laval, GEA, HFM, APV, Funke"
       ],
       [
         "Selection",
@@ -326,7 +278,7 @@ export const reference:Record<string,Reference>={
     ],
     "links": [],
     "table": null,
-    "note": "The reference mentions independent TÜV certification of Thermowave's testing procedure; this is not a Graphene certification."
+    "note": "Verify product test records, materials, certifications and thermal performance with the selected manufacturer."
   },
   "cooling-towers": {
     "brand": "Genius / Malaysia",
@@ -345,12 +297,7 @@ export const reference:Record<string,Reference>={
         "80 °C"
       ]
     ],
-    "links": [
-      [
-        "Genius GPT catalogue PDF",
-        "https://www.powerbreezebd.com/wp-content/uploads/2023/02/Genius-GPT-catalogue.pdf"
-      ]
-    ],
+    "links": [],
     "table": {
       "headers": [
         "Series",
@@ -392,7 +339,7 @@ export const reference:Record<string,Reference>={
     "summary": "Gear units, geared motors, fluid couplings and lift drive equipment.",
     "facts": [
       [
-        "Reference brand",
+        "Example manufacturer",
         "Premium Transmission"
       ],
       [
@@ -405,15 +352,10 @@ export const reference:Record<string,Reference>={
       ],
       [
         "Torque and ratios",
-        "Model-specific; not listed on reference page"
+        "Model-specific; confirm with manufacturer"
       ]
     ],
-    "links": [
-      [
-        "Manufacturer profile PDF",
-        "https://www.premium-transmission.com/downloads/Company%20profile_Premium%20Transmission.pdf"
-      ]
-    ],
+    "links": [],
     "table": null,
     "note": ""
   },
@@ -438,12 +380,7 @@ export const reference:Record<string,Reference>={
         "MCC, control systems, electric heaters, silencers and accessories"
       ]
     ],
-    "links": [
-      [
-        "VENCO product catalogue",
-        "https://venco.com.tr/?lang=en"
-      ]
-    ],
+    "links": [],
     "table": null,
     "note": ""
   },
@@ -452,7 +389,7 @@ export const reference:Record<string,Reference>={
     "summary": "Industrial assembly tools; manufacturer catalogue also covers bolting, quality assurance, automation, material removal and workstation equipment.",
     "facts": [
       [
-        "Reference brand",
+        "Example manufacturer",
         "Atlas Copco"
       ],
       [
@@ -464,16 +401,7 @@ export const reference:Record<string,Reference>={
         "Model-specific"
       ]
     ],
-    "links": [
-      [
-        "Atlas Copco industrial tools",
-        "https://www.atlascopco.com/en-bd/itba/products"
-      ],
-      [
-        "Reference tools catalogue",
-        "https://drive.google.com/file/d/179HJjS1kUOYkMM_PHKdF0OaSW98tj8b_/view?usp=share_link"
-      ]
-    ],
+    "links": [],
     "table": null,
     "note": ""
   }

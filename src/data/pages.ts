@@ -143,7 +143,7 @@ export const pages = [
     "sections": [
       [
         "Product catalogues & datasheets",
-        "Model-specific files will be published after manufacturer and company approval."
+        "Download Graphene Power BD equipment selection guides. Final model-specific datasheets are subject to supplier confirmation."
       ],
       [
         "News & updates",

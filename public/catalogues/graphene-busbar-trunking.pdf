@@ -1,0 +1,125 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 2 /Kids [5 0 R 7 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3477 >>
+stream
+0.965 0.961 0.933 rg 0 0 595 842 re f
+0.063 0.106 0.263 rg 0 650 595 192 re f
+0.141 0.286 0.78 rg 375 842 m 595 842 l 595 650 l 465 660 330 790 375 842 c f
+0.322 0.898 0.937 RG 1.4 w 438 842 m 400 780 555 750 595 775 c S
+0.322 0.898 0.937 rg 38 797 11 11 re f
+BT /F2 13 Tf 1 1 1 rg 1 0 0 1 56 799 Tm (GRAPHENE POWER BD) Tj ET
+BT /F2 9 Tf 0.322 0.898 0.937 rg 1 0 0 1 38 777 Tm (ENGINEERING / TECHNICAL PORTFOLIO) Tj ET
+BT /F2 30 Tf 1 1 1 rg 1 0 0 1 38 741 Tm (Busbar trunking) Tj ET
+BT /F2 10 Tf 0.322 0.898 0.937 rg 1 0 0 1 38 671 Tm (04  /  ELECTRICAL SYSTEMS) Tj ET
+BT /F1 9 Tf 1 1 1 rg 1 0 0 1 390 671 Tm (SELECTION GUIDE  /  01) Tj ET
+BT /F1 11 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 625 Tm (Modular busbar distribution equipment. Individual ratings require manufacturer) Tj ET
+BT /F1 11 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 610 Tm (documentation. Gersan is an example manufacturer.) Tj ET
+BT /F2 14 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 587 Tm (Equipment range) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 47 568 Tm (Feeder busbar) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 310 568 Tm (Distribution busbar) Tj ET
+0.141 0.286 0.78 rg 38 566 3 3 re f
+0.141 0.286 0.78 rg 301 566 3 3 re f
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 47 550 Tm (Tap-off units) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 310 550 Tm (Installation accessories) Tj ET
+0.141 0.286 0.78 rg 38 548 3 3 re f
+0.141 0.286 0.78 rg 301 548 3 3 re f
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 47 532 Tm (GNL & GL low-power busbar) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 310 532 Tm (GGD medium-power busbar) Tj ET
+0.141 0.286 0.78 rg 38 530 3 3 re f
+0.141 0.286 0.78 rg 301 530 3 3 re f
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 47 514 Tm (GS Compact high-power busbar) Tj ET
+0.141 0.286 0.78 rg 38 512 3 3 re f
+BT /F2 13 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 486 Tm (Key selection parameters) Tj ET
+0.85 0.88 0.93 rg 38 471 519 1 re f
+BT /F2 9 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 455 Tm (01) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 62 455 Tm (Current rating) Tj ET
+BT /F2 9 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 439 Tm (02) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 62 439 Tm (Voltage) Tj ET
+BT /F2 9 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 423 Tm (03) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 62 423 Tm (Conductor material) Tj ET
+BT /F2 9 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 407 Tm (04) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 62 407 Tm (Ingress protection) Tj ET
+BT /F2 9 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 391 Tm (05) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 62 391 Tm (Route length) Tj ET
+BT /F2 13 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 365 Tm (Technical overview) Tj ET
+0.85 0.88 0.93 rg 38 350 519 1 re f
+BT /F2 9 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 334 Tm (Example manufacturer) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 219 334 Tm (Gersan Electric) Tj ET
+BT /F2 9 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 315 Tm (Manufacturer origin) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 219 315 Tm (Turkey) Tj ET
+BT /F2 9 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 296 Tm (Model ratings) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 219 296 Tm (Confirm with selected manufacturer) Tj ET
+0.85 0.88 0.93 rg 38 44 519 1 re f
+BT /F2 8 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 31 Tm (GRAPHENE POWER BD  /  EQUIPMENT SELECTION GUIDE) Tj ET
+BT /F1 8 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 19 Tm (Indicative data. Confirm final ratings and availability before ordering.) Tj ET
+BT /F2 9 Tf 0.141 0.286 0.78 rg 1 0 0 1 520 25 Tm (01) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1831 >>
+stream
+0.965 0.961 0.933 rg 0 0 595 842 re f
+0.063 0.106 0.263 rg 0 725 595 117 re f
+0.141 0.286 0.78 rg 375 842 m 595 842 l 595 725 l 465 736 330 790 375 842 c f
+0.322 0.898 0.937 RG 1.4 w 438 842 m 400 780 555 750 595 775 c S
+0.322 0.898 0.937 rg 38 797 11 11 re f
+BT /F2 13 Tf 1 1 1 rg 1 0 0 1 56 799 Tm (GRAPHENE POWER BD) Tj ET
+BT /F2 9 Tf 0.322 0.898 0.937 rg 1 0 0 1 38 777 Tm (ENGINEERING / TECHNICAL PORTFOLIO) Tj ET
+BT /F2 21 Tf 1 1 1 rg 1 0 0 1 38 750 Tm (Technical data) Tj ET
+BT /F2 13 Tf 0.141 0.286 0.78 rg 1 0 0 1 38 687 Tm (Published / indicative technical information) Tj ET
+0.85 0.88 0.93 rg 38 672 519 1 re f
+BT /F2 10 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 656 Tm (Example manufacturer) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 200 656 Tm (Gersan Electric) Tj ET
+0.85 0.88 0.93 rg 38 638 519 0.5 re f
+BT /F2 10 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 634 Tm (Manufacturer origin) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 200 634 Tm (Turkey) Tj ET
+0.85 0.88 0.93 rg 38 616 519 0.5 re f
+BT /F2 10 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 612 Tm (Model ratings) Tj ET
+BT /F1 10 Tf 0.067 0.11 0.259 rg 1 0 0 1 200 612 Tm (Confirm with selected manufacturer) Tj ET
+0.85 0.88 0.93 rg 38 594 519 0.5 re f
+BT /F1 9 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 578 Tm (This catalogue is a Graphene Power BD selection guide, not a quotation, certified datasheet, or) Tj ET
+BT /F1 9 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 565 Tm (confirmation of stock. Obtain final manufacturer documentation before specifying or purchasing.) Tj ET
+0.85 0.88 0.93 rg 38 44 519 1 re f
+BT /F2 8 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 31 Tm (GRAPHENE POWER BD  /  EQUIPMENT SELECTION GUIDE) Tj ET
+BT /F1 8 Tf 0.28 0.34 0.46 rg 1 0 0 1 38 19 Tm (Indicative data. Confirm final ratings and availability before ordering.) Tj ET
+BT /F2 9 Tf 0.141 0.286 0.78 rg 1 0 0 1 520 25 Tm (02) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Title (Graphene Power BD - Busbar trunking) /Author (Graphene Power BD) /Creator (Graphene Power BD) >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000000402 00000 n 
+0000003930 00000 n 
+0000004066 00000 n 
+0000005948 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R /Info 9 0 R >>
+startxref
+6071
+%%EOF

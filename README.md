@@ -22,3 +22,6 @@ Three editable palette colors, curated presets, reset, early restoration from or
 
 ## Visual catalogue V6
 All existing named equipment configurations have individual tiles at /products/gallery/ and on family pages. Manufacturer/reference images are sourced and labeled with photo/render/thumbnail distinctions. Some entries have no verified matching photo: they deliberately link to the source rather than display unrelated imagery. The family-level ventilation example is Systemair, not VENCO. Third-party images are remote; permission, local caching and higher-resolution replacements are required before production publication. The actual photographed product is not guaranteed to be Graphene inventory.
+
+## Original Graphene catalogues
+All customer-facing brochure downloads are original Graphene Power BD PDF selection guides, including 12 family brochures and one full portfolio. Competitor catalogue links have been removed from the public document UI; internal research provenance is in docs/catalogue-research.json. These are indicative selection documents, not certified datasheets, quotations, authorized dealership claims or stock guarantees. Reference photos remain separately credited and require permission before commercial publication.
