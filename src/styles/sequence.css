@@ -9,3 +9,5 @@
 .sequence-active .sequence-wave{will-change:auto}
 @media(max-width:760px){.sequence-matrix{right:1%;gap:6px;grid-template-columns:repeat(8,4px)}.sequence-matrix i{width:4px;height:4px}.sequence-circuit{opacity:.48}.sequence-line{padding-bottom:.12em;margin-bottom:-.12em}}
 @media(prefers-reduced-motion:reduce){.sequence-matrix{display:none}.sequence-circuit{opacity:.35}.sequence-word{transform:none!important}}
+
+.story-energy-path{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:visible;opacity:.72}.sequence-circuit .circuit-node{transform-box:fill-box;transform-origin:center}.sequence-active .hero-stream path:nth-of-type(2),.sequence-active .hero-stream path:nth-of-type(3){animation-duration:12s}@media(prefers-reduced-motion:reduce){.story-energy-path{opacity:.35}}
