@@ -4,5 +4,5 @@ const {slug,name}=Astro.props;
 const photo=photos[slug];
 ---
 <div class:list={['equipment-photo','catalogue-media',{'photo-missing':!photo,'low-res':photo&&photo.width>0&&photo.width<400}]}>
-{photo ? <><img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" width={photo.width||640} height={photo.height||420} style={photo.width>0&&photo.width<400?'max-width:'+photo.width+'px;max-height:'+photo.height+'px':undefined}/><span class="image-credit">{photo.credit} · {photo.kind}</span><span hidden class="photo-fallback">Source image unavailable</span></> : <div class="photo-placeholder"><span class="photo-index">{name}</span><strong>Product information</strong><span>Photo pending</span></div>}
+{photo ? <><img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" width={photo.width||640} height={photo.height||420} style={photo.width>0&&photo.width<400?'max-width:'+photo.width+'px;max-height:'+photo.height+'px':undefined}/><span class="image-credit">{photo.credit} · {photo.kind}{photo.license?' · '+photo.license:''}</span><span hidden class="photo-fallback">Source image unavailable</span></> : <div class="photo-placeholder"><span class="photo-index">{name}</span><strong>Product information</strong><span>Photo pending</span></div>}
 </div>

@@ -942,10 +942,10 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": "ahu",
+    "asset": "heatRecovery",
     "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.01",
-    "imageMatch": "family",
+    "imageMatch": "subtype",
     "imageFallbacks": []
   },
   {
@@ -1036,13 +1036,11 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": "fan",
+    "asset": "roofFan",
     "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.08",
-    "imageMatch": "family",
-    "imageFallbacks": [
-      "jet"
-    ]
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "ventilation-silencers-and-accessories",
@@ -1050,13 +1048,11 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": "jet",
+    "asset": "silencer",
     "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.09",
-    "imageMatch": "context",
-    "imageFallbacks": [
-      "fan"
-    ]
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "ventilation-fans-with-casing",
@@ -1090,10 +1086,10 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": "ahu",
+    "asset": "ductHeater",
     "source": "/catalogues/graphene-ventilation.pdf",
     "number": "11.12",
-    "imageMatch": "context",
+    "imageMatch": "subtype",
     "imageFallbacks": []
   },
   {

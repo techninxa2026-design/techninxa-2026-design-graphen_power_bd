@@ -428,6 +428,46 @@ export const assets:Record<string,EquipmentImage>={
     "height": 158,
     "kind": "Manufacturer product image",
     "fit": "contain"
+  },
+  "ductHeater": {
+    "src": "https://stepimassets.blob.core.windows.net/dsassetsprod/PRODUCT-MAIN-IMAGE_ACC_CB.JPG",
+    "alt": "Systemair CB electrical duct heater",
+    "credit": "Systemair",
+    "source": "https://www.systemair.com/en/products/fans/accessories/mechanical-accessories/heating-and-cooling-batteries/electrical-duct-heaters/cb",
+    "width": 400,
+    "height": 303,
+    "kind": "Alternative manufacturer product image",
+    "fit": "contain"
+  },
+  "silencer": {
+    "src": "https://stepimassets.blob.core.windows.net/dsassetsprod/RSA_20221201_092649871.JPG",
+    "alt": "Systemair RSA duct-connected silencer",
+    "credit": "Systemair",
+    "source": "https://www.systemair.com/en/products/fans/accessories/mechanical-accessories/silencers/duct-connected-silencers/rsa",
+    "width": 400,
+    "height": 312,
+    "kind": "Alternative manufacturer product image",
+    "fit": "contain"
+  },
+  "heatRecovery": {
+    "src": "https://a.storyblok.com/f/108972/1500x936/cdf190d95b/sense-rt.png/m/1500x936/filters%3Aquality%2880%29",
+    "alt": "Systemair Sense RT heat recovery ventilation unit",
+    "credit": "Systemair",
+    "source": "https://www.systemair.com/en/products/air-handling-units/sense/sense-rt",
+    "width": 1500,
+    "height": 936,
+    "kind": "Alternative manufacturer product image",
+    "fit": "contain"
+  },
+  "roofFan": {
+    "src": "https://stepimassets.blob.core.windows.net/dsassetsprod/PRODUCT-MAIN-IMAGE_DVV.png",
+    "alt": "Systemair DVV roof extraction fan",
+    "credit": "Systemair",
+    "source": "https://www.systemair.com/en/products/fans/roof-fans/dvv/dvv",
+    "width": 907,
+    "height": 840,
+    "kind": "Alternative manufacturer product image",
+    "fit": "contain"
   }
 };
 const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"towerIndustrial","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool","cable-trays":"trayPerforated"};
