@@ -269,6 +269,56 @@ export const assets:Record<string,EquipmentImage>={
     "height": 800,
     "kind": "Manufacturer product photo",
     "fit": "contain"
+  },
+  "gearMotor": {
+    "src": "https://www.premium-transmission.com/wp-content/uploads/2024/06/Parallel_Shaft-eared-motors.webp",
+    "alt": "Premium Transmission parallel shaft geared motor",
+    "credit": "Premium Transmission",
+    "source": "https://www.premium-transmission.com/",
+    "width": 645,
+    "height": 645,
+    "kind": "Manufacturer product image",
+    "fit": "contain"
+  },
+  "oilFree": {
+    "src": "https://atlascopco.scene7.com/is/image/atlascopco/ZE3_SETUP_Cam06_4x3",
+    "alt": "Atlas Copco ZE oil-free screw compressor installation",
+    "credit": "Atlas Copco",
+    "source": "https://www.atlascopco.com/en-bd/compressors/products/air-compressor/oil-free-air-compressors/low-pressure-screw-compressor-ze-za-vsd",
+    "width": 400,
+    "height": 283,
+    "kind": "Manufacturer installation image",
+    "fit": "contain"
+  },
+  "dryer": {
+    "src": "https://atlascopco.scene7.com/is/image/atlascopco/CD-BD-XD?%24landscape800%24=&fmt=png-alpha",
+    "alt": "Atlas Copco BD desiccant air dryer system",
+    "credit": "Atlas Copco",
+    "source": "https://www.atlascopco.com/en-bd/compressors/products/air-dryers/desiccant-air-dryers",
+    "width": 800,
+    "height": 800,
+    "kind": "Manufacturer product image",
+    "fit": "contain"
+  },
+  "fanEx": {
+    "src": "https://stepimassets.blob.core.windows.net/dsassetsprod/PRODUCT-MAIN-IMAGE_AXC-EX.png",
+    "alt": "Systemair AXC-EX explosion-protected axial fan",
+    "credit": "Systemair",
+    "source": "https://www.systemair.com/en/products/fans/axial-fans/axc",
+    "width": 842,
+    "height": 843,
+    "kind": "Alternative manufacturer product image",
+    "fit": "contain"
+  },
+  "fanSmoke": {
+    "src": "https://stepimassets.blob.core.windows.net/dsassetsprod/PRODUCT-MAIN-IMAGE_AXC_B_.JPG",
+    "alt": "Systemair AXC(B) smoke extraction axial fan",
+    "credit": "Systemair",
+    "source": "https://www.systemair.com/en/products/fans/axial-fans/axc",
+    "width": 290,
+    "height": 254,
+    "kind": "Alternative manufacturer thumbnail",
+    "fit": "contain"
   }
 };
 const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","cable-trays":"tray","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"rect","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool"};

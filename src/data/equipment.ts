@@ -316,7 +316,7 @@ export const equipment=[
     "family": "air-compressors",
     "familyName": "Air compressors",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "oilFree",
     "source": "https://www.atlascopco.com/en-bd/compressors/products",
     "number": "06.02"
   },
@@ -326,7 +326,7 @@ export const equipment=[
     "family": "air-compressors",
     "familyName": "Air compressors",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "dryer",
     "source": "https://www.atlascopco.com/en-bd/compressors/products",
     "number": "06.03"
   },
@@ -626,7 +626,7 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "gearMotor",
     "source": "https://www.premium-transmission.com/",
     "number": "10.08"
   },
@@ -756,7 +756,7 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fanSmoke",
     "source": "https://venco.com.tr/all-products/?lang=en",
     "number": "11.04"
   },
@@ -786,7 +786,7 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fanEx",
     "source": "https://venco.com.tr/all-products/?lang=en",
     "number": "11.07"
   },
