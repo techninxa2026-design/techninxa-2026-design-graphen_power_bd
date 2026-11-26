@@ -1,7 +1,8 @@
 ---
+import EquipmentPhoto from './EquipmentPhoto.astro';
 const {product:p}=Astro.props;
 ---
 <a class="product-card" href={'/products/'+p.slug+'/'} data-product data-group={p.group} data-search={[p.name,p.description,...p.variants].join(' ').toLowerCase()}>
 <div class="product-top"><span>{p.number} / {p.group}</span><span class="round-arrow">↗</span></div>
-<div class="product-art"><img src={'/equipment/'+p.slug+'.svg'} alt="" loading="lazy" width="480" height="300"/></div>
+<EquipmentPhoto slug={p.slug} name={p.name}/>
 <div class="product-copy"><h3>{p.name}</h3><p>{p.description}</p></div></a>
