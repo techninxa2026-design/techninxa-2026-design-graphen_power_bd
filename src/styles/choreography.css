@@ -1,9 +1,5 @@
-/* Progressive enhancement: real cross-document transitions, no router required. */
+/* V10 page-content choreography. Navigation snapshots are handled by navigation-transition.css. */
 @media(prefers-reduced-motion:no-preference){
-@view-transition{navigation:auto}
-::view-transition-old(root){animation:scene-out .27s ease-in both}::view-transition-new(root){animation:scene-in .47s cubic-bezier(.16,1,.3,1) both}
-@keyframes scene-out{to{opacity:0;transform:translateY(-10px) scale(.99)}}@keyframes scene-in{from{opacity:0;transform:translateY(14px) scale(1.008)}to{opacity:1;transform:none}}
-.header{view-transition-name:site-header}::view-transition-old(site-header),::view-transition-new(site-header){animation-duration:.25s}
 @keyframes detail-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .page-head h1,.detail-head h1{animation:detail-rise .65s cubic-bezier(.16,1,.3,1) both}.page-head p,.detail-grid p{animation:detail-rise .65s .09s both}
 @keyframes draw-stream{from{stroke-dashoffset:170}to{stroke-dashoffset:0}}.hero-stream path:nth-of-type(2),.hero-stream path:nth-of-type(3){stroke-dasharray:3 9;animation:draw-stream 9s linear infinite}
@@ -11,6 +7,5 @@
 @supports(animation-timeline:scroll()) {.photo-sculpture img{animation:photo-drift linear both;animation-timeline:scroll(root block);animation-range:0 650px}@keyframes photo-drift{from{translate:0 0}to{translate:0 18px}}}
 @media(hover:hover) and (pointer:fine){.system-tile,.editorial-photo,.product-card,.directory-grid>a{transition:transform .36s cubic-bezier(.16,1,.3,1),background .24s,box-shadow .24s,border-color .24s}.system-tile:hover .system-glyph{transform:rotate(-8deg) scale(1.12)}.system-glyph{transition:transform .6s cubic-bezier(.16,1,.3,1)}.system-tile:hover .system-arrow{transform:rotate(12deg)}.system-arrow{transition:transform .3s}.editorial-photo:hover .editorial-caption{translate:0 -5px}.editorial-caption{transition:translate .35s}.product-card:hover .round-arrow{rotate:10deg}.round-arrow{transition:background .2s,rotate .3s}.action-primary:active,.button:active{transform:scale(.97)}}
 }
-@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-old(root),::view-transition-new(root){animation:none!important}}
 
 @media(prefers-reduced-motion:no-preference){@keyframes filter-in{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}.filter-enter{animation:filter-in .35s var(--filter-delay,0ms) cubic-bezier(.16,1,.3,1) both}.mega-group:not([hidden]).filter-enter{animation:filter-in .28s both}.theme-presets button{transition:background .2s,transform .2s,border-color .2s}.theme-presets button:hover{transform:translateY(-2px)}}

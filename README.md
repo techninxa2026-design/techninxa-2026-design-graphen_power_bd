@@ -36,3 +36,6 @@ The engineering-story energy trace uses Anime.js onScroll with playback synchron
 
 ## V10 kinetic motion
 Added an original three-chapter scroll-led Energy Journey (desktop sticky scene, mobile/static chapter layout), a pointer-reactive hero light and layered parallax, image-mask reveals using Anime.js, interaction impulses and more pronounced entrance/page transitions. Motion preserves static navigation and reduced-motion fallback. No new dependencies.
+
+## Navigation transitions (V10 baseline)
+The approved V10 content motion is unchanged. Same-origin pages opt into browser-native cross-document view transitions: curved entrance masks, outgoing scene shrink, theme-colored energy gradient, independent header and direction-aware history transitions. Browsers without native support use a short themed curtain for regular internal page links, with a pre-paint sessionStorage handoff and automatic timeout recovery. Same-page anchors, external links, downloads, modified clicks, new tabs, filters and form behavior are not intercepted. Reduced motion bypasses the effect. No new dependency or runtime server.

@@ -1,0 +1,45 @@
+/* Navigation-only motion. V10 hero, scroll, card and pointer animations are untouched. */
+.navigation-curtain{display:none;position:fixed;inset:0;z-index:10001;isolation:isolate;overflow:hidden;pointer-events:none;color:white;background:var(--night);clip-path:inset(0);transform:none}
+.nav-curtain-skin{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 85% 20%,var(--palette-primary,var(--blue)),transparent 72%),var(--night)}
+.nav-curtain-flow{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.nav-curtain-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(88vw,640px);display:grid;justify-items:center;gap:15px;text-align:center}
+.nav-curtain-content>span{font:700 11px monospace;letter-spacing:.28em;color:var(--cyan)}
+.nav-curtain-content>strong{font-size:clamp(38px,8vw,104px);font-weight:700;letter-spacing:-.075em;line-height:1;overflow-wrap:anywhere}
+.nav-curtain-line{height:3px;width:min(220px,50vw);background:color-mix(in srgb,var(--cyan) 25%,transparent);border-radius:6px;overflow:hidden;margin-top:10px}
+.nav-curtain-line>i{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--palette-secondary,var(--cyan)),var(--palette-accent,var(--orange)));transform-origin:left}
+.nav-curtain-edge{position:absolute;inset:0;border:3px solid var(--palette-secondary,var(--cyan));border-radius:32px;opacity:.4;pointer-events:none}
+@media(prefers-reduced-motion:no-preference){
+ @view-transition{navigation:auto}
+ /* Browser snapshot transition: keep the floating nav independent, reveal a curved energy field between scenes. */
+ html[data-navigation-mode="native"] .header{view-transition-name:graphene-navigation-header}
+ ::view-transition{background:radial-gradient(ellipse at 80% 15%,var(--palette-primary,var(--blue)) 0%,transparent 65%),linear-gradient(135deg,var(--night) 12%,var(--palette-secondary,var(--cyan)) 70%,var(--palette-accent,var(--orange)) 100%)}
+ ::view-transition-group(root){animation-duration:.82s}
+ ::view-transition-image-pair(root){isolation:isolate}
+ ::view-transition-old(root),::view-transition-new(root){mix-blend-mode:normal;object-fit:cover;height:100%;width:100%;transform-origin:center}
+ ::view-transition-old(root){animation:graphene-page-out .48s cubic-bezier(.55,.05,.8,.35) both;z-index:1}
+ ::view-transition-new(root){animation:graphene-page-in .70s .12s cubic-bezier(.18,.82,.21,1) both;z-index:2}
+ ::view-transition-group(graphene-navigation-header){z-index:4;animation-duration:.82s}
+ ::view-transition-old(graphene-navigation-header){animation:graphene-header-out .3s ease both}
+ ::view-transition-new(graphene-navigation-header){animation:graphene-header-in .36s .36s ease both}
+ html[data-navigation-direction="back"]::view-transition-old(root){animation-name:graphene-page-out-back}
+ html[data-navigation-direction="back"]::view-transition-new(root){animation-name:graphene-page-in-back}
+ @keyframes graphene-page-out{0%{clip-path:inset(0 round 0);transform:none;opacity:1}55%{clip-path:inset(2% 3% 2% 3% round 35px);transform:translateY(-3%) scale(.98);opacity:1}100%{clip-path:inset(0 0 100% 0 round 0 0 45% 45%);transform:translateY(-10%) scale(.96);opacity:0}}
+ @keyframes graphene-page-in{0%{clip-path:ellipse(0% 0% at 50% 105%);transform:translateY(9%) scale(1.035);opacity:1}32%{clip-path:ellipse(85% 48% at 50% 100%);transform:translateY(3%) scale(1.015);opacity:1}100%{clip-path:ellipse(150% 150% at 50% 100%);transform:none;opacity:1}}
+ @keyframes graphene-page-out-back{0%{clip-path:inset(0);transform:none;opacity:1}100%{clip-path:inset(100% 0 0 0 round 45% 45% 0 0);transform:translateY(10%) scale(.96);opacity:0}}
+ @keyframes graphene-page-in-back{0%{clip-path:ellipse(0% 0% at 50% -5%);transform:translateY(-9%) scale(1.035);opacity:1}32%{clip-path:ellipse(85% 48% at 50% 0%);transform:translateY(-3%) scale(1.015)}100%{clip-path:ellipse(150% 150% at 50% 0%);transform:none;opacity:1}}
+ @keyframes graphene-header-out{to{opacity:0;transform:translateY(-6px)}}
+ @keyframes graphene-header-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+ /* Unsupported browsers: a real branded curtain that passes across document loads. */
+ html[data-navigation-mode="curtain"][data-navigation-phase] .navigation-curtain{display:block;pointer-events:auto}
+ html[data-navigation-phase="exit"] .navigation-curtain{animation:graphene-curtain-cover .39s cubic-bezier(.65,.04,.29,1) both}
+ html[data-navigation-phase="exit"] .nav-curtain-content{animation:graphene-curtain-label .32s .07s both}
+ html[data-navigation-phase="exit"] .nav-curtain-line>i{animation:graphene-curtain-progress .39s ease both}
+ html[data-navigation-phase="enter"] .navigation-curtain{animation:graphene-curtain-reveal .82s cubic-bezier(.76,0,.18,1) both}
+ html[data-navigation-phase="enter"] .nav-curtain-content{animation:graphene-curtain-label-out .42s .12s both}
+ @keyframes graphene-curtain-cover{from{clip-path:ellipse(0% 0% at 50% 112%)}to{clip-path:ellipse(150% 150% at 50% 100%)}}
+ @keyframes graphene-curtain-reveal{0%,12%{clip-path:ellipse(150% 150% at 50% 0%)}100%{clip-path:ellipse(0% 0% at 50% -12%)}}
+ @keyframes graphene-curtain-label{from{opacity:0;transform:translate(-50%,-32%)}to{opacity:1;transform:translate(-50%,-50%)}}
+ @keyframes graphene-curtain-label-out{to{opacity:0;transform:translate(-50%,-70%)}}
+ @keyframes graphene-curtain-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}.navigation-curtain{display:none!important}::view-transition-old(root),::view-transition-new(root){animation:none!important}}
