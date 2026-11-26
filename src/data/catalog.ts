@@ -91,7 +91,11 @@ export const products = [
     "variants": [
       "Standby diesel generators",
       "Prime power generators",
-      "Continuous power systems"
+      "Continuous power systems",
+      "mtu 0080 DS – 0225 DS",
+      "mtu 1600 DS",
+      "mtu 2000 DS G05/G06",
+      "mtu 4000 DS"
     ],
     "specs": [
       "Power rating (kVA)",
@@ -173,7 +177,14 @@ export const products = [
       "Square cooling towers",
       "Rectangular cooling towers",
       "Low-noise configurations",
-      "Custom cooling towers"
+      "Custom cooling towers",
+      "GPT series",
+      "GD series",
+      "GDS series",
+      "GKS series",
+      "GPC series",
+      "Side-discharge towers",
+      "High-temperature towers"
     ],
     "specs": [
       "Cooling capacity",
@@ -201,7 +212,12 @@ export const products = [
       "Worm gearboxes",
       "Constant-speed fluid couplings",
       "Variable-speed fluid couplings",
-      "Geared lift machines"
+      "Geared lift machines",
+      "Bevel helical cooling tower gearbox",
+      "Coal pulverizing mill gearbox",
+      "Planetary mill duty gearbox",
+      "Premium Stephan geared motor",
+      "ALM series Altra worm gearbox"
     ],
     "specs": [
       "Torque",
@@ -226,7 +242,12 @@ export const products = [
       "Pressurization fans",
       "Explosion-protected fans",
       "Roof and duct fans",
-      "Silencers and accessories"
+      "Silencers and accessories",
+      "Fans with casing",
+      "Automatic control systems and MCC panels",
+      "Duct and AHU electric heaters",
+      "Shelter fans",
+      "Kitchen fans"
     ],
     "specs": [
       "Airflow",

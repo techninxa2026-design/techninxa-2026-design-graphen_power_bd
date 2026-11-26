@@ -1,8 +1,9 @@
 ---
 import EquipmentPhoto from './EquipmentPhoto.astro';
+import {reference} from '../data/reference';
 const {product:p}=Astro.props;
 ---
-<a class="product-card" href={'/products/'+p.slug+'/'} data-product data-group={p.group} data-search={[p.name,p.description,...p.variants].join(' ').toLowerCase()}>
+<a class="product-card" href={'/products/'+p.slug+'/'} data-product data-group={p.group} data-search={[p.name,p.description,...p.variants,reference[p.slug].brand,...reference[p.slug].facts.flat()].join(' ').toLowerCase()}>
 <div class="product-top"><span>{p.number} / {p.group}</span><span class="round-arrow">↗</span></div>
 <EquipmentPhoto slug={p.slug} name={p.name}/>
-<div class="product-copy"><h3>{p.name}</h3><p>{p.description}</p></div></a>
+<div class="product-copy"><small class="product-brand">{reference[p.slug].brand}</small><h3>{p.name}</h3><p>{p.description}</p></div></a>
