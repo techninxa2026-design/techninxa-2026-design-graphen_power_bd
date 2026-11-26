@@ -9,7 +9,6 @@ import '../styles/gallery.css';
 import '../styles/cursor.css';
 import '../styles/sequence.css';
 import '../styles/kinetic.css';
-import '../styles/scroll-story.css';
 import ThemePanel from '../components/ThemePanel.astro';
 import {heroPhoto} from '../data/photos';
 import { products, groups } from '../data/catalog';
@@ -45,7 +44,6 @@ import '../lib/experience';
 import '../lib/cursor';
 import '../lib/sequence';
 import '../lib/kinetic';
-import '../lib/scroll-story';
 document.querySelectorAll<HTMLImageElement>('.tile-photo img').forEach(img=>{
 const parent=img.closest<HTMLAnchorElement>('.tile-photo');let alternates:{src:string;alt:string;credit:string;source:string;width:number;height:number;license?:string}[]=[];try{alternates=JSON.parse(img.dataset.imageFallbacks||'[]');}catch{}
 function fail(){const next=alternates.shift();if(next&&parent){img.alt=next.alt;img.width=next.width||640;img.height=next.height||420;parent.href=next.src;parent.setAttribute('aria-label','Open reference image: '+next.alt);parent.classList.toggle('tile-thumbnail',next.width>0&&next.width<400);const label=parent.querySelector('.tile-photo-label');if(label)label.textContent='Related family example · '+next.credit;const attribution=parent.closest('.equipment-tile')?.querySelector<HTMLAnchorElement>('.image-attribution');if(attribution){attribution.href=next.source;attribution.textContent='Image: '+next.alt+' · '+next.credit+(next.license?' · '+next.license:'')+' ↗';}img.src=next.src;return;}img.hidden=true;parent?.classList.add('image-failed');const msg=parent?.querySelector<HTMLElement>('.tile-unavailable');if(msg)msg.hidden=false;}

@@ -22,13 +22,13 @@ function update(){
     el.style.setProperty('--scene-offset',String((i-phase)*45)+'px');
     el.style.setProperty('--scene-scale',String(1+distance*.12));
   });
-  chapters.forEach((el,i)=>{const distance=Math.abs(phase-i);el.classList.toggle('chapter-current',i===Math.round(phase));el.style.setProperty('--chapter-progress',String(clamp(1-distance)));});
+  chapters.forEach((el,i)=>el.classList.toggle('chapter-current',i===Math.round(phase)));
 }
 function queue(){if(!scrollFrame)scrollFrame=requestAnimationFrame(update);}
 function sync(){
   const enable=!reduced.matches&&desktop.matches&&!!journey&&!!pin;
   journey?.classList.toggle('journey-enhanced',enable);
-  if(!enable){journey?.style.removeProperty('--journey-progress');scenes.forEach(el=>{el.style.removeProperty('--scene-alpha');el.style.removeProperty('--scene-offset');el.style.removeProperty('--scene-scale');});chapters.forEach(el=>{el.classList.remove('chapter-current');el.style.removeProperty('--chapter-progress');});}
+  if(!enable){journey?.style.removeProperty('--journey-progress');scenes.forEach(el=>{el.style.removeProperty('--scene-alpha');el.style.removeProperty('--scene-offset');el.style.removeProperty('--scene-scale');});chapters.forEach(el=>el.classList.remove('chapter-current'));}
   queue();
 }
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)queue();});window.addEventListener('scroll',queue,{passive:true});window.addEventListener('resize',queue,{passive:true});window.addEventListener('load',queue,{once:true});desktop.addEventListener('change',sync);reduced.addEventListener('change',sync);sync();
@@ -44,7 +44,7 @@ const imageAnimations=new Set<ReturnType<typeof animate>>();
 let mediaObserver:IntersectionObserver|undefined;
 function stopImages(){mediaObserver?.disconnect();for(const a of [...imageAnimations])a.revert();imageAnimations.clear();}
 function observeImages(){
-  stopImages();if(document.querySelector('.home-v3')||reduced.matches||!('IntersectionObserver' in window))return;
+  stopImages();if(reduced.matches||!('IntersectionObserver' in window))return;
   mediaObserver=new IntersectionObserver(entries=>{
     const list=entries.filter(e=>e.isIntersecting).map(e=>e.target as HTMLElement);
     for(const el of list)mediaObserver?.unobserve(el);

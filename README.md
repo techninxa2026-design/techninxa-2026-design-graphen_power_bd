@@ -36,6 +36,3 @@ The engineering-story energy trace uses Anime.js onScroll with playback synchron
 
 ## V10 kinetic motion
 Added an original three-chapter scroll-led Energy Journey (desktop sticky scene, mobile/static chapter layout), a pointer-reactive hero light and layered parallax, image-mask reveals using Anime.js, interaction impulses and more pronounced entrance/page transitions. Motion preserves static navigation and reduced-motion fallback. No new dependencies.
-
-## V11 — scroll as the playhead
-The home page uses a deterministic scroll-driven engine (`src/lib/scroll-story.ts`) instead of one-shot intersection reveals. Desktop hero sticks for a controlled sequence: photo mask/scale, copy displacement, circuit drawing, energy matrix, wave deformation and live progress. Systems, journey, products, engineering and CTA use viewport-progress-based staged transforms. Scroll upward reverses the same values; no wheel interception. Compact layouts and reduced-motion users keep normal scrolling. Existing non-home animations and product functions remain intact. No dependency changes.

@@ -71,7 +71,7 @@ function startSections(){
   // Existing catalogue filters retain their native CSS transitions and search behavior.
 }
 function stop(){observer?.disconnect();heroObserver?.disconnect();for(const s of scrollObservers)s.revert();scrollObservers.clear();for(const a of [...active])cleanup(a);root.classList.remove('sequence-active');}
-function start(){if(reduced.matches||root.classList.contains('sequence-active'))return;root.classList.add('sequence-active');try{if(!document.querySelector('.home-v3')){startHero();startSections();startScrollScene();}}catch(error){stop();console.warn('Graphene motion enhancement unavailable',error);}}
+function start(){if(reduced.matches||root.classList.contains('sequence-active'))return;root.classList.add('sequence-active');try{startHero();startSections();startScrollScene();}catch(error){stop();console.warn('Graphene motion enhancement unavailable',error);}}
 reduced.addEventListener('change',()=>{if(reduced.matches)stop();else start();});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){for(const a of looped)a.pause();}else{const hero=document.querySelector('.motion-hero');if(hero){const b=hero.getBoundingClientRect();if(b.bottom>0&&b.top<innerHeight)for(const a of looped)a.resume();}}});
 window.addEventListener('pagehide',()=>{for(const a of looped)a.pause();});
