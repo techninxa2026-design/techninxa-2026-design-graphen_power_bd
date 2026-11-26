@@ -42,3 +42,6 @@ The approved V10 content motion is unchanged. Same-origin pages opt into browser
 
 ## Company identity
 Company-supplied name: Graphene Power Engineering (GPE), established 2014. The supplied 408×148 logo is locally stored as an optimized WebP (original proportions and colors). `src/data/company.ts` centralizes the supplied company profile, office address and metadata. Contact page and footer show the office address; no unprovided email or phone is invented. Existing downloadable catalogue PDFs are unchanged, and continue to use their original Graphene Power BD wording.
+
+## Responsive vector identity
+`BrandLogo.astro` contains an original inline SVG adaptation of the supplied Graphene identity: curved energy arcs, geometric outlined GRAPHENE lettering, and POWER ENGINEERING subtitle. Primary, secondary and accent palette values recolor the visible logo live, with lighter tints for dark surfaces. Navbar, footer, about and transition curtain reuse this component. A static original-color vector and favicon support metadata; the supplied raster is retained for social previews and provenance. No dependency changes.

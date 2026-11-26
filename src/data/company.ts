@@ -11,5 +11,6 @@ export const company = {
   "country": "Bangladesh",
   "postalCode": "1216",
   "website": "https://graphenepowerbd.com",
-  "logo": "/brand/graphene-logo.webp"
+  "logo": "/brand/graphene-logo.svg",
+  "socialLogo": "/brand/graphene-logo.webp"
 } as const;
