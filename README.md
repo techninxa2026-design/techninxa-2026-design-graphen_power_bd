@@ -28,3 +28,6 @@ All customer-facing brochure downloads are original Graphene Power BD PDF select
 
 ## Semantic equipment image mapping
 All 89 entries have a curated image association. Product-type, family and system-context examples are labeled separately, with photo credit and source links. Some accessories or special configurations are shown in the context of the installed equipment, not as exact product photos. New Wikimedia photos have license attribution. External image availability and third-party commercial permissions remain subject to verification; no invented product images. Compatible alternates are used on load errors when available. The cable tray family now has a real installation photo.
+
+## Anime.js motion sequences
+Anime.js 4.2.2 is pinned with its lockfile. `src/lib/sequence.ts` orchestrates staggered hero title masks, photographic reveal, SVG circuit drawing, animated grid and morphing wave, viewport-triggered section/card entrances. Existing navigation, filters, theme, scrollbar and pointer remain functional. Reduced-motion preferences stop and revert animation; decorative loops pause outside the hero and when the tab is hidden. The static build bundles the library with Astro/Vite; no runtime CDN or server required. Research: https://animejs.com/ and its Timeline, Stagger and SVG documentation.

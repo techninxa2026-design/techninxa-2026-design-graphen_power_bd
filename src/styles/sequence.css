@@ -1,0 +1,11 @@
+/* Coordinated Anime.js sequences. Existing CSS is the no-script fallback. */
+.sequence-line{display:block;overflow:hidden;padding:0 .08em .13em .045em;margin:0 -.08em -.13em -.045em;line-height:1.02}
+.sequence-word{display:inline-block;transform-origin:bottom left;will-change:auto}
+.sequence-circuit{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;opacity:.75;overflow:visible}
+.sequence-matrix{position:absolute;z-index:-1;top:12%;right:-6%;display:grid;grid-template-columns:repeat(8,5px);gap:9px;pointer-events:none;transform:rotate(-12deg)}
+.sequence-matrix i{width:5px;height:5px;background:var(--cyan);border-radius:50%;opacity:.25}
+.sequence-active .motion-label,.sequence-active .motion-copy h1,.sequence-active .motion-description,.sequence-active .motion-actions,.sequence-active .photo-sculpture,.sequence-active .page-head h1,.sequence-active .page-head p,.sequence-active .detail-head h1,.sequence-active .detail-grid p,.sequence-active .motion-visible{animation:none}
+.sequence-active .photo-sculpture{transform:rotate(-6deg)}
+.sequence-active .sequence-wave{will-change:auto}
+@media(max-width:760px){.sequence-matrix{right:1%;gap:6px;grid-template-columns:repeat(8,4px)}.sequence-matrix i{width:4px;height:4px}.sequence-circuit{opacity:.48}.sequence-line{padding-bottom:.12em;margin-bottom:-.12em}}
+@media(prefers-reduced-motion:reduce){.sequence-matrix{display:none}.sequence-circuit{opacity:.35}.sequence-word{transform:none!important}}
