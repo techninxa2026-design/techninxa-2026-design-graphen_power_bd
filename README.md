@@ -25,3 +25,6 @@ All existing named equipment configurations have individual tiles at /products/g
 
 ## Original Graphene catalogues
 All customer-facing brochure downloads are original Graphene Power BD PDF selection guides, including 12 family brochures and one full portfolio. Competitor catalogue links have been removed from the public document UI; internal research provenance is in docs/catalogue-research.json. These are indicative selection documents, not certified datasheets, quotations, authorized dealership claims or stock guarantees. Reference photos remain separately credited and require permission before commercial publication.
+
+## Semantic equipment image mapping
+All 89 entries have a curated image association. Product-type, family and system-context examples are labeled separately, with photo credit and source links. Some accessories or special configurations are shown in the context of the installed equipment, not as exact product photos. New Wikimedia photos have license attribution. External image availability and third-party commercial permissions remain subject to verification; no invented product images. Compatible alternates are used on load errors when available. The cable tray family now has a real installation photo.

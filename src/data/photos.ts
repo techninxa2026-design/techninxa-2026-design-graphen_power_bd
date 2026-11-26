@@ -1,4 +1,4 @@
-export type EquipmentImage={src:string;alt:string;credit:string;source:string;width:number;height:number;kind:string;fit:string};
+export type EquipmentImage={src:string;alt:string;credit:string;source:string;width:number;height:number;kind:string;fit:string;license?:string};
 export const assets:Record<string,EquipmentImage>={
   "transformer": {
     "src": "https://www.powerbreezebd.com/wp-content/uploads/2023/03/Powerbreeze.jpeg",
@@ -52,7 +52,7 @@ export const assets:Record<string,EquipmentImage>={
   },
   "genSmall": {
     "src": "https://alliantenergybd.com/wp-content/uploads/2020/12/04A_IVECO_Genset_50Kva_DSC1729-768x576.jpg",
-    "alt": "mtu small diesel generator set",
+    "alt": "Small IVECO diesel generator set (family example, not an mtu model)",
     "credit": "Alliant Energy Solutions",
     "source": "https://alliantenergybd.com/products/diesel-generator-sets/",
     "width": 768,
@@ -309,9 +309,128 @@ export const assets:Record<string,EquipmentImage>={
     "height": 254,
     "kind": "Alternative manufacturer thumbnail",
     "fit": "contain"
+  },
+  "dryTransformer": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/52/MS_Trafo_10kV_4.jpg",
+    "alt": "10 kV cast-resin dry-type transformer",
+    "credit": "Pedalito / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:MS_Trafo_10kV_4.jpg",
+    "width": 4000,
+    "height": 3000,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC0 1.0"
+  },
+  "distribution": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Distribution_Transformer_1.jpg",
+    "alt": "Substation distribution transformer",
+    "credit": "Yoshieslunchbox / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Distribution_Transformer_1.jpg",
+    "width": 3672,
+    "height": 4896,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC BY-SA 4.0"
+  },
+  "trayWire": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Wire_cable_tray01.jpg",
+    "alt": "Wire mesh cable tray containing cables",
+    "credit": "Leotard / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Wire_cable_tray01.jpg",
+    "width": 3888,
+    "height": 2592,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "Public domain"
+  },
+  "trayLadder": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/52/Cabtray_11.jpg",
+    "alt": "Cable ladder and perforated cable tray installation",
+    "credit": "Leotard / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Cabtray_11.jpg",
+    "width": 3888,
+    "height": 2592,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC0 1.0"
+  },
+  "trayPerforated": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/95/Cabtray_07.jpg",
+    "alt": "Perforated metal cable trays and cable ladder installed overhead",
+    "credit": "Leotard / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Cabtray_07.jpg",
+    "width": 3888,
+    "height": 2592,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC0 1.0"
+  },
+  "busInstalled": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Sample_busbar_trunking_system.jpg",
+    "alt": "Installed busbar trunking with bends and supports",
+    "credit": "Blacky-CS / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Sample_busbar_trunking_system.jpg",
+    "width": 4032,
+    "height": 3024,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC BY-SA 4.0"
+  },
+  "ahu": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/f/ff/HVAC_Air_Handler_Unit%2C_pic1.JPG",
+    "alt": "Industrial HVAC air handling unit",
+    "credit": "Alf van Beem / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:HVAC_Air_Handler_Unit%2C_pic1.JPG",
+    "width": 4608,
+    "height": 3456,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC0 1.0"
+  },
+  "jet": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/9d/20060808_Misiryeong_Tunnel_%28Jet_Fan%29.jpg",
+    "alt": "Tunnel ventilation jet fans",
+    "credit": "Misiryeong / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:20060808_Misiryeong_Tunnel_%28Jet_Fan%29.jpg",
+    "width": 1024,
+    "height": 768,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC BY-SA 4.0"
+  },
+  "towerIndustrial": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/be/Cenk_Endustri_Field_Erected_Industrial_Cooling_Tower.JPG",
+    "alt": "Industrial induced-draft counterflow cooling tower installation",
+    "credit": "Cenk Endustri / Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Cenk_Endustri_Field_Erected_Industrial_Cooling_Tower.JPG",
+    "width": 2681,
+    "height": 1542,
+    "kind": "Reference photograph",
+    "fit": "contain",
+    "license": "CC BY-SA 3.0"
+  },
+  "bevel": {
+    "src": "https://configurator.premium-transmission.com/uploads/products/hb.png",
+    "alt": "Premium Transmission helical and bevel-helical gear unit family",
+    "credit": "Premium Transmission",
+    "source": "https://configurator.premium-transmission.com/",
+    "width": 270,
+    "height": 150,
+    "kind": "Manufacturer product image",
+    "fit": "contain"
+  },
+  "lift": {
+    "src": "https://configurator.premium-transmission.com/uploads/products/lift.png",
+    "alt": "Premium Transmission lift machine family",
+    "credit": "Premium Transmission",
+    "source": "https://configurator.premium-transmission.com/",
+    "width": 200,
+    "height": 158,
+    "kind": "Manufacturer product image",
+    "fit": "contain"
   }
 };
-const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"rect","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool"};
+const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"towerIndustrial","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool","cable-trays":"trayPerforated"};
 export const photos:Record<string,EquipmentImage>=Object.fromEntries(Object.entries(familyAssets).map(([family,key])=>[family,assets[key]]));
 export const heroPhoto="https://www.powerbreezebd.com/wp-content/uploads/2023/01/product-page.jpg";
 export const source="https://www.powerbreezebd.com/products/";

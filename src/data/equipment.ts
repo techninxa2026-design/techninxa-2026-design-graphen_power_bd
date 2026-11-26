@@ -8,7 +8,9 @@ export const equipment=[
     "group": "Electrical",
     "asset": "transformer",
     "source": "/catalogues/graphene-transformers.pdf",
-    "number": "01.01"
+    "number": "01.01",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "transformers-oil-filled-distribution-transformers",
@@ -16,9 +18,11 @@ export const equipment=[
     "family": "transformers",
     "familyName": "Transformers",
     "group": "Electrical",
-    "asset": null,
+    "asset": "distribution",
     "source": "/catalogues/graphene-transformers.pdf",
-    "number": "01.02"
+    "number": "01.02",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "transformers-dry-type-cast-resin-transformers",
@@ -26,9 +30,11 @@ export const equipment=[
     "family": "transformers",
     "familyName": "Transformers",
     "group": "Electrical",
-    "asset": null,
+    "asset": "dryTransformer",
     "source": "/catalogues/graphene-transformers.pdf",
-    "number": "01.03"
+    "number": "01.03",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-hv-panels",
@@ -36,9 +42,11 @@ export const equipment=[
     "family": "electrical-panels",
     "familyName": "Electrical panels",
     "group": "Electrical",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.01"
+    "number": "02.01",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-lv-panels",
@@ -46,9 +54,11 @@ export const equipment=[
     "family": "electrical-panels",
     "familyName": "Electrical panels",
     "group": "Electrical",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.02"
+    "number": "02.02",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-power-factor-correction-pfi",
@@ -56,9 +66,11 @@ export const equipment=[
     "family": "electrical-panels",
     "familyName": "Electrical panels",
     "group": "Electrical",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.03"
+    "number": "02.03",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-motor-control-centres-mcc",
@@ -66,9 +78,11 @@ export const equipment=[
     "family": "electrical-panels",
     "familyName": "Electrical panels",
     "group": "Electrical",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.04"
+    "number": "02.04",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-ats-panels",
@@ -76,9 +90,11 @@ export const equipment=[
     "family": "electrical-panels",
     "familyName": "Electrical panels",
     "group": "Electrical",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.05"
+    "number": "02.05",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-synchronizing-panels",
@@ -86,9 +102,11 @@ export const equipment=[
     "family": "electrical-panels",
     "familyName": "Electrical panels",
     "group": "Electrical",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.06"
+    "number": "02.06",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-mdb-and-sdb",
@@ -98,7 +116,9 @@ export const equipment=[
     "group": "Electrical",
     "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.07"
+    "number": "02.07",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "electrical-panels-custom-control-panels",
@@ -106,9 +126,11 @@ export const equipment=[
     "family": "electrical-panels",
     "familyName": "Electrical panels",
     "group": "Electrical",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-electrical-panels.pdf",
-    "number": "02.08"
+    "number": "02.08",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "cable-trays-perforated-trays",
@@ -116,9 +138,13 @@ export const equipment=[
     "family": "cable-trays",
     "familyName": "Cable tray systems",
     "group": "Electrical",
-    "asset": null,
+    "asset": "trayPerforated",
     "source": "/catalogues/graphene-cable-trays.pdf",
-    "number": "03.01"
+    "number": "03.01",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "trayLadder"
+    ]
   },
   {
     "id": "cable-trays-ladder-trays",
@@ -126,9 +152,13 @@ export const equipment=[
     "family": "cable-trays",
     "familyName": "Cable tray systems",
     "group": "Electrical",
-    "asset": null,
+    "asset": "trayLadder",
     "source": "/catalogues/graphene-cable-trays.pdf",
-    "number": "03.02"
+    "number": "03.02",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "trayPerforated"
+    ]
   },
   {
     "id": "cable-trays-channel-trays",
@@ -136,9 +166,13 @@ export const equipment=[
     "family": "cable-trays",
     "familyName": "Cable tray systems",
     "group": "Electrical",
-    "asset": null,
+    "asset": "trayPerforated",
     "source": "/catalogues/graphene-cable-trays.pdf",
-    "number": "03.03"
+    "number": "03.03",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "trayLadder"
+    ]
   },
   {
     "id": "cable-trays-walkable-trays",
@@ -146,9 +180,13 @@ export const equipment=[
     "family": "cable-trays",
     "familyName": "Cable tray systems",
     "group": "Electrical",
-    "asset": null,
+    "asset": "trayLadder",
     "source": "/catalogues/graphene-cable-trays.pdf",
-    "number": "03.04"
+    "number": "03.04",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "trayPerforated"
+    ]
   },
   {
     "id": "cable-trays-wire-mesh-trays",
@@ -156,9 +194,11 @@ export const equipment=[
     "family": "cable-trays",
     "familyName": "Cable tray systems",
     "group": "Electrical",
-    "asset": null,
+    "asset": "trayWire",
     "source": "/catalogues/graphene-cable-trays.pdf",
-    "number": "03.05"
+    "number": "03.05",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "busbar-trunking-feeder-busbar",
@@ -166,9 +206,13 @@ export const equipment=[
     "family": "busbar-trunking",
     "familyName": "Busbar trunking",
     "group": "Electrical",
-    "asset": null,
+    "asset": "busHigh",
     "source": "/catalogues/graphene-busbar-trunking.pdf",
-    "number": "04.01"
+    "number": "04.01",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "busInstalled"
+    ]
   },
   {
     "id": "busbar-trunking-distribution-busbar",
@@ -176,9 +220,13 @@ export const equipment=[
     "family": "busbar-trunking",
     "familyName": "Busbar trunking",
     "group": "Electrical",
-    "asset": null,
+    "asset": "busMedium",
     "source": "/catalogues/graphene-busbar-trunking.pdf",
-    "number": "04.02"
+    "number": "04.02",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "busInstalled"
+    ]
   },
   {
     "id": "busbar-trunking-tap-off-units",
@@ -186,9 +234,13 @@ export const equipment=[
     "family": "busbar-trunking",
     "familyName": "Busbar trunking",
     "group": "Electrical",
-    "asset": null,
+    "asset": "busInstalled",
     "source": "/catalogues/graphene-busbar-trunking.pdf",
-    "number": "04.03"
+    "number": "04.03",
+    "imageMatch": "context",
+    "imageFallbacks": [
+      "busHigh"
+    ]
   },
   {
     "id": "busbar-trunking-installation-accessories",
@@ -196,9 +248,13 @@ export const equipment=[
     "family": "busbar-trunking",
     "familyName": "Busbar trunking",
     "group": "Electrical",
-    "asset": null,
+    "asset": "busInstalled",
     "source": "/catalogues/graphene-busbar-trunking.pdf",
-    "number": "04.04"
+    "number": "04.04",
+    "imageMatch": "context",
+    "imageFallbacks": [
+      "busHigh"
+    ]
   },
   {
     "id": "busbar-trunking-gnl-gl-low-power-busbar",
@@ -208,7 +264,11 @@ export const equipment=[
     "group": "Electrical",
     "asset": "busLow",
     "source": "/catalogues/graphene-busbar-trunking.pdf",
-    "number": "04.05"
+    "number": "04.05",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "busInstalled"
+    ]
   },
   {
     "id": "busbar-trunking-ggd-medium-power-busbar",
@@ -218,7 +278,11 @@ export const equipment=[
     "group": "Electrical",
     "asset": "busMedium",
     "source": "/catalogues/graphene-busbar-trunking.pdf",
-    "number": "04.06"
+    "number": "04.06",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "busInstalled"
+    ]
   },
   {
     "id": "busbar-trunking-gs-compact-high-power-busbar",
@@ -228,7 +292,11 @@ export const equipment=[
     "group": "Electrical",
     "asset": "busHigh",
     "source": "/catalogues/graphene-busbar-trunking.pdf",
-    "number": "04.07"
+    "number": "04.07",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "busInstalled"
+    ]
   },
   {
     "id": "generators-standby-diesel-generators",
@@ -236,9 +304,13 @@ export const equipment=[
     "family": "generators",
     "familyName": "Generators",
     "group": "Electrical",
-    "asset": null,
+    "asset": "gen1600",
     "source": "/catalogues/graphene-generators.pdf",
-    "number": "05.01"
+    "number": "05.01",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "gen2000"
+    ]
   },
   {
     "id": "generators-prime-power-generators",
@@ -246,9 +318,13 @@ export const equipment=[
     "family": "generators",
     "familyName": "Generators",
     "group": "Electrical",
-    "asset": null,
+    "asset": "gen2000",
     "source": "/catalogues/graphene-generators.pdf",
-    "number": "05.02"
+    "number": "05.02",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "gen1600"
+    ]
   },
   {
     "id": "generators-continuous-power-systems",
@@ -256,9 +332,13 @@ export const equipment=[
     "family": "generators",
     "familyName": "Generators",
     "group": "Electrical",
-    "asset": null,
+    "asset": "gen4000",
     "source": "/catalogues/graphene-generators.pdf",
-    "number": "05.03"
+    "number": "05.03",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "gen2000"
+    ]
   },
   {
     "id": "generators-mtu-0080-ds-0225-ds",
@@ -268,7 +348,11 @@ export const equipment=[
     "group": "Electrical",
     "asset": "genSmall",
     "source": "/catalogues/graphene-generators.pdf",
-    "number": "05.04"
+    "number": "05.04",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "gen1600"
+    ]
   },
   {
     "id": "generators-mtu-1600-ds",
@@ -278,7 +362,11 @@ export const equipment=[
     "group": "Electrical",
     "asset": "gen1600",
     "source": "/catalogues/graphene-generators.pdf",
-    "number": "05.05"
+    "number": "05.05",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "gen2000"
+    ]
   },
   {
     "id": "generators-mtu-2000-ds-g05-g06",
@@ -288,7 +376,11 @@ export const equipment=[
     "group": "Electrical",
     "asset": "gen2000",
     "source": "/catalogues/graphene-generators.pdf",
-    "number": "05.06"
+    "number": "05.06",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "gen1600"
+    ]
   },
   {
     "id": "generators-mtu-4000-ds",
@@ -298,7 +390,11 @@ export const equipment=[
     "group": "Electrical",
     "asset": "gen4000",
     "source": "/catalogues/graphene-generators.pdf",
-    "number": "05.07"
+    "number": "05.07",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "gen2000"
+    ]
   },
   {
     "id": "air-compressors-rotary-screw-compressors",
@@ -308,7 +404,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "compressor",
     "source": "/catalogues/graphene-air-compressors.pdf",
-    "number": "06.01"
+    "number": "06.01",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "air-compressors-oil-free-compressors",
@@ -318,7 +416,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "oilFree",
     "source": "/catalogues/graphene-air-compressors.pdf",
-    "number": "06.02"
+    "number": "06.02",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "air-compressors-air-treatment",
@@ -328,7 +428,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "dryer",
     "source": "/catalogues/graphene-air-compressors.pdf",
-    "number": "06.03"
+    "number": "06.03",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "air-compressors-spare-parts",
@@ -336,9 +438,11 @@ export const equipment=[
     "family": "air-compressors",
     "familyName": "Air compressors",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "compressor",
     "source": "/catalogues/graphene-air-compressors.pdf",
-    "number": "06.04"
+    "number": "06.04",
+    "imageMatch": "context",
+    "imageFallbacks": []
   },
   {
     "id": "vacuum-pumps-industrial-vacuum-pumps",
@@ -348,7 +452,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "vacuum",
     "source": "/catalogues/graphene-vacuum-pumps.pdf",
-    "number": "07.01"
+    "number": "07.01",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "vacuum-pumps-process-vacuum-systems",
@@ -356,9 +462,11 @@ export const equipment=[
     "family": "vacuum-pumps",
     "familyName": "Vacuum pumps",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "vacuum",
     "source": "/catalogues/graphene-vacuum-pumps.pdf",
-    "number": "07.02"
+    "number": "07.02",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "vacuum-pumps-vacuum-accessories",
@@ -366,9 +474,11 @@ export const equipment=[
     "family": "vacuum-pumps",
     "familyName": "Vacuum pumps",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "vacuum",
     "source": "/catalogues/graphene-vacuum-pumps.pdf",
-    "number": "07.03"
+    "number": "07.03",
+    "imageMatch": "context",
+    "imageFallbacks": []
   },
   {
     "id": "heat-exchangers-plate-heat-exchangers",
@@ -378,7 +488,9 @@ export const equipment=[
     "group": "Thermal",
     "asset": "plate",
     "source": "/catalogues/graphene-heat-exchangers.pdf",
-    "number": "08.01"
+    "number": "08.01",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "heat-exchangers-dry-coolers",
@@ -388,7 +500,9 @@ export const equipment=[
     "group": "Thermal",
     "asset": "dry",
     "source": "/catalogues/graphene-heat-exchangers.pdf",
-    "number": "08.02"
+    "number": "08.02",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "heat-exchangers-remote-radiators",
@@ -396,9 +510,11 @@ export const equipment=[
     "family": "heat-exchangers",
     "familyName": "Heat exchangers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "dry",
     "source": "/catalogues/graphene-heat-exchangers.pdf",
-    "number": "08.03"
+    "number": "08.03",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "heat-exchangers-evaporators",
@@ -408,7 +524,9 @@ export const equipment=[
     "group": "Thermal",
     "asset": "evap",
     "source": "/catalogues/graphene-heat-exchangers.pdf",
-    "number": "08.04"
+    "number": "08.04",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "heat-exchangers-condensers",
@@ -418,7 +536,9 @@ export const equipment=[
     "group": "Thermal",
     "asset": "cond",
     "source": "/catalogues/graphene-heat-exchangers.pdf",
-    "number": "08.05"
+    "number": "08.05",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "heat-exchangers-coils",
@@ -428,7 +548,9 @@ export const equipment=[
     "group": "Thermal",
     "asset": "coil",
     "source": "/catalogues/graphene-heat-exchangers.pdf",
-    "number": "08.06"
+    "number": "08.06",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "cooling-towers-round-cooling-towers",
@@ -438,7 +560,9 @@ export const equipment=[
     "group": "Thermal",
     "asset": "round",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.01"
+    "number": "09.01",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "cooling-towers-square-cooling-towers",
@@ -446,9 +570,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "rect",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.02"
+    "number": "09.02",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "towerIndustrial"
+    ]
   },
   {
     "id": "cooling-towers-rectangular-cooling-towers",
@@ -458,7 +586,11 @@ export const equipment=[
     "group": "Thermal",
     "asset": "rect",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.03"
+    "number": "09.03",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "towerIndustrial"
+    ]
   },
   {
     "id": "cooling-towers-low-noise-configurations",
@@ -466,9 +598,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "towerIndustrial",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.04"
+    "number": "09.04",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "rect"
+    ]
   },
   {
     "id": "cooling-towers-custom-cooling-towers",
@@ -476,9 +612,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "towerIndustrial",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.05"
+    "number": "09.05",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "rect"
+    ]
   },
   {
     "id": "cooling-towers-gpt-series",
@@ -488,7 +628,9 @@ export const equipment=[
     "group": "Thermal",
     "asset": "round",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.06"
+    "number": "09.06",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "cooling-towers-gd-series",
@@ -496,9 +638,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "rect",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.07"
+    "number": "09.07",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "towerIndustrial"
+    ]
   },
   {
     "id": "cooling-towers-gds-series",
@@ -506,9 +652,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "rect",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.08"
+    "number": "09.08",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "towerIndustrial"
+    ]
   },
   {
     "id": "cooling-towers-gks-series",
@@ -516,9 +666,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "rect",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.09"
+    "number": "09.09",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "towerIndustrial"
+    ]
   },
   {
     "id": "cooling-towers-gpc-series",
@@ -526,9 +680,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "rect",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.10"
+    "number": "09.10",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "towerIndustrial"
+    ]
   },
   {
     "id": "cooling-towers-side-discharge-towers",
@@ -536,9 +694,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "towerIndustrial",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.11"
+    "number": "09.11",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "rect"
+    ]
   },
   {
     "id": "cooling-towers-high-temperature-towers",
@@ -546,9 +708,13 @@ export const equipment=[
     "family": "cooling-towers",
     "familyName": "Cooling towers",
     "group": "Thermal",
-    "asset": null,
+    "asset": "towerIndustrial",
     "source": "/catalogues/graphene-cooling-towers.pdf",
-    "number": "09.12"
+    "number": "09.12",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "rect"
+    ]
   },
   {
     "id": "mechanical-transmission-helical-gearboxes",
@@ -558,7 +724,11 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "helical",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.01"
+    "number": "10.01",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "bevel"
+    ]
   },
   {
     "id": "mechanical-transmission-bevel-helical-gearboxes",
@@ -566,9 +736,13 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "bevel",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.02"
+    "number": "10.02",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "helical"
+    ]
   },
   {
     "id": "mechanical-transmission-extruder-gearboxes",
@@ -576,9 +750,13 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "helical",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.03"
+    "number": "10.03",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "bevel"
+    ]
   },
   {
     "id": "mechanical-transmission-mill-gearboxes",
@@ -586,9 +764,13 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "helical",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.04"
+    "number": "10.04",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "bevel"
+    ]
   },
   {
     "id": "mechanical-transmission-crane-duty-gearboxes",
@@ -596,9 +778,13 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "helical",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.05"
+    "number": "10.05",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "bevel"
+    ]
   },
   {
     "id": "mechanical-transmission-pinion-stand-gearboxes",
@@ -606,9 +792,13 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "helical",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.06"
+    "number": "10.06",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "bevel"
+    ]
   },
   {
     "id": "mechanical-transmission-planetary-gearboxes",
@@ -618,7 +808,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "planet",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.07"
+    "number": "10.07",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-geared-motors",
@@ -628,7 +820,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "gearMotor",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.08"
+    "number": "10.08",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-worm-gearboxes",
@@ -638,7 +832,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "worm",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.09"
+    "number": "10.09",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-constant-speed-fluid-couplings",
@@ -648,7 +844,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "constant",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.10"
+    "number": "10.10",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-variable-speed-fluid-couplings",
@@ -658,7 +856,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "variable",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.11"
+    "number": "10.11",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-geared-lift-machines",
@@ -666,9 +866,11 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "lift",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.12"
+    "number": "10.12",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-bevel-helical-cooling-tower-gearbox",
@@ -676,9 +878,13 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "bevel",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.13"
+    "number": "10.13",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "helical"
+    ]
   },
   {
     "id": "mechanical-transmission-coal-pulverizing-mill-gearbox",
@@ -686,9 +892,13 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "helical",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.14"
+    "number": "10.14",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "bevel"
+    ]
   },
   {
     "id": "mechanical-transmission-planetary-mill-duty-gearbox",
@@ -696,9 +906,11 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "planet",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.15"
+    "number": "10.15",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-premium-stephan-geared-motor",
@@ -706,9 +918,11 @@ export const equipment=[
     "family": "mechanical-transmission",
     "familyName": "Mechanical transmission",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "gearMotor",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.16"
+    "number": "10.16",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "mechanical-transmission-alm-series-altra-worm-gearbox",
@@ -718,7 +932,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "altra",
     "source": "/catalogues/graphene-mechanical-transmission.pdf",
-    "number": "10.17"
+    "number": "10.17",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "ventilation-heat-recovery-ventilators",
@@ -726,9 +942,11 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "ahu",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.01"
+    "number": "11.01",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "ventilation-air-handling-units",
@@ -736,9 +954,11 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "ahu",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.02"
+    "number": "11.02",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "ventilation-jet-fans",
@@ -746,9 +966,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "jet",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.03"
+    "number": "11.03",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "fan"
+    ]
   },
   {
     "id": "ventilation-axial-smoke-exhaust-fans",
@@ -758,7 +982,11 @@ export const equipment=[
     "group": "Thermal",
     "asset": "fanSmoke",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.04"
+    "number": "11.04",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "fan"
+    ]
   },
   {
     "id": "ventilation-fresh-air-fans",
@@ -766,9 +994,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fan",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.05"
+    "number": "11.05",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "jet"
+    ]
   },
   {
     "id": "ventilation-pressurization-fans",
@@ -776,9 +1008,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fan",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.06"
+    "number": "11.06",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "jet"
+    ]
   },
   {
     "id": "ventilation-explosion-protected-fans",
@@ -788,7 +1024,11 @@ export const equipment=[
     "group": "Thermal",
     "asset": "fanEx",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.07"
+    "number": "11.07",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "fan"
+    ]
   },
   {
     "id": "ventilation-roof-and-duct-fans",
@@ -796,9 +1036,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fan",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.08"
+    "number": "11.08",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "jet"
+    ]
   },
   {
     "id": "ventilation-silencers-and-accessories",
@@ -806,9 +1050,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "jet",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.09"
+    "number": "11.09",
+    "imageMatch": "context",
+    "imageFallbacks": [
+      "fan"
+    ]
   },
   {
     "id": "ventilation-fans-with-casing",
@@ -816,9 +1064,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fan",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.10"
+    "number": "11.10",
+    "imageMatch": "subtype",
+    "imageFallbacks": [
+      "jet"
+    ]
   },
   {
     "id": "ventilation-automatic-control-systems-and-mcc-panels",
@@ -826,9 +1078,11 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "panel",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.11"
+    "number": "11.11",
+    "imageMatch": "family",
+    "imageFallbacks": []
   },
   {
     "id": "ventilation-duct-and-ahu-electric-heaters",
@@ -836,9 +1090,11 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "ahu",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.12"
+    "number": "11.12",
+    "imageMatch": "context",
+    "imageFallbacks": []
   },
   {
     "id": "ventilation-shelter-fans",
@@ -846,9 +1102,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fan",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.13"
+    "number": "11.13",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "jet"
+    ]
   },
   {
     "id": "ventilation-kitchen-fans",
@@ -856,9 +1116,13 @@ export const equipment=[
     "family": "ventilation",
     "familyName": "Ventilation systems",
     "group": "Thermal",
-    "asset": null,
+    "asset": "fan",
     "source": "/catalogues/graphene-ventilation.pdf",
-    "number": "11.14"
+    "number": "11.14",
+    "imageMatch": "family",
+    "imageFallbacks": [
+      "jet"
+    ]
   },
   {
     "id": "industrial-tools-assembly-tools",
@@ -868,7 +1132,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "tool",
     "source": "/catalogues/graphene-industrial-tools.pdf",
-    "number": "12.01"
+    "number": "12.01",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "industrial-tools-industrial-tightening-tools",
@@ -878,7 +1144,9 @@ export const equipment=[
     "group": "Mechanical",
     "asset": "tool",
     "source": "/catalogues/graphene-industrial-tools.pdf",
-    "number": "12.02"
+    "number": "12.02",
+    "imageMatch": "subtype",
+    "imageFallbacks": []
   },
   {
     "id": "industrial-tools-production-accessories",
@@ -886,9 +1154,11 @@ export const equipment=[
     "family": "industrial-tools",
     "familyName": "Industrial tools",
     "group": "Mechanical",
-    "asset": null,
+    "asset": "tool",
     "source": "/catalogues/graphene-industrial-tools.pdf",
-    "number": "12.03"
+    "number": "12.03",
+    "imageMatch": "context",
+    "imageFallbacks": []
   }
 ];
 export function imageFor(id:string|null){return id?assets[id]:undefined;}
