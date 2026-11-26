@@ -22,9 +22,9 @@ const areas=[
   <svg class="hero-stream" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="flow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--tone-254acb, #254acb)"/><stop offset="1" stop-color="var(--tone-00c5d4, #00c5d4)"/></linearGradient></defs><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="url(#flow)" stroke-width="155" opacity=".16" fill="none"/><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".4" fill="none"/><path d="M-170 820 C250 1010 425 300 820 330 S1260 830 1620 100" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".18" fill="none"/></svg>
   <div class="wrap motion-hero-inner">
     <div class="motion-copy">
-      <div class="motion-label"><span class="pulse-dot"></span> ENGINEERING / BANGLADESH <span class="label-line"></span> 01</div>
+      <div class="motion-label"><span class="pulse-dot"></span> EST. 2014 / BANGLADESH <span class="label-line"></span> 01</div>
       <h1 id="hero-title" aria-label="Energy in motion."><span class="sequence-line" aria-hidden="true"><span class="sequence-word">Energy</span></span><span class="sequence-line" aria-hidden="true"><span class="sequence-word">in <em>motion<span>.</span></em></span></span></h1>
-      <div class="motion-description"><span class="mini-orbit" aria-hidden="true">✳</span><p>Connecting power, machinery and thermal systems to the ambitions of modern industry.</p></div>
+      <div class="motion-description"><span class="mini-orbit" aria-hidden="true">✳</span><p>Graphene Power Engineering (GPE) connects power, machinery and thermal systems to the ambitions of modern industry.</p></div>
       <div class="motion-actions"><a class="action-primary" href="/products/">Discover our equipment <span>↗</span></a><a class="action-secondary" href="/services/">Engineering scope <span>↗</span></a></div>
     </div>
     <div class="motion-visual" data-energy-pointer><div class="hero-lens" aria-hidden="true"></div><svg class="sequence-circuit" viewBox="0 0 600 520" aria-hidden="true"><g fill="none" stroke="var(--cyan)" stroke-width="1.3" stroke-linecap="round"><path data-circuit d="M18 340H74L135 278H200"/><path data-circuit d="M330 25H432L490 84H576"/><path data-circuit d="M385 470H465L528 407H585"/></g><g fill="var(--orange)"><circle class="circuit-node" cx="18" cy="340" r="4"/><circle class="circuit-node" cx="200" cy="278" r="4"/><circle class="circuit-node" cx="330" cy="25" r="4"/><circle class="circuit-node" cx="576" cy="84" r="4"/><circle class="circuit-node" cx="385" cy="470" r="4"/><circle class="circuit-node" cx="585" cy="407" r="4"/></g></svg><div class="sequence-matrix" aria-hidden="true">{Array.from({length:48},(_,i)=><i data-dot={i}></i>)}</div>
@@ -39,7 +39,7 @@ const areas=[
 </section>
 <section class="systems-intro wrap" id="explore" data-rail="Systems">
   <div class="section-kicker"><span>01</span> / THE INDUSTRIAL ECOSYSTEM</div>
-  <div class="intro-layout" data-motion><h2>Built to<br/><em>connect.</em></h2><div><p>From the source of power to the point of use, explore three engineering domains that form one connected industrial system.</p><a class="ink-link" href="/solutions/">Explore industrial solutions <span>↗</span></a></div></div>
+  <div class="intro-layout" data-motion><h2>Built to<br/><em>connect.</em></h2><div><p>Based in Dhaka since 2014, Graphene Power Engineering brings a forward-thinking, sustainable approach to comprehensive power engineering and distribution solutions.</p><a class="ink-link" href="/about/">Discover our company <span>↗</span></a></div></div>
   <div class="system-ribbon" data-motion>{areas.map(([n,title,desc,group])=><a href={'/products/?system='+group} class={'system-tile system-'+n}><div class="system-top"><span>DOMAIN / {n}</span><span class="system-arrow">↗</span></div><div class="system-glyph" aria-hidden="true">{n==='01'?'↯':n==='02'?'◎':'≋'}</div><h3>{title}<em>.</em></h3><p>{desc}</p></a>)}</div>
 </section>
 <EnergyJourney />

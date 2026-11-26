@@ -1,0 +1,5 @@
+---
+import {company} from '../data/company';
+const {className=''}=Astro.props;
+---
+<img class:list={['company-logo',className]} src={company.logo} alt={company.name} width="408" height="148" decoding="async"/>

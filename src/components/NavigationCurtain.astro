@@ -1,6 +1,9 @@
+---
+import BrandLogo from './BrandLogo.astro';
+---
 <div class="navigation-curtain" id="navigation-curtain" aria-hidden="true">
   <div class="nav-curtain-skin"></div>
   <svg class="nav-curtain-flow" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-180 730 C240 960 465 35 875 280 S1290 725 1630 80" fill="none" stroke="var(--palette-primary,var(--blue))" stroke-width="200" opacity=".5"/><path d="M-180 730 C240 960 465 35 875 280 S1290 725 1630 80" fill="none" stroke="var(--palette-secondary,var(--cyan))" stroke-width="2" opacity=".8"/><path d="M-180 780 C240 1010 465 85 875 330 S1290 775 1630 130" fill="none" stroke="var(--palette-accent,var(--orange))" stroke-width="1.5" opacity=".55"/></svg>
-  <div class="nav-curtain-content"><svg viewBox="0 0 48 48" width="66" height="66" aria-hidden="true"><path fill="var(--cyan)" d="M24 2 45 14v20L24 46 3 34V14Zm0 8L10 18v12l14 8 14-8v-8H24v7h6l-6 3-7-4v-8l7-4 9 5 5-5Z"/><path fill="var(--orange)" d="M39 4h5v10h-5zM36.5 6.5h10v5h-10z"/></svg><span>GRAPHENE POWER BD</span><strong data-navigation-title>Explore.</strong><div class="nav-curtain-line"><i></i></div></div>
+  <div class="nav-curtain-content"><BrandLogo className="curtain-company-logo"/><span>GRAPHENE POWER ENGINEERING</span><strong data-navigation-title>Explore.</strong><div class="nav-curtain-line"><i></i></div></div>
   <div class="nav-curtain-edge"></div>
 </div>

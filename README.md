@@ -39,3 +39,6 @@ Added an original three-chapter scroll-led Energy Journey (desktop sticky scene,
 
 ## Navigation transitions (V10 baseline)
 The approved V10 content motion is unchanged. Same-origin pages opt into browser-native cross-document view transitions: curved entrance masks, outgoing scene shrink, theme-colored energy gradient, independent header and direction-aware history transitions. Browsers without native support use a short themed curtain for regular internal page links, with a pre-paint sessionStorage handoff and automatic timeout recovery. Same-page anchors, external links, downloads, modified clicks, new tabs, filters and form behavior are not intercepted. Reduced motion bypasses the effect. No new dependency or runtime server.
+
+## Company identity
+Company-supplied name: Graphene Power Engineering (GPE), established 2014. The supplied 408×148 logo is locally stored as an optimized WebP (original proportions and colors). `src/data/company.ts` centralizes the supplied company profile, office address and metadata. Contact page and footer show the office address; no unprovided email or phone is invented. Existing downloadable catalogue PDFs are unchanged, and continue to use their original Graphene Power BD wording.

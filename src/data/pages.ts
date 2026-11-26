@@ -3,27 +3,23 @@ export const pages = [
     "slug": "about",
     "label": "Company",
     "heading": "Engineering with purpose.",
-    "intro": "Graphene Power BD brings electrical, mechanical and thermal equipment information into one industrial engineering platform.",
+    "intro": "Founded in 2014 and based in Dhaka, Bangladesh, Graphene Power Engineering (GPE) is a pioneering power solutions venture established by a team of highly experienced professional engineers. Backed by over a decade of industry expertise, the company is committed to delivering comprehensive power engineering and distribution solutions with a forward-thinking, sustainable approach.",
     "sections": [
       [
-        "Company overview",
-        "Explore our planned engineering portfolio and technical product directory."
+        "Our beginnings",
+        "Established in 2014 in Dhaka, Bangladesh, GPE was founded by a team of highly experienced professional engineers."
       ],
       [
-        "Leadership & management",
-        "Verified leadership profiles will be added when company information is approved."
+        "Our expertise",
+        "Comprehensive power engineering and distribution solutions, backed by over a decade of industry expertise."
       ],
       [
-        "Partners & dealerships",
-        "Authorized partnerships will be published only after confirmation."
+        "Our approach",
+        "A forward-thinking, sustainable approach to industrial power solutions."
       ],
       [
-        "Quality & certifications",
-        "Verified certifications and compliance documents will be listed here."
-      ],
-      [
-        "Clients & projects",
-        "Approved project references and client case studies will be published here."
+        "Our portfolio",
+        "Explore electrical, mechanical and thermal engineering equipment, including power distribution, industrial machinery and thermal systems."
       ]
     ]
   },
@@ -143,7 +139,7 @@ export const pages = [
     "sections": [
       [
         "Product catalogues & datasheets",
-        "Download Graphene Power BD equipment selection guides. Final model-specific datasheets are subject to supplier confirmation."
+        "Download Graphene Power Engineering equipment selection guides. Final model-specific datasheets are subject to supplier confirmation."
       ],
       [
         "News & updates",
