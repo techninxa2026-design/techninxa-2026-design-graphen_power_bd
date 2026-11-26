@@ -7,5 +7,7 @@ import {products,groups} from '../../data/catalog';
 <script>
 let group='All';const search=document.querySelector<HTMLInputElement>('#product-search');const buttons=document.querySelectorAll<HTMLButtonElement>('[data-filter]');const cards=document.querySelectorAll<HTMLElement>('[data-product]');
 function filter(){let n=0;const q=(search?.value||'').trim().toLowerCase();cards.forEach(card=>{const visible=(group==='All'||card.dataset.group===group)&& (card.dataset.search||'').includes(q);card.hidden=!visible;if(visible)n++;});const result=document.querySelector('#results');if(result)result.textContent=n+' product '+(n===1?'family':'families');const empty=document.querySelector<HTMLElement>('#empty');if(empty)empty.hidden=n!==0;}
+const requestedSystem=new URLSearchParams(location.search).get('system');
+if(requestedSystem&&Array.from(buttons).some(b=>b.dataset.filter===requestedSystem)){group=requestedSystem;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===group)));filter();}
 search?.addEventListener('input',filter);buttons.forEach(b=>b.addEventListener('click',()=>{group=b.dataset.filter||'All';buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filter();}));
 </script>

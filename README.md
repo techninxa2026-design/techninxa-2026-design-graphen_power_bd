@@ -10,3 +10,6 @@ src/data/catalog.ts drives catalogue and static detail pages; src/data/pages.ts 
 
 ## Verification
 Run npm ci and npm run build; inspect dist routes and test navigation, search, filter, mobile menu and inquiry download in browser. Do not deploy unverified business content.
+
+## V3 visual direction — Energy in motion
+A midnight-indigo, electric-cyan and apricot design with organic wave boundaries, sculpted photographic masks, orbit link, asymmetric photo editorial and interactive equipment directory. Product search and filter routes remain static. Existing external reference photography remains subject to permissions, availability and replacement with approved local images. No new dependencies.

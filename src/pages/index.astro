@@ -1,14 +1,69 @@
 ---
 import Site from '../layouts/Site.astro';
-import ProductCard from '../components/ProductCard.astro';
-import {products} from '../data/catalog';
+import {products,groups} from '../data/catalog';
 import {heroPhoto,photos} from '../data/photos';
+const featured = [
+ {slug:'transformers',label:'01 / POWER TRANSFORMATION',copy:'Power at its source.',photo:photos.transformers},
+ {slug:'electrical-panels',label:'02 / INTELLIGENT DISTRIBUTION',copy:'Control every connection.',photo:photos['electrical-panels']},
+ {slug:'cooling-towers',label:'03 / THERMAL MANAGEMENT',copy:'Keep industry moving.',photo:photos['cooling-towers']}
+];
+const areas=[
+ ['01','Electrical','Power distribution, protection and reliable generation.','Electrical'],
+ ['02','Mechanical','Motion, compressed air and industrial processes.','Mechanical'],
+ ['03','Thermal','Cooling, ventilation and precision heat transfer.','Thermal']
+];
 ---
-<Site>
-<section class="hero photo-hero"><img class="hero-photo" src={heroPhoto} alt="Industrial power station at dusk" fetchpriority="high" width="612" height="459"/><div class="hero-grid"></div><div class="wrap hero-inner"><div class="hero-content"><div class="eyebrow light"><span class="signal"></span> INDUSTRIAL ENGINEERING / BANGLADESH</div><h1>Power.<br/>Precision.<br/><em>Progress.</em></h1><p>Explore the electrical, mechanical and thermal technologies that keep modern industry moving.</p><div class="actions"><a class="button" href="/products/">Explore equipment <span>↗</span></a><a class="button outline" href="/services/">Engineering services <span>→</span></a></div></div><div class="hero-visual"><div class="hero-note"><span class="hero-note-icon">↗</span><small>ENGINEERING PORTFOLIO</small><strong>12 product families.<br/>3 connected systems.</strong><a href="/products/">Discover the range →</a></div><span class="visual-tag">REFERENCE PHOTO / POWERBREEZE</span></div><div class="hero-bottom"><span>01 — 03 / SYSTEMS OF INDUSTRY</span><span>SCROLL TO EXPLORE ↓</span></div></div></section>
-<div class="domain-strip"><div class="wrap"><span>01 <b>Electrical power</b></span><span>02 <b>Mechanical systems</b></span><span>03 <b>Thermal engineering</b></span></div></div>
-<section class="wrap section"><div class="section-heading" data-reveal><div><div class="eyebrow">01 / EQUIPMENT PORTFOLIO</div><h2>Every component.<br/><em>One connected vision.</em></h2></div><a class="text-link" href="/products/">View all 12 categories ↗</a></div><div class="product-grid featured">{[products[0],products[1],products[8],products[4],products[5],products[7]].map(product=><ProductCard {product}/>)}</div></section>
-<section class="feature-section"><div class="wrap feature-layout"><div class="feature-art"><img src={photos.transformers.src} alt={photos.transformers.alt} width="500" height="500" loading="lazy"/><small>REFERENCE PHOTO / POWERBREEZE</small></div><div data-reveal><div class="eyebrow light">02 / ENGINEERING SCOPE</div><h2>Beyond the<br/>equipment.</h2><p>Plan your industrial infrastructure as a connected system, from power distribution to mechanical installation and thermal management.</p><a class="button" href="/services/">Explore scope of work ↗</a></div></div></section>
-<section class="wrap section"><div class="section-heading"><div><div class="eyebrow">03 / APPLICATIONS</div><h2>Built around<br/><em>industrial needs.</em></h2></div><a class="text-link" href="/solutions/">Explore solutions ↗</a></div><div class="solution-list">{[['01','Manufacturing','Production equipment, drives and compressed air.'],['02','Infrastructure','Electrical distribution, backup power and protection.'],['03','Process & HVAC','Cooling, heat transfer, ventilation and vacuum systems.']].map(([n,t,d])=><a href="/solutions/"><small>{n}</small><h3>{t}</h3><p>{d}</p><span>↗</span></a>)}</div></section>
-<section class="cta-band"><div class="wrap"><div><div class="eyebrow">04 / NEXT STEP</div><h2>Build your project<br/>requirements.</h2></div><a class="button dark" href="/contact/">Prepare an inquiry ↗</a></div></section>
+<Site title="Energy in motion">
+<div class="home-v3">
+<section class="motion-hero" aria-labelledby="hero-title">
+  <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
+  <svg class="hero-stream" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="flow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#254acb"/><stop offset="1" stop-color="#00c5d4"/></linearGradient></defs><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="url(#flow)" stroke-width="155" opacity=".16" fill="none"/><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="#8ce8f1" stroke-width="1" opacity=".4" fill="none"/><path d="M-170 820 C250 1010 425 300 820 330 S1260 830 1620 100" stroke="#8ce8f1" stroke-width="1" opacity=".18" fill="none"/></svg>
+  <div class="wrap motion-hero-inner">
+    <div class="motion-copy">
+      <div class="motion-label"><span class="pulse-dot"></span> ENGINEERING / BANGLADESH <span class="label-line"></span> 01</div>
+      <h1 id="hero-title">Energy<br/>in <em>motion<span>.</span></em></h1>
+      <div class="motion-description"><span class="mini-orbit" aria-hidden="true">✳</span><p>Connecting power, machinery and thermal systems to the ambitions of modern industry.</p></div>
+      <div class="motion-actions"><a class="action-primary" href="/products/">Discover our equipment <span>↗</span></a><a class="action-secondary" href="/services/">Engineering scope <span>↗</span></a></div>
+    </div>
+    <div class="motion-visual">
+      <div class="photo-outline" aria-hidden="true"></div><div class="photo-sculpture"><img src={heroPhoto} alt="Industrial power infrastructure, reference photograph from Powerbreeze" width="612" height="459" fetchpriority="high"/><div class="photo-shade"></div><span class="photo-caption">01 / POWER INFRASTRUCTURE <span>REFERENCE PHOTO</span></span></div>
+      <a class="orb-link" href="/products/" aria-label="Explore twelve equipment families"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="orbit-text" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs><text><textPath href="#orbit-text">EXPLORE EQUIPMENT ✳ EXPLORE EQUIPMENT ✳ </textPath></text></svg><strong>↗</strong></a>
+      <div class="photo-inset"><img src={photos.transformers.src} alt="Transformer installation reference photograph" width="200" height="200" loading="eager"/><span><b>01</b> / POWER SYSTEMS</span></div>
+      <div class="visual-number" aria-hidden="true">G<span>+</span></div>
+    </div>
+  </div>
+  <div class="wrap hero-index"><a href="#explore">SCROLL TO EXPLORE <span>↓</span></a><span>POWER / MECHANICAL / THERMAL</span><span>12 EQUIPMENT FAMILIES</span></div>
+  <svg class="hero-wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path fill="#f6f5ee" d="M0 94 C230 160 445 6 690 52 S1120 166 1440 22 V140 H0Z"/></svg>
+</section>
+<section class="systems-intro wrap" id="explore">
+  <div class="section-kicker"><span>01</span> / THE INDUSTRIAL ECOSYSTEM</div>
+  <div class="intro-layout"><h2>Built to<br/><em>connect.</em></h2><div><p>From the source of power to the point of use, explore three engineering domains that form one connected industrial system.</p><a class="ink-link" href="/solutions/">Explore industrial solutions <span>↗</span></a></div></div>
+  <div class="system-ribbon">{areas.map(([n,title,desc,group])=><a href={'/products/?system='+group} class={'system-tile system-'+n}><div class="system-top"><span>DOMAIN / {n}</span><span class="system-arrow">↗</span></div><div class="system-glyph" aria-hidden="true">{n==='01'?'↯':n==='02'?'◎':'≋'}</div><h3>{title}<em>.</em></h3><p>{desc}</p></a>)}</div>
+</section>
+<section class="equipment-stage" id="equipment">
+  <svg class="stage-wave" viewBox="0 0 1440 125" preserveAspectRatio="none" aria-hidden="true"><path fill="#f6f5ee" d="M0 0H1440V44C1140 140 948 15 702 60S250 142 0 30Z"/></svg>
+  <div class="wrap equipment-inner">
+    <div class="section-kicker on-dark"><span>02</span> / PRODUCT PORTFOLIO</div>
+    <div class="stage-heading"><h2>Meet the<br/><em>machines.</em></h2><p>Explore our reference equipment families, their configurations and technical selection requirements.</p></div>
+    <div class="photo-editorial">
+      {featured.map((item,i)=><a class={'editorial-photo editorial-'+i} href={'/products/'+item.slug+'/'}><img src={item.photo.src} alt={item.photo.alt} loading="lazy" width="600" height="450"/><div class="editorial-gradient"></div><div class="editorial-caption"><small>{item.label}</small><h3>{item.copy}</h3><span>View product family <b>↗</b></span></div><span class="editorial-credit">POWERBREEZE / REFERENCE</span></a>)}
+    </div>
+    <div class="directory-shell">
+      <div class="directory-side"><span class="section-kicker"><span>12</span> / PRODUCT FAMILIES</span><h3>Find your<br/>equipment.</h3><div class="directory-tabs" aria-label="Filter equipment directory">{['All',...groups].map((g,i)=><button type="button" data-home-filter={g} aria-pressed={i===0?'true':'false'}>{g==='All'?'All systems':g}<span>↗</span></button>)}</div><a href="/products/" class="ink-link">Full product catalogue <span>↗</span></a></div>
+      <div class="directory-grid" id="home-directory" aria-label="Equipment families">{products.map(p=><a href={'/products/'+p.slug+'/'} data-home-product data-system={p.group}><span class="dir-number">{p.number}</span><div><h4>{p.name}</h4><small>{p.variants.length} configurations · {p.group}</small></div><span class="dir-arrow">↗</span></a>)}</div>
+    </div>
+  </div>
+  <svg class="stage-end" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#f6f5ee" d="M0 90 C320 -20 540 160 850 65 S1260 25 1440 85 V120H0Z"/></svg>
+</section>
+<section class="wrap engineering-story">
+  <div class="story-visual"><div class="story-orbit"></div><div class="story-photo"><img src={photos.transformers.src} alt={photos.transformers.alt} width="500" height="500" loading="lazy"/></div><div class="story-stamp"><strong>19</strong><span>AREAS OF<br/>ENGINEERING WORK</span></div><span class="story-credit">REFERENCE PHOTOGRAPH / POWERBREEZE</span></div>
+  <div class="story-content"><div class="section-kicker"><span>03</span> / ENGINEERING SCOPE</div><h2>More than<br/><em>machines.</em></h2><p>Equipment is only one part of the system. Explore the requirements behind industrial installations, power distribution, maintenance and mechanical integration.</p><div class="story-list"><span><b>01</b> Electrical infrastructure</span><span><b>02</b> Mechanical integration</span><span><b>03</b> Service & maintenance</span></div><a class="action-primary dark-action" href="/services/">Explore scope of work <span>↗</span></a></div>
+</section>
+<section class="motion-cta"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="#113776" stroke-width="150" fill="none" opacity=".23"/><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="#102d65" stroke-width="2" fill="none" opacity=".4"/></svg><div class="wrap motion-cta-inner"><div><div class="section-kicker"><span>04</span> / WHAT'S NEXT</div><h2>Make the next<br/>connection<span>.</span></h2></div><a href="/contact/" class="cta-orb"><span>↗</span><strong>Prepare a<br/>project inquiry</strong></a></div></section>
+</div>
 </Site>
+<script>
+const tabs=Array.from(document.querySelectorAll<HTMLButtonElement>('[data-home-filter]'));
+const items=Array.from(document.querySelectorAll<HTMLElement>('[data-home-product]'));
+tabs.forEach(tab=>tab.addEventListener('click',()=>{const group=tab.dataset.homeFilter;tabs.forEach(b=>b.setAttribute('aria-pressed',String(b===tab)));items.forEach(item=>item.hidden=group!=='All'&&item.dataset.system!==group);}));
+</script>
