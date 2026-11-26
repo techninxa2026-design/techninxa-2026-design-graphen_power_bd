@@ -2,6 +2,7 @@
 import Site from '../layouts/Site.astro';
 import {products,groups} from '../data/catalog';
 import EquipmentPhoto from '../components/EquipmentPhoto.astro';
+import EnergyJourney from '../components/EnergyJourney.astro';
 import {heroPhoto,photos} from '../data/photos';
 const featured = [
  {slug:'transformers',label:'01 / POWER TRANSFORMATION',copy:'Power at its source.',photo:photos.transformers},
@@ -26,7 +27,7 @@ const areas=[
       <div class="motion-description"><span class="mini-orbit" aria-hidden="true">✳</span><p>Connecting power, machinery and thermal systems to the ambitions of modern industry.</p></div>
       <div class="motion-actions"><a class="action-primary" href="/products/">Discover our equipment <span>↗</span></a><a class="action-secondary" href="/services/">Engineering scope <span>↗</span></a></div>
     </div>
-    <div class="motion-visual"><svg class="sequence-circuit" viewBox="0 0 600 520" aria-hidden="true"><g fill="none" stroke="var(--cyan)" stroke-width="1.3" stroke-linecap="round"><path data-circuit d="M18 340H74L135 278H200"/><path data-circuit d="M330 25H432L490 84H576"/><path data-circuit d="M385 470H465L528 407H585"/></g><g fill="var(--orange)"><circle class="circuit-node" cx="18" cy="340" r="4"/><circle class="circuit-node" cx="200" cy="278" r="4"/><circle class="circuit-node" cx="330" cy="25" r="4"/><circle class="circuit-node" cx="576" cy="84" r="4"/><circle class="circuit-node" cx="385" cy="470" r="4"/><circle class="circuit-node" cx="585" cy="407" r="4"/></g></svg><div class="sequence-matrix" aria-hidden="true">{Array.from({length:48},(_,i)=><i data-dot={i}></i>)}</div>
+    <div class="motion-visual" data-energy-pointer><div class="hero-lens" aria-hidden="true"></div><svg class="sequence-circuit" viewBox="0 0 600 520" aria-hidden="true"><g fill="none" stroke="var(--cyan)" stroke-width="1.3" stroke-linecap="round"><path data-circuit d="M18 340H74L135 278H200"/><path data-circuit d="M330 25H432L490 84H576"/><path data-circuit d="M385 470H465L528 407H585"/></g><g fill="var(--orange)"><circle class="circuit-node" cx="18" cy="340" r="4"/><circle class="circuit-node" cx="200" cy="278" r="4"/><circle class="circuit-node" cx="330" cy="25" r="4"/><circle class="circuit-node" cx="576" cy="84" r="4"/><circle class="circuit-node" cx="385" cy="470" r="4"/><circle class="circuit-node" cx="585" cy="407" r="4"/></g></svg><div class="sequence-matrix" aria-hidden="true">{Array.from({length:48},(_,i)=><i data-dot={i}></i>)}</div>
       <div class="photo-outline" aria-hidden="true"></div><div class="photo-sculpture"><img src={heroPhoto} alt="Industrial power infrastructure, reference photograph from Powerbreeze" width="612" height="459" fetchpriority="high"/><div class="photo-shade"></div><span class="photo-caption">01 / POWER INFRASTRUCTURE <span>REFERENCE PHOTO</span></span></div>
       <a class="orb-link" href="/products/" aria-label="Explore twelve equipment families"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="orbit-text" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs><text><textPath href="#orbit-text">EXPLORE EQUIPMENT ✳ EXPLORE EQUIPMENT ✳ </textPath></text></svg><strong>↗</strong></a>
       <div class="photo-inset"><img src={photos.transformers.src} alt="Transformer installation reference photograph" width="200" height="200" loading="eager"/><span><b>01</b> / POWER SYSTEMS</span></div>
@@ -41,6 +42,7 @@ const areas=[
   <div class="intro-layout" data-motion><h2>Built to<br/><em>connect.</em></h2><div><p>From the source of power to the point of use, explore three engineering domains that form one connected industrial system.</p><a class="ink-link" href="/solutions/">Explore industrial solutions <span>↗</span></a></div></div>
   <div class="system-ribbon" data-motion>{areas.map(([n,title,desc,group])=><a href={'/products/?system='+group} class={'system-tile system-'+n}><div class="system-top"><span>DOMAIN / {n}</span><span class="system-arrow">↗</span></div><div class="system-glyph" aria-hidden="true">{n==='01'?'↯':n==='02'?'◎':'≋'}</div><h3>{title}<em>.</em></h3><p>{desc}</p></a>)}</div>
 </section>
+<EnergyJourney />
 <section class="equipment-stage" id="equipment" data-rail="Equipment">
   <svg class="stage-wave" viewBox="0 0 1440 125" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 0H1440V44C1140 140 948 15 702 60S250 142 0 30Z"/></svg>
   <div class="wrap equipment-inner">

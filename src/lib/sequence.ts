@@ -16,7 +16,7 @@ function groupReveal(nodes:HTMLElement[], distance=20){
   const list=nodes.filter(n=>!n.hidden&&n.getClientRects().length);
   if(!list.length||reduced.matches)return;
   list.forEach(n=>n.classList.remove('filter-enter','motion-visible','arrived'));
-  const a=animate(list,{opacity:[0,1],y:[distance,0],duration:620,delay:(_el,i)=>Math.min(i,8)*55,ease:'outExpo',onComplete:self=>{queueMicrotask(()=>{if(active.has(self))cleanup(self);});}});
+  const a=animate(list,{opacity:[0,1],y:[distance*1.75,0],scale:[.965,1],duration:850,delay:(_el,i)=>Math.min(i,8)*75,ease:'outExpo',onComplete:self=>{queueMicrotask(()=>{if(active.has(self))cleanup(self);});}});
   track(a);
 }
 function startHero(){
@@ -27,8 +27,8 @@ function startHero(){
   const ornament=select('.photo-outline,.orb-link,.hero-index',hero);
   const tl=createTimeline({autoplay:false,defaults:{ease:'outExpo'},onComplete:self=>{queueMicrotask(()=>{if(active.has(self))cleanup(self);});}});
   if(copy[0])tl.add(copy[0],{opacity:[0,1],y:[16,0],duration:430},0);
-  if(words.length)tl.add(words,{y:['105%','0%'],opacity:[0,1],duration:780,delay:stagger(110)},100);
-  if(photo)tl.add(photo,{opacity:[0,1],scale:[.91,1],rotate:[-10,-6],duration:950},220);
+  if(words.length)tl.add(words,{y:['115%','0%'],opacity:[0,1],duration:1050,delay:stagger(170)},100);
+  if(photo)tl.add(photo,{opacity:[0,1],scale:[.79,1],rotate:[-15,-6],duration:1300},220);
   if(copy.length>1)tl.add(copy.slice(1),{opacity:[0,1],y:[23,0],duration:580,delay:stagger(95)},440);
   if(ornament.length)tl.add(ornament,{opacity:[0,1],scale:[.95,1],duration:650,delay:stagger(65)},520);
   const lines=hero.querySelectorAll<SVGPathElement>('[data-circuit]');

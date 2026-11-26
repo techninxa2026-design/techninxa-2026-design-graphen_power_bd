@@ -33,3 +33,6 @@ All 89 entries have a curated image association. Product-type, family and system
 Anime.js 4.2.2 is pinned with its lockfile. `src/lib/sequence.ts` orchestrates staggered hero title masks, photographic reveal, SVG circuit drawing, animated grid and morphing wave, viewport-triggered section/card entrances. Existing navigation, filters, theme, scrollbar and pointer remain functional. Reduced-motion preferences stop and revert animation; decorative loops pause outside the hero and when the tab is hidden. The static build bundles the library with Astro/Vite; no runtime CDN or server required. Research: https://animejs.com/ and its Timeline, Stagger and SVG documentation.
 
 The engineering-story energy trace uses Anime.js onScroll with playback synchronized to viewport progress, reverses naturally on upward scroll, and is reverted if reduced motion is enabled.
+
+## V10 kinetic motion
+Added an original three-chapter scroll-led Energy Journey (desktop sticky scene, mobile/static chapter layout), a pointer-reactive hero light and layered parallax, image-mask reveals using Anime.js, interaction impulses and more pronounced entrance/page transitions. Motion preserves static navigation and reduced-motion fallback. No new dependencies.
