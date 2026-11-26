@@ -1,0 +1,23 @@
+---
+import '../styles/site.css';
+import { products, groups } from '../data/catalog';
+const {title='Industrial power & engineering', description='Explore electrical, mechanical and thermal engineering equipment with Graphene Power BD.'}=Astro.props;
+const canonical=new URL(Astro.url.pathname, 'https://graphenepowerbd.com');
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#101a19"/><link rel="canonical" href={canonical}/><link rel="icon" href="/mark.svg" type="image/svg+xml"/><title>{title} | Graphene Power BD</title></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header"><div class="nav wrap"><a class="brand" href="/" aria-label="Graphene Power BD home"><img src="/mark.svg" alt="" width="45" height="45"/><span>GRAPHENE<strong>POWER <i>BD</i></strong></span></a><nav aria-label="Main navigation"><a href="/about/">Company</a><details class="mega"><summary>Products <span>⌄</span></summary><div class="mega-panel"><a class="mega-intro" href="/products/"><small>01 / EXPLORE</small><h3>Engineered<br/>for industry.</h3><span>All products ↗</span></a>{groups.map(group=><div><h4>{group}</h4>{products.filter(p=>p.group===group).map(p=><a href={'/products/'+p.slug+'/'}>{p.name}</a>)}</div>)}</div></details><a href="/services/">Services</a><a href="/solutions/">Solutions</a><a href="/resources/">Resources</a></nav><a class="button nav-cta" href="/contact/">Discuss a project <span>↗</span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button></div><div id="mobile-nav" hidden class="mobile-nav"><a href="/about/">Company</a><a href="/products/">Products</a><a href="/services/">Services</a><a href="/solutions/">Solutions</a><a href="/resources/">Resources</a><a href="/contact/">Discuss a project ↗</a></div></header>
+<main id="main"><slot/></main>
+<footer class="footer"><div class="wrap footer-main"><div><a class="brand" href="/"><img src="/mark.svg" alt="" width="45" height="45"/><span>GRAPHENE<strong>POWER <i>BD</i></strong></span></a><h2>Powering what<br/>comes next.</h2></div><div><h4>Explore</h4><a href="/products/">Product catalogue</a><a href="/services/">Engineering services</a><a href="/solutions/">Industrial solutions</a></div><div><h4>Company</h4><a href="/about/">About</a><a href="/resources/">Resources & media</a><a href="/contact/">Contact</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} Graphene Power BD</span><a href="#main">Back to top ↑</a></div></footer>
+<script>
+const toggle=document.querySelector<HTMLButtonElement>('.menu-toggle');
+const mobile=document.querySelector<HTMLElement>('#mobile-nav');
+toggle?.addEventListener('click',()=>{if(!mobile)return;mobile.hidden=!mobile.hidden;toggle.setAttribute('aria-expanded',String(!mobile.hidden));toggle.setAttribute('aria-label',mobile.hidden?'Open navigation':'Close navigation');});
+const mega=document.querySelector<HTMLDetailsElement>('.mega');
+document.addEventListener('click',e=>{if(mega && e.target instanceof Node && !mega.contains(e.target))mega.open=false;});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(mega?.open){mega.open=false;mega.querySelector('summary')?.focus();}if(mobile&&!mobile.hidden){mobile.hidden=true;toggle?.setAttribute('aria-expanded','false');toggle?.setAttribute('aria-label','Open navigation');toggle?.focus();}}});
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('arrived');observer.unobserve(e.target);}}),{threshold:.1});document.querySelectorAll('[data-reveal]').forEach(el=>observer.observe(el));}
+</script>
+</body></html>

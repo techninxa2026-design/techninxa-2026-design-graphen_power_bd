@@ -1,0 +1,9 @@
+---
+import Site from '../../layouts/Site.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import {products} from '../../data/catalog';
+export function getStaticPaths(){return products.map(product=>({params:{slug:product.slug},props:{product}}));}
+const {product:p}=Astro.props;
+const related=products.filter(x=>x.group===p.group&&x.slug!==p.slug).slice(0,3);
+---
+<Site title={p.name} description={p.description}><section class="detail-head"><div class="wrap"><div class="breadcrumbs"><a href="/">Home</a> / <a href="/products/">Products</a> / {p.name}</div><div class="detail-grid"><div><div class="eyebrow">{p.number} / {p.group} SYSTEMS</div><h1>{p.name}<em>.</em></h1><p>{p.description}</p><a class="button dark" href={'/contact/?product='+p.slug}>Prepare equipment inquiry ↗</a></div><div class="detail-art"><img src={'/equipment/'+p.slug+'.svg'} alt={'Conceptual illustration of '+p.name.toLowerCase()} width="480" height="300"/><small>ILLUSTRATIVE / NOT A MODEL-SPECIFIC DRAWING</small></div></div></div></section><section class="wrap section detail-body"><div><div class="eyebrow">01 / CONFIGURATIONS</div><h2>Explore the range.</h2><div class="variant-list">{p.variants.map((v,i)=><div><small>{String(i+1).padStart(2,'0')}</small><strong>{v}</strong></div>)}</div></div><div><div class="eyebrow">02 / TECHNICAL SELECTION</div><h2>What to specify.</h2><p>Collect the following engineering parameters before requesting model-specific documentation or a quotation.</p><dl class="spec-list">{p.specs.map(s=><div><dt>{s}</dt><dd>Project specific</dd></div>)}</dl><small>Final ratings, brands, availability and compliance require supplier confirmation.</small></div></section><section class="wrap section"><div class="section-heading"><h2>Related equipment.</h2><a class="text-link" href="/products/">All products ↗</a></div><div class="product-grid">{related.map(product=><ProductCard {product}/>)}</div></section></Site>
