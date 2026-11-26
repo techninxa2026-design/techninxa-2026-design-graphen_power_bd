@@ -65,5 +65,5 @@ const areas=[
 <script>
 const tabs=Array.from(document.querySelectorAll<HTMLButtonElement>('[data-home-filter]'));
 const items=Array.from(document.querySelectorAll<HTMLElement>('[data-home-product]'));
-tabs.forEach(tab=>tab.addEventListener('click',()=>{const group=tab.dataset.homeFilter;tabs.forEach(b=>b.setAttribute('aria-pressed',String(b===tab)));items.forEach(item=>item.hidden=group!=='All'&&item.dataset.system!==group);}));
+tabs.forEach(tab=>tab.addEventListener('click',()=>{const group=tab.dataset.homeFilter;tabs.forEach(b=>b.setAttribute('aria-pressed',String(b===tab)));let n=0;items.forEach(item=>{const wasHidden=item.hidden;item.hidden=group!=='All'&&item.dataset.system!==group;if(!item.hidden){if(wasHidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches){item.classList.remove('filter-enter');void item.offsetWidth;item.style.setProperty('--filter-delay',String(Math.min(n,5)*35)+'ms');item.classList.add('filter-enter');}n++;}});}));
 </script>

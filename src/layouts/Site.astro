@@ -27,7 +27,7 @@ toggle?.addEventListener('click',()=>{if(!mobile)return;mobile.hidden=!mobile.hi
 const mega=document.querySelector<HTMLDetailsElement>('.mega');
 const choices=Array.from(document.querySelectorAll<HTMLButtonElement>('[data-mega-group]'));
 const panels=Array.from(document.querySelectorAll<HTMLElement>('[data-mega-panel]'));
-function selectGroup(group:string){choices.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.megaGroup===group)));panels.forEach(p=>p.hidden=p.dataset.megaPanel!==group);}
+function selectGroup(group:string){choices.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.megaGroup===group)));panels.forEach(p=>{const wasHidden=p.hidden;p.hidden=p.dataset.megaPanel!==group;if(!p.hidden&&wasHidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches){p.classList.remove('filter-enter');void p.offsetWidth;p.classList.add('filter-enter');}});}
 if(choices[0])selectGroup(choices[0].dataset.megaGroup||'Electrical');
 choices.forEach(b=>b.addEventListener('click',()=>selectGroup(b.dataset.megaGroup||'Electrical')));
 document.querySelectorAll<HTMLImageElement>('.equipment-photo img').forEach(img=>{function failed(){img.hidden=true;const container=img.closest('.equipment-photo');container?.classList.add('photo-missing');const fallback=container?.querySelector<HTMLElement>('.photo-fallback');if(fallback)fallback.hidden=false;}img.addEventListener('error',failed);if(img.complete&&!img.naturalWidth)failed();});

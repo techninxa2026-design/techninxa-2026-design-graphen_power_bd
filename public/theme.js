@@ -15,8 +15,10 @@ function recolor(hex,palette){
  if(s<.025||l<.025||l>.985)return '#'+x;
  const role=colorRole(h,s,l,src),chosen=rgb(palette[role]),[nh,ns]=hsl(chosen);
  // Keep the source's luminance so light/dark foreground relationships remain close to the original.
- const sat=Math.min(.95,s*(.4+.6*ns/Math.max(.3,hsl(rgb(defaults[role]))[1])));
- const target=lum(orig);let low=0,high=1;for(let i=0;i<18;i++){const mid=(low+high)/2;if(lum(fromHsl(nh,sat,mid))<target)low=mid;else high=mid;}
+ const sat=ns<.025?0:Math.min(.95,s*(.4+.6*ns/Math.max(.3,hsl(rgb(defaults[role]))[1])));
+ // Decorative shades follow the selected hue and saturation; tonal adjustments remain bounded.
+ const sourceLum=lum(orig),shift=(lum(chosen)-lum(rgb(defaults[role])))*.12;
+ const target=Math.max(0,Math.min(1,sourceLum+(sourceLum>.1&&sourceLum<.75?shift:0)));let low=0,high=1;for(let i=0;i<18;i++){const mid=(low+high)/2;if(lum(fromHsl(nh,sat,mid))<target)low=mid;else high=mid;}
  const out=fromHsl(nh,sat,(low+high)/2).map(v=>Math.round(v*255).toString(16).padStart(2,'0')).join('');
  return '#'+out+alpha;
 }
