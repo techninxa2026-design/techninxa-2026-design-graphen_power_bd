@@ -3,6 +3,6 @@ import {photos} from '../data/photos';
 const {slug,name}=Astro.props;
 const photo=photos[slug];
 ---
-<div class:list={['equipment-photo',{'photo-missing':!photo}]}>
-{photo ? <><img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" style={photo.fit?'object-fit:'+photo.fit:undefined} width="640" height="420"/><span class="image-credit">Reference: Powerbreeze</span><span hidden class="photo-fallback">Photo unavailable</span></> : <div class="photo-placeholder"><span class="photo-index">EQUIPMENT / {name}</span><strong>Technical<br/>overview</strong><span>Photography pending</span></div>}
+<div class:list={['equipment-photo',{'photo-missing':!photo,'low-res':photo?.src.includes('150x150')}]}>
+{photo ? <><img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" style={photo.fit?'object-fit:'+photo.fit:undefined} width={photo.src.includes('150x150')?150:640} height={photo.src.includes('150x150')?150:420}/><span class="image-credit">Reference: Powerbreeze {photo.src.includes('150x150')?'· thumbnail':''}</span><span hidden class="photo-fallback">Photo unavailable</span></> : <div class="photo-placeholder"><span class="photo-index">EQUIPMENT / {name}</span><strong>Technical<br/>overview</strong><span>Photography pending</span></div>}
 </div>
