@@ -1,0 +1,7 @@
+---
+import EquipmentTile from './EquipmentTile.astro';
+import {equipment} from '../data/equipment';
+const {family}=Astro.props;
+const list=family?equipment.filter(i=>i.family===family):equipment;
+---
+<div class="visual-gallery">{list.map(item=><EquipmentTile {item}/>)}</div>

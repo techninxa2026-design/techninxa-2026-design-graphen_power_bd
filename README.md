@@ -19,3 +19,6 @@ Source-backed facts for all 12 equipment families, tables for tray dimensions, g
 
 ## V5 theme and motion
 Three editable palette colors, curated presets, reset, early restoration from origin-local storage, and cross-tab synchronization. All existing CSS color literals and inline homepage SVG colors are tokenized; photos retain their natural colors. Palette derivation preserves original relative luminance, so very dark/light user choices are adapted to readable UI shades. Native same-origin view transitions and scroll-linked enhancements are progressive and disabled for reduced-motion preferences. No new dependencies.
+
+## Visual catalogue V6
+All existing named equipment configurations have individual tiles at /products/gallery/ and on family pages. Manufacturer/reference images are sourced and labeled with photo/render/thumbnail distinctions. Some entries have no verified matching photo: they deliberately link to the source rather than display unrelated imagery. The family-level ventilation example is Systemair, not VENCO. Third-party images are remote; permission, local caching and higher-resolution replacements are required before production publication. The actual photographed product is not guaranteed to be Graphene inventory.

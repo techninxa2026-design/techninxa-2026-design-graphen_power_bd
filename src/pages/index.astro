@@ -1,6 +1,7 @@
 ---
 import Site from '../layouts/Site.astro';
 import {products,groups} from '../data/catalog';
+import EquipmentPhoto from '../components/EquipmentPhoto.astro';
 import {heroPhoto,photos} from '../data/photos';
 const featured = [
  {slug:'transformers',label:'01 / POWER TRANSFORMATION',copy:'Power at its source.',photo:photos.transformers},
@@ -49,8 +50,8 @@ const areas=[
       {featured.map((item,i)=><a class={'editorial-photo editorial-'+i} href={'/products/'+item.slug+'/'}><img src={item.photo.src} alt={item.photo.alt} loading="lazy" width="600" height="450" class:list={[item.slug==="cooling-towers"&&"small-source"]}/><div class="editorial-gradient"></div><div class="editorial-caption"><small>{item.label}</small><h3>{item.copy}</h3><span>View product family <b>↗</b></span></div><span class="editorial-credit">POWERBREEZE / REFERENCE</span></a>)}
     </div>
     <div class="directory-shell" data-motion>
-      <div class="directory-side"><span class="section-kicker"><span>12</span> / PRODUCT FAMILIES</span><h3>Find your<br/>equipment.</h3><div class="directory-tabs" aria-label="Filter equipment directory">{['All',...groups].map((g,i)=><button type="button" data-home-filter={g} aria-pressed={i===0?'true':'false'}>{g==='All'?'All systems':g}<span>↗</span></button>)}</div><a href="/products/" class="ink-link">Full product catalogue <span>↗</span></a></div>
-      <div class="directory-grid" id="home-directory" aria-label="Equipment families">{products.map(p=><a href={'/products/'+p.slug+'/'} data-home-product data-system={p.group}><span class="dir-number">{p.number}</span><div><h4>{p.name}</h4><small>{p.variants.length} configurations · {p.group}</small></div><span class="dir-arrow">↗</span></a>)}</div>
+      <div class="directory-side"><span class="section-kicker"><span>12</span> / PRODUCT FAMILIES</span><h3>Find your<br/>equipment.</h3><div class="directory-tabs" aria-label="Filter equipment directory">{['All',...groups].map((g,i)=><button type="button" data-home-filter={g} aria-pressed={i===0?'true':'false'}>{g==='All'?'All systems':g}<span>↗</span></button>)}</div><a href="/products/gallery/" class="ink-link">View every equipment type <span>↗</span></a></div>
+      <div class="directory-grid photo-directory" id="home-directory" aria-label="Equipment families">{products.map(p=><a href={'/products/'+p.slug+'/'} data-home-product data-system={p.group}><span class="dir-number">{p.number}</span><EquipmentPhoto slug={p.slug} name={p.name}/><div><h4>{p.name}</h4><small>{p.variants.length} configurations · {p.group}</small></div><span class="dir-arrow">↗</span></a>)}</div>
     </div>
   </div>
   <svg class="stage-end" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 90 C320 -20 540 160 850 65 S1260 25 1440 85 V120H0Z"/></svg>

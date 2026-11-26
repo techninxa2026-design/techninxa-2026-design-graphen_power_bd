@@ -72,7 +72,10 @@ export const products = [
       "Feeder busbar",
       "Distribution busbar",
       "Tap-off units",
-      "Installation accessories"
+      "Installation accessories",
+      "GNL & GL low-power busbar",
+      "GGD medium-power busbar",
+      "GS Compact high-power busbar"
     ],
     "specs": [
       "Current rating",
