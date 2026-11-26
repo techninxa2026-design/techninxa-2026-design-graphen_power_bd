@@ -16,3 +16,6 @@ A midnight-indigo, electric-cyan and apricot design with organic wave boundaries
 
 ## V4
 Source-backed facts for all 12 equipment families, tables for tray dimensions, generator and cooling tower series, source links, custom scrollbar and page progress rail. Cable tray dimensions checked against the reference PDF. Generator headline and series discrepancy disclosed. Graphene supplier availability and certification are unverified. Original larger photos could not be accessed; existing thumbnails are kept at small sizes and missing imagery is not fabricated. No new runtime dependencies.
+
+## V5 theme and motion
+Three editable palette colors, curated presets, reset, early restoration from origin-local storage, and cross-tab synchronization. All existing CSS color literals and inline homepage SVG colors are tokenized; photos retain their natural colors. Palette derivation preserves original relative luminance, so very dark/light user choices are adapted to readable UI shades. Native same-origin view transitions and scroll-linked enhancements are progressive and disabled for reduced-motion preferences. No new dependencies.

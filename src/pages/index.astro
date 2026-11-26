@@ -17,7 +17,7 @@ const areas=[
 <div class="home-v3">
 <section class="motion-hero" id="overview" data-rail="Home" aria-labelledby="hero-title">
   <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
-  <svg class="hero-stream" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="flow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#254acb"/><stop offset="1" stop-color="#00c5d4"/></linearGradient></defs><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="url(#flow)" stroke-width="155" opacity=".16" fill="none"/><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="#8ce8f1" stroke-width="1" opacity=".4" fill="none"/><path d="M-170 820 C250 1010 425 300 820 330 S1260 830 1620 100" stroke="#8ce8f1" stroke-width="1" opacity=".18" fill="none"/></svg>
+  <svg class="hero-stream" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="flow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--tone-254acb, #254acb)"/><stop offset="1" stop-color="var(--tone-00c5d4, #00c5d4)"/></linearGradient></defs><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="url(#flow)" stroke-width="155" opacity=".16" fill="none"/><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".4" fill="none"/><path d="M-170 820 C250 1010 425 300 820 330 S1260 830 1620 100" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".18" fill="none"/></svg>
   <div class="wrap motion-hero-inner">
     <div class="motion-copy">
       <div class="motion-label"><span class="pulse-dot"></span> ENGINEERING / BANGLADESH <span class="label-line"></span> 01</div>
@@ -33,7 +33,7 @@ const areas=[
     </div>
   </div>
   <div class="wrap hero-index"><a href="#explore">SCROLL TO EXPLORE <span>↓</span></a><span>POWER / MECHANICAL / THERMAL</span><span>12 EQUIPMENT FAMILIES</span></div>
-  <svg class="hero-wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path fill="#f6f5ee" d="M0 94 C230 160 445 6 690 52 S1120 166 1440 22 V140 H0Z"/></svg>
+  <svg class="hero-wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 94 C230 160 445 6 690 52 S1120 166 1440 22 V140 H0Z"/></svg>
 </section>
 <section class="systems-intro wrap" id="explore" data-rail="Systems">
   <div class="section-kicker"><span>01</span> / THE INDUSTRIAL ECOSYSTEM</div>
@@ -41,7 +41,7 @@ const areas=[
   <div class="system-ribbon" data-motion>{areas.map(([n,title,desc,group])=><a href={'/products/?system='+group} class={'system-tile system-'+n}><div class="system-top"><span>DOMAIN / {n}</span><span class="system-arrow">↗</span></div><div class="system-glyph" aria-hidden="true">{n==='01'?'↯':n==='02'?'◎':'≋'}</div><h3>{title}<em>.</em></h3><p>{desc}</p></a>)}</div>
 </section>
 <section class="equipment-stage" id="equipment" data-rail="Equipment">
-  <svg class="stage-wave" viewBox="0 0 1440 125" preserveAspectRatio="none" aria-hidden="true"><path fill="#f6f5ee" d="M0 0H1440V44C1140 140 948 15 702 60S250 142 0 30Z"/></svg>
+  <svg class="stage-wave" viewBox="0 0 1440 125" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 0H1440V44C1140 140 948 15 702 60S250 142 0 30Z"/></svg>
   <div class="wrap equipment-inner">
     <div class="section-kicker on-dark"><span>02</span> / PRODUCT PORTFOLIO</div>
     <div class="stage-heading" data-motion><h2>Meet the<br/><em>machines.</em></h2><p>Explore our reference equipment families, their configurations and technical selection requirements.</p></div>
@@ -53,13 +53,13 @@ const areas=[
       <div class="directory-grid" id="home-directory" aria-label="Equipment families">{products.map(p=><a href={'/products/'+p.slug+'/'} data-home-product data-system={p.group}><span class="dir-number">{p.number}</span><div><h4>{p.name}</h4><small>{p.variants.length} configurations · {p.group}</small></div><span class="dir-arrow">↗</span></a>)}</div>
     </div>
   </div>
-  <svg class="stage-end" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#f6f5ee" d="M0 90 C320 -20 540 160 850 65 S1260 25 1440 85 V120H0Z"/></svg>
+  <svg class="stage-end" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 90 C320 -20 540 160 850 65 S1260 25 1440 85 V120H0Z"/></svg>
 </section>
 <section class="wrap engineering-story" id="engineering" data-rail="Engineering">
   <div class="story-visual"><div class="story-orbit"></div><div class="story-photo"><img src={photos.transformers.src} alt={photos.transformers.alt} width="500" height="500" loading="lazy"/></div><div class="story-stamp"><strong>19</strong><span>AREAS OF<br/>ENGINEERING WORK</span></div><span class="story-credit">REFERENCE PHOTOGRAPH / POWERBREEZE</span></div>
   <div class="story-content" data-motion><div class="section-kicker"><span>03</span> / ENGINEERING SCOPE</div><h2>More than<br/><em>machines.</em></h2><p>Equipment is only one part of the system. Explore the requirements behind industrial installations, power distribution, maintenance and mechanical integration.</p><div class="story-list"><span><b>01</b> Electrical infrastructure</span><span><b>02</b> Mechanical integration</span><span><b>03</b> Service & maintenance</span></div><a class="action-primary dark-action" href="/services/">Explore scope of work <span>↗</span></a></div>
 </section>
-<section class="motion-cta" id="inquiry" data-rail="Inquiry"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="#113776" stroke-width="150" fill="none" opacity=".23"/><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="#102d65" stroke-width="2" fill="none" opacity=".4"/></svg><div class="wrap motion-cta-inner"><div><div class="section-kicker"><span>04</span> / WHAT'S NEXT</div><h2>Make the next<br/>connection<span>.</span></h2></div><a href="/contact/" class="cta-orb"><span>↗</span><strong>Prepare a<br/>project inquiry</strong></a></div></section>
+<section class="motion-cta" id="inquiry" data-rail="Inquiry"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="var(--tone-113776, #113776)" stroke-width="150" fill="none" opacity=".23"/><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="var(--tone-102d65, #102d65)" stroke-width="2" fill="none" opacity=".4"/></svg><div class="wrap motion-cta-inner"><div><div class="section-kicker"><span>04</span> / WHAT'S NEXT</div><h2>Make the next<br/>connection<span>.</span></h2></div><a href="/contact/" class="cta-orb"><span>↗</span><strong>Prepare a<br/>project inquiry</strong></a></div></section>
 </div>
 </Site>
 <script>

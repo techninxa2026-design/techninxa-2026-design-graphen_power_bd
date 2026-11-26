@@ -1,0 +1,13 @@
+---
+const presets=[{name:'Energy',colors:['#2449c7','#52e5ef','#ffab77']},{name:'Emerald',colors:['#176848','#65e6ac','#f6c36b']},{name:'Solar',colors:['#a13b16','#ffca67','#ef8ca9']},{name:'Aurora',colors:['#6836b8','#a6c9ff','#f39ad2']},{name:'Graphite',colors:['#435466','#b8e6ed','#e2b77b']}];
+---
+<button class="theme-launch" type="button" id="theme-launch" aria-label="Customize website theme" aria-haspopup="dialog" hidden><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.2a2 2 0 0 0 1.5-3.3 1.7 1.7 0 0 1 1.3-2.8h2A3.9 3.9 0 0 0 22 11c0-4.4-4.5-8-10-8Z"/><circle cx="7.6" cy="10" r="1"/><circle cx="11" cy="6.8" r="1"/><circle cx="16" cy="7.5" r="1"/><circle cx="7.5" cy="15" r="1"/></svg><span>Theme</span></button>
+<dialog id="theme-dialog" class="theme-dialog" aria-labelledby="theme-title">
+ <div class="theme-top"><div><div class="theme-kicker">GRAPHENE / PERSONALIZE</div><h2 id="theme-title">Make it<br/><em>yours.</em></h2></div><button type="button" class="theme-close" aria-label="Close theme editor">×</button></div>
+ <div class="theme-preview" aria-hidden="true"><div class="theme-preview-wave"></div><span>YOUR PALETTE</span><strong>Energy in<br/>motion<span>.</span></strong><i>Explore ↗</i></div>
+ <p>Choose three colors. The website adapts instantly and remembers your palette on this browser.</p>
+ <div class="theme-inputs">{[['primary','Primary','Backgrounds & gradients','#2449c7'],['secondary','Secondary','Actions & highlights','#52e5ef'],['accent','Accent','Details & accents','#ffab77']].map(([key,label,help,value])=><label class="theme-field"><span><strong>{label}</strong><small>{help}</small></span><output data-hex={key}>{value.toUpperCase()}</output><input type="color" data-theme-color={key} value={value} aria-label={label+' color'}/></label>)}</div>
+ <div class="theme-presets-label">Curated palettes</div><div class="theme-presets">{presets.map(p=><button type="button" data-preset={p.colors.join(',')} aria-label={p.name+' palette'} aria-pressed={p.name==='Energy'?'true':'false'}><span>{p.colors.map(c=><i style={'background:'+c}></i>)}</span><small>{p.name}</small></button>)}</div>
+ <div class="theme-actions"><button type="button" class="theme-reset">Reset default</button><button type="button" class="theme-done">Done <span>↗</span></button></div>
+ <p class="theme-status" role="status">Preferences stay on this device.</p>
+</dialog>
