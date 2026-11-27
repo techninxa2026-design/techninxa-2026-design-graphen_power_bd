@@ -10,6 +10,8 @@ export const company = {
   "city": "Dhaka",
   "country": "Bangladesh",
   "postalCode": "1216",
+  "phone": "+880-1816166322",
+  "phoneHref": "+8801816166322",
   "website": "https://graphenepowerbd.com",
   "logo": "/brand/graphene-logo.svg",
   "socialLogo": "/brand/graphene-logo.webp"

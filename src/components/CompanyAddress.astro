@@ -1,5 +1,6 @@
 ---
 import {company} from '../data/company';
+import CompanyPhone from './CompanyPhone.astro';
 const {compact=false}=Astro.props;
 ---
-<address class:list={['company-address',{'company-address-compact':compact}]}><strong>{company.name}</strong>{company.address.map(line=><span>{line}</span>)}<span>{company.country}</span></address>
+<address class:list={['company-address',{'company-address-compact':compact}]}><strong>{company.name}</strong>{company.address.map(line=><span>{line}</span>)}<span>{company.country}</span><CompanyPhone /></address>
