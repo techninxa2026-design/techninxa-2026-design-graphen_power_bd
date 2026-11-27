@@ -1,0 +1,3 @@
+# Graphene Power Engineering - static site at the domain document root
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
