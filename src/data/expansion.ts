@@ -1,3 +1,4 @@
+import { serviceCategory, type CategoryName } from './categories';
 import type { portfolioPhotos } from './portfolio-photos';
 
 type PhotoKey = keyof typeof portfolioPhotos;
@@ -5,7 +6,7 @@ type PhotoKey = keyof typeof portfolioPhotos;
 type PortfolioFamily = {
   slug: string;
   name: string;
-  group: string;
+  group: CategoryName;
   number: string;
   description: string;
   specs: string[];
@@ -75,7 +76,7 @@ export const additions: PortfolioFamily[] = [
   {
     slug: 'generator-controls',
     name: 'Generator controls & changeover',
-    group: 'Electrical',
+    group: 'Standby power',
     number: '16',
     description: 'Controls for standby supply, power transfer and parallel generator operation.',
     photo: 'generatorTransfer',
@@ -94,7 +95,7 @@ export const additions: PortfolioFamily[] = [
   {
     slug: 'lightning-protection',
     name: 'Lightning protection & earthing',
-    group: 'Electrical',
+    group: 'Lightning protection',
     number: '17',
     description: 'External lightning protection and earthing components for industrial facilities.',
     photo: 'lightningTerminal',
@@ -110,12 +111,107 @@ export const additions: PortfolioFamily[] = [
       ['Earthing', 'Review soil conditions and specify the inspection and testing requirements with the design.'],
     ],
   },
-];
-
-export const engineeringServices = [
-  ['Electrical testing', 'Insulation resistance (IR) and earth resistance testing for installation checks and maintenance.'],
-  ['Electrical consultancy', 'Single-line diagrams (SLDs), electrical design and project bills of quantities (BOQs).'],
-  ['Standards implementation', 'Project-specific implementation work referencing NFPA, BNBC, ACCORD and RSC requirements where applicable.'],
-  ['Turnkey electromechanical installation', 'Coordination and installation of electrical, mechanical and renewable energy systems.'],
-  ['Solar project engineering', 'Project planning for on-grid, off-grid and hybrid solar installations.'],
+  {
+    slug: 'busbar-fittings',
+    name: 'Busbar fittings & tap-off units',
+    group: 'Busbar & cable systems',
+    number: '18',
+    description: 'Tap-off units, direction changes and feed connections for modular busbar trunking.',
+    photo: 'busbarInstallation',
+    variants: [
+      { name: 'Busbar tap-off units', photo: 'busbarInstallation', imageMatch: 'context' },
+      { name: 'Busbar feeds, bends and joints', photo: 'busbarInstallation', imageMatch: 'context' },
+    ],
+    specs: ['Busbar manufacturer and series', 'Current rating', 'Tap-off locations', 'Route and enclosure requirements'],
+    facts: [
+      ['Tap-off locations', 'Show where branch circuits connect to the main busbar run.'],
+      ['Fittings', 'Share the run layout so feeds, bends and joints can be matched to the trunking system.'],
+    ],
+  },
+  {
+    slug: 'earthing-bonding',
+    name: 'Earthing & bonding equipment',
+    group: 'Lightning protection',
+    number: '19',
+    description: 'Earth bars, bonding conductors and associated connection points for electrical and lightning protection systems.',
+    photo: 'earthingBusbars',
+    variants: [
+      { name: 'Main earth bars and terminals', photo: 'mainEarthBar', imageMatch: 'subtype' },
+      { name: 'Bonding conductors and connections', photo: 'earthingBusbars', imageMatch: 'context' },
+    ],
+    specs: ['Earthing drawings', 'Conductor sizes', 'Connection materials', 'Installation environment'],
+    facts: [
+      ['Earthing terminals', 'Identify the equipment and conductors that need to connect to each earth bar.'],
+      ['Bonding', 'Share the drawings and site conditions so connections can be selected for the project.'],
+    ],
+  },
+  {
+    slug: 'electrical-testing',
+    name: 'Electrical resistance testing',
+    group: serviceCategory,
+    number: '20',
+    description: 'Insulation resistance and earth resistance testing for electrical installations.',
+    photo: 'substationTesting',
+    variants: [
+      { name: 'Insulation resistance testing (IR)', photo: 'insulationTester', imageMatch: 'context' },
+      { name: 'Earth resistance testing', photo: 'earthTester', imageMatch: 'context' },
+    ],
+    specs: ['Site location', 'Circuits or earthing systems to inspect', 'Existing drawings or test records', 'Site access and shutdown windows'],
+    facts: [
+      ['Insulation resistance', 'Scope testing for the equipment and circuits identified in your project brief.'],
+      ['Earth resistance', 'Identify the earthing systems or electrodes included in the survey.'],
+    ],
+  },
+  {
+    slug: 'electrical-consultancy',
+    name: 'Electrical design & consultancy',
+    group: serviceCategory,
+    number: '21',
+    description: 'Single-line diagrams, electrical design and project bills of quantities.',
+    photo: 'electricalDrawings',
+    variants: [
+      { name: 'Single-line diagrams (SLDs)', photo: 'electricalDrawings', imageMatch: 'context' },
+      { name: 'Electrical system design', photo: 'controlCabinet', imageMatch: 'context' },
+      { name: 'Project bills of quantities (BOQs)', photo: 'electricalDrawings', imageMatch: 'context' },
+    ],
+    specs: ['Project scope', 'Existing drawings', 'Equipment and load schedule', 'Required deliverables and timeline'],
+    facts: [
+      ['Single-line diagrams', 'Document supply, distribution and equipment connections in the project scope.'],
+      ['Design and quantities', 'Define the design deliverables and equipment quantities needed for the project.'],
+    ],
+  },
+  {
+    slug: 'standards-implementation',
+    name: 'Standards implementation',
+    group: serviceCategory,
+    number: '22',
+    description: 'Site-specific implementation work for applicable NFPA, BNBC, ACCORD and RSC requirements.',
+    photo: 'equipmentInspection',
+    variants: [
+      { name: 'NFPA and BNBC implementation work', photo: 'equipmentInspection', imageMatch: 'context' },
+      { name: 'ACCORD and RSC corrective work', photo: 'substationTesting', imageMatch: 'context' },
+    ],
+    specs: ['Applicable project requirements', 'Inspection report or corrective action list', 'Existing drawings', 'Agreed work scope'],
+    facts: [
+      ['Project requirements', 'Share the requirements and findings issued for the facility.'],
+      ['Implementation scope', 'Agree on the electrical or electromechanical work covered by the project.'],
+    ],
+  },
+  {
+    slug: 'turnkey-installation',
+    name: 'Turnkey electromechanical installation',
+    group: serviceCategory,
+    number: '23',
+    description: 'Coordination and installation of electrical and mechanical systems for industrial sites.',
+    photo: 'cableInstallation',
+    variants: [
+      { name: 'Electrical equipment installation', photo: 'cableInstallation', imageMatch: 'context' },
+      { name: 'Mechanical equipment integration', photo: 'industrialCompressor', imageMatch: 'context' },
+    ],
+    specs: ['Project location', 'Equipment schedule', 'Installation drawings', 'Site readiness and work schedule'],
+    facts: [
+      ['Electrical installation', 'Define the distribution equipment, cable routes and system interfaces in the installation scope.'],
+      ['Mechanical integration', 'Coordinate equipment layout, access and connection points with the site team.'],
+    ],
+  },
 ];

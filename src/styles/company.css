@@ -16,21 +16,6 @@
 .company-logo-vector .logo-energy-secondary { fill: #90edc3; }
 .company-logo-vector .logo-subtitle { fill: #dae7e2; }
 
-.home-v3 .system-ribbon {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.home-v3 .system-04 {
-  background: color-mix(in srgb, var(--orange) 69%, white);
-  color: #222719;
-  border-radius: 55px 55px 12px 55px;
-}
-.home-v3 .system-04 p, .home-v3 .system-04 h3 em { color: #444122; }
-@media (max-width: 1100px) {
-  .home-v3 .system-ribbon { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 520px) {
-  .home-v3 .system-ribbon { grid-template-columns: 1fr; }
-}
 @media(max-width:360px){.header .brand .company-logo{width:158px}}
 
 /* Centralized click-to-call contact details, responsive to the live palette. */

@@ -1,5 +1,4 @@
 import { company } from './company';
-import { engineeringServices } from './expansion';
 
 export const pages = [
   {
@@ -110,7 +109,7 @@ export const pages = [
         "Mechanical installation",
         "Mechanical equipment integration."
       ],
-      ...engineeringServices
+      ["Solar project engineering", "Project planning for on-grid, off-grid and hybrid solar installations."]
     ]
   },
   {

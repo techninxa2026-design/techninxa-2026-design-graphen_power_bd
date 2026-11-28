@@ -1,3 +1,4 @@
+import { serviceCategory } from './categories';
 import { additions } from './expansion';
 
 export type Reference={brand:string;summary:string;facts:string[][];links:string[][];table:{headers:string[];rows:string[][]}|null;note:string};
@@ -416,6 +417,6 @@ for (const product of additions) {
     facts: product.facts,
     links: [],
     table: null,
-    note: 'Final equipment selection depends on site conditions and project requirements.',
+    note: product.group === serviceCategory ? '' : 'Final equipment selection depends on site conditions and project requirements.',
   };
 }

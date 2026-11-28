@@ -2,6 +2,8 @@
 import Site from '../layouts/Site.astro';
 import { pages } from '../data/pages';
 import { products } from '../data/catalog';
+import { categoryUrl, serviceCategory } from '../data/categories';
+import ProductCard from '../components/ProductCard.astro';
 import { company } from '../data/company';
 import { portfolioPhotos } from '../data/portfolio-photos';
 import BrandLogo from '../components/BrandLogo.astro';
@@ -46,6 +48,18 @@ const photoCredits = Object.values(portfolioPhotos);
     </section>
   )}
 
+  {page.slug === 'services' && (
+    <section class="wrap section" id="engineering-services" aria-labelledby="engineering-heading">
+      <div class="section-heading">
+        <h2 id="engineering-heading">Engineering services</h2>
+        <a class="text-link" href={categoryUrl(serviceCategory)}>Explore service offerings ↗</a>
+      </div>
+      <div class="product-grid">
+        {products.filter(product => product.group === serviceCategory).map(product => <ProductCard {product} />)}
+      </div>
+    </section>
+  )}
+
   <section class="wrap section">
     <div class="section-heading">
       <h2>{page.slug === 'about' ? 'What we do.' : `Explore ${page.label.toLowerCase()}.`}</h2>
@@ -64,7 +78,7 @@ const photoCredits = Object.values(portfolioPhotos);
   {page.slug === 'resources' && (
     <section class="wrap section catalogue-library" id="catalogues">
       <div class="section-heading">
-        <h2>Equipment guides.</h2>
+        <h2>Equipment and service guides.</h2>
         <a class="button dark" href="/catalogues/graphene-complete-portfolio.pdf" download>Original portfolio PDF ↓</a>
       </div>
       <div class="brochure-grid">
@@ -79,7 +93,7 @@ const photoCredits = Object.values(portfolioPhotos);
           </a>
         ))}
       </div>
-      <p class="gallery-disclosure">Equipment guides provide indicative information for project planning.</p>
+      <p class="gallery-disclosure">Use these guides to prepare your project brief.</p>
       <details class="photo-credits" id="photo-credits">
         <summary>Reference photo credits</summary>
         <p>These photographs show equipment and installation examples. Photos were resized and cropped for the website.</p>

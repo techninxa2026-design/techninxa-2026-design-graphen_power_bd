@@ -1,3 +1,4 @@
+import { categories, type CategoryName } from './categories';
 import { additions } from './expansion';
 
 const originalProducts = [
@@ -47,7 +48,7 @@ const originalProducts = [
   {
     "slug": "cable-trays",
     "name": "Cable tray systems",
-    "group": "Electrical",
+    "group": "Busbar & cable systems",
     "description": "Structured cable routing and support for complex facilities.",
     "variants": [
       "Perforated trays",
@@ -68,7 +69,7 @@ const originalProducts = [
   {
     "slug": "busbar-trunking",
     "name": "Busbar trunking",
-    "group": "Electrical",
+    "group": "Busbar & cable systems",
     "description": "Modular high-current power distribution within buildings and plants.",
     "variants": [
       "Feeder busbar",
@@ -91,7 +92,7 @@ const originalProducts = [
   {
     "slug": "generators",
     "name": "Generators",
-    "group": "Electrical",
+    "group": "Standby power",
     "description": "On-site power for standby, prime and continuous-duty applications.",
     "variants": [
       "Standby diesel generators",
@@ -282,12 +283,12 @@ const originalProducts = [
     ],
     "number": "12"
   }
-];
+] satisfies Product[];
 
-type Product = {
+export type Product = {
   slug: string;
   name: string;
-  group: string;
+  group: CategoryName;
   description: string;
   variants: string[];
   specs: string[];
@@ -306,4 +307,4 @@ export const products: Product[] = [
   })),
 ];
 
-export const groups = [...new Set(products.map(product => product.group))];
+export const groups = categories.map(category => category.name);

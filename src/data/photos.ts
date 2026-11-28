@@ -474,7 +474,7 @@ export const assets:Record<string,EquipmentImage>={
     "fit": "contain"
   }
 };
-const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"towerIndustrial","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool","cable-trays":"trayPerforated"};
+const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busbarInstallation","generators":"standbyGenerator","air-compressors":"screwCompressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"industrialCoolingTower","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool","cable-trays":"cableInstallation"};
 export const photos:Record<string,EquipmentImage>=Object.fromEntries(Object.entries(familyAssets).map(([family,key])=>[family,assets[key]]));
 export const source="https://www.powerbreezebd.com/products/";
 
