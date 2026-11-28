@@ -1,3 +1,5 @@
+import { additions } from './expansion';
+
 export type Reference={brand:string;summary:string;facts:string[][];links:string[][];table:{headers:string[];rows:string[][]}|null;note:string};
 export const reference:Record<string,Reference>={
   "transformers": {
@@ -406,3 +408,14 @@ export const reference:Record<string,Reference>={
     "note": ""
   }
 };
+
+for (const product of additions) {
+  reference[product.slug] = {
+    brand: 'Graphene Power Engineering',
+    summary: product.description,
+    facts: product.facts,
+    links: [],
+    table: null,
+    note: 'Final equipment selection depends on site conditions and project requirements.',
+  };
+}

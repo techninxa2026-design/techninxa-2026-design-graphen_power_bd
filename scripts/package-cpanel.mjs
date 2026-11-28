@@ -26,8 +26,10 @@ const required=['index.html','404.html','.htaccess','robots.txt','sitemap.xml','
 for(const p of required)if(!names.has(p))fail('Missing required file: '+p);
 const sitemap=await readFile(join(dist,'sitemap.xml'),'utf8');
 const routes=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(x=>new URL(x[1]));
-if(routes.length!==20)fail('Expected 20 public routes, got '+routes.length);
 const routeFile=u=>decodeURIComponent(u.pathname).replace(/^\//,'')+(u.pathname.endsWith('/')?'index.html':'');
+const publicPages=paths.filter(p=>rel(p).endsWith('index.html')).map(rel);
+const indexedPages=new Set(routes.map(routeFile));
+if(routes.length!==publicPages.length||routes.length!==indexedPages.size||publicPages.some(p=>!indexedPages.has(p)))fail('Sitemap must list each public page exactly once.');
 for(const u of routes){if(u.origin!==origin||!names.has(routeFile(u)))fail('Invalid sitemap route: '+u.href);}
 const pdfs=paths.filter(p=>rel(p).startsWith('catalogues/')&&p.endsWith('.pdf'));
 if(pdfs.length!==13)fail('Expected 13 catalogues, got '+pdfs.length);
@@ -45,6 +47,12 @@ for(const p of paths.filter(p=>p.endsWith('.html'))){
   const n=decodeURIComponent(u.pathname).replace(/^\//,'');
   if(!names.has(n)&&!names.has(n.replace(/\/$/,'')+'/index.html')&&!names.has(n+'index.html')&&!(n===''&&names.has('index.html')))issues.add(rel(p)+' -> '+raw);
   links++;
+ }
+ for(const m of html.matchAll(/\bsrcset\s*=\s*["']([^"']+)["']/gi)){
+  for(const image of m[1].split(',')){
+   const src=image.trim().split(/\s+/)[0];
+   if(src.startsWith('/')&&!names.has(decodeURIComponent(src.slice(1))))issues.add(rel(p)+' -> '+src);
+  }
  }
  if(!html.includes('Graphene Power Engineering'))issues.add(rel(p)+' -> company identity missing');
 }

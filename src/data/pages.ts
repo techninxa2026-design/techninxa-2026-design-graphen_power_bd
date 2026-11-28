@@ -1,9 +1,12 @@
+import { company } from './company';
+import { engineeringServices } from './expansion';
+
 export const pages = [
   {
     "slug": "about",
     "label": "Company",
     "heading": "Engineering with purpose.",
-    "intro": "Founded in 2014 and based in Dhaka, Bangladesh, Graphene Power Engineering (GPE) is a pioneering power solutions venture established by a team of highly experienced professional engineers. Backed by over a decade of industry expertise, the company is committed to delivering comprehensive power engineering and distribution solutions with a forward-thinking, sustainable approach.",
+    "intro": company.profile,
     "sections": [
       [
         "Our beginnings",
@@ -11,16 +14,18 @@ export const pages = [
       ],
       [
         "Our expertise",
-        "Comprehensive power engineering and distribution solutions, backed by over a decade of industry expertise."
+        "Our engineers help clients define load requirements and select equipment for substations, standby power, distribution, industrial machinery and thermal systems."
       ],
       [
         "Our approach",
-        "A forward-thinking, sustainable approach to industrial power solutions."
+        "We start with the site and how it operates. Grid availability, backup priorities and the installation environment inform equipment selection and the scope of engineering work."
       ],
       [
         "Our portfolio",
-        "Explore electrical, mechanical and thermal engineering equipment, including power distribution, industrial machinery and thermal systems."
-      ]
+        "Explore electrical, mechanical and thermal engineering equipment, including substations, standby power, solar systems, industrial machinery and thermal systems."
+      ],
+      ["Engineering and installation", "Our scope covers design, single-line diagrams, bills of quantities, resistance testing and turnkey electromechanical installation."],
+      ["Renewable energy", "We plan grid-connected, off-grid and hybrid solar projects and help specify modules, installation accessories and portable power equipment."]
     ]
   },
   {
@@ -104,7 +109,8 @@ export const pages = [
       [
         "Mechanical installation",
         "Mechanical equipment integration."
-      ]
+      ],
+      ...engineeringServices
     ]
   },
   {
@@ -128,7 +134,8 @@ export const pages = [
       [
         "HVAC & thermal systems",
         "Cooling towers, ventilation, dry coolers and heat exchangers."
-      ]
+      ],
+      ["Renewable energy", "On-grid, off-grid and hybrid solar systems, from rooftop photovoltaic arrays to portable backup power."]
     ]
   },
   {

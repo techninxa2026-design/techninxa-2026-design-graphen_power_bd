@@ -1,0 +1,228 @@
+---
+import { portfolioPhotos } from '../data/portfolio-photos';
+
+const slides = [
+  { photo: portfolioPhotos.rooftopSolar, small: '/equipment/portfolio/solar-rooftop-640.webp', title: 'Renewable energy', href: '/products/?system=Renewable%20energy' },
+  { photo: portfolioPhotos.substationTransformer, small: '/equipment/portfolio/substation-transformer-640.webp', title: 'Substations & distribution', href: '/products/substations/' },
+  { photo: portfolioPhotos.lightningTerminal, title: 'Lightning protection', href: '/products/lightning-protection/' },
+  { photo: portfolioPhotos.substationTesting, title: 'Testing & installation', href: '/services/' },
+];
+const displayNumber = (number: number) => String(number).padStart(2, '0');
+---
+<section class="hero-slider" aria-label="Featured products and services" aria-roledescription="carousel">
+  <div class="photo-outline" aria-hidden="true"></div>
+  <div class="photo-sculpture" id="hero-slides">
+    {slides.map(({ photo, small, title, href }, index) => (
+      <div class="hero-slide" data-hero-slide hidden={index > 0} role="group" aria-roledescription="slide"
+        aria-label={`${index + 1} of ${slides.length}`}>
+        <a href={href} aria-label={`Explore ${title.toLowerCase()}`}>
+          <img src={photo.src}
+            srcset={small ? `${small} 640w, ${photo.src} ${photo.width}w` : undefined}
+            sizes={small ? '(max-width: 760px) 85vw, (max-width: 1500px) 45vw, 650px' : undefined}
+            alt={photo.alt} width={photo.width} height={photo.height}
+            loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'low'} decoding="async"/>
+          <span class="hero-slide-title">
+            {title}
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 18 18 6M8 6h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    ))}
+  </div>
+  <div class="hero-slider-footer">
+    <div class="hero-slide-credits">
+      {slides.map(({ photo }, index) => (
+        <a data-hero-credit hidden={index > 0} href={photo.source} target="_blank" rel="noopener noreferrer"
+          aria-label={`Reference photo credit: ${photo.credit}`}>
+          Reference photo
+        </a>
+      ))}
+    </div>
+    <div class="hero-slide-controls" hidden>
+      <button type="button" data-direction="-1" aria-label="Previous slide" aria-controls="hero-slides">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <span data-hero-count aria-hidden="true">{displayNumber(1)} / {displayNumber(slides.length)}</span>
+      <button type="button" data-direction="1" aria-label="Next slide" aria-controls="hero-slides">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <span class="hero-slide-status" data-hero-status role="status"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const slider = document.querySelector('.hero-slider');
+  const controls = slider?.querySelector<HTMLElement>('.hero-slide-controls');
+  const count = controls?.querySelector('[data-hero-count]');
+  const status = controls?.querySelector('[data-hero-status]');
+
+  if (slider && controls && count && status) {
+    const slides = Array.from(slider.querySelectorAll<HTMLElement>('[data-hero-slide]'));
+    const credits = Array.from(slider.querySelectorAll<HTMLAnchorElement>('[data-hero-credit]'));
+    let active = 0;
+
+    const move = (direction: number) => {
+      const currentSlide = slides[active];
+      const focused = currentSlide.contains(document.activeElement) || credits[active] === document.activeElement;
+      const previous = active;
+      active = (active + direction + slides.length) % slides.length;
+
+      slides[active].hidden = false;
+      credits[active].hidden = false;
+      if (focused) slides[active].querySelector('a')?.focus();
+      slides[previous].hidden = true;
+      credits[previous].hidden = true;
+      count.textContent = String(active + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+      const title = slides[active].querySelector('.hero-slide-title')?.textContent?.trim();
+      status.textContent = `${title}, slide ${active + 1} of ${slides.length}`;
+    };
+
+    if (slides.length > 1) {
+      controls.hidden = false;
+      controls.querySelectorAll<HTMLButtonElement>('button').forEach(button => {
+        button.addEventListener('click', () => move(Number(button.dataset.direction)));
+      });
+      slider.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          move(event.key === 'ArrowLeft' ? -1 : 1);
+        }
+      });
+    }
+  }
+</script>
+
+<style>
+  .hero-slider {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-slider .photo-outline {
+    inset: 0 1% 62px 5%;
+  }
+  .hero-slider .photo-sculpture {
+    inset: 9px 3% 72px 8%;
+  }
+  .hero-slide, .hero-slide > a {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+  .hero-slide > a {
+    color: white;
+    background: var(--night);
+  }
+  .hero-slide > a::after {
+    position: absolute;
+    inset: 32% 0 0;
+    content: '';
+    background: linear-gradient(transparent 22%, #06151bd9 93%);
+    pointer-events: none;
+  }
+  .hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-slide-title {
+    position: absolute;
+    z-index: 1;
+    bottom: 13%;
+    left: 12%;
+    right: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: clamp(1.25rem, 2.3vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.04em;
+    transform: rotate(6deg);
+  }
+  .hero-slide-title svg {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid #ffffff9c;
+    border-radius: 50%;
+    transition: background .2s, color .2s;
+  }
+  .hero-slide a:hover .hero-slide-title svg,
+  .hero-slide a:focus-visible .hero-slide-title svg {
+    color: var(--night);
+    background: white;
+  }
+  .hero-slider-footer {
+    position: absolute;
+    left: 8%;
+    right: 3%;
+    bottom: 4px;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+  }
+  .hero-slide-credits a {
+    color: var(--tone-cfdbf5, #cfdbf5);
+    font-size: .75rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .hero-slide-controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background: var(--night);
+    color: white;
+    border: 1px solid #ffffff45;
+    border-radius: 100px;
+    padding: 3px;
+    font: 700 .72rem monospace;
+  }
+  .hero-slide-controls button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: #ffffff1c;
+    color: inherit;
+    cursor: pointer;
+  }
+  .hero-slide-controls button:hover { background: #ffffff36; }
+  .hero-slide-controls button:focus-visible, .hero-slide-credits a:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+  }
+  .hero-slide-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .hero-slide[hidden], .hero-slide-controls[hidden], .hero-slide-credits [hidden] { display: none; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-slide:not([hidden]) { animation: reveal-slide .32s ease-out both; }
+    @keyframes reveal-slide { from { opacity: 0; } }
+  }
+  @media (max-width: 760px) {
+    .hero-slider .photo-outline { inset: 2px 3% 63px 4%; }
+    .hero-slider .photo-sculpture { inset: 11px 6% 72px 7%; }
+    .hero-slider-footer { left: 7%; right: 13%; }
+    .hero-slide-title { left: 10%; right: 9%; font-size: clamp(1.1rem, 5vw, 1.7rem); }
+    .hero-slide-title svg { width: 35px; height: 35px; padding: 7px; }
+  }
+</style>

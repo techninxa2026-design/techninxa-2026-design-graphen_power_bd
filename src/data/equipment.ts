@@ -1,3 +1,4 @@
+import { additions } from './expansion';
 import {assets} from './photos';
 export const equipment=[
   {
@@ -1155,6 +1156,18 @@ export const equipment=[
     "number": "12.03",
     "imageMatch": "context",
     "imageFallbacks": []
-  }
+  },
+  ...additions.flatMap(product => product.variants.map((variant, index) => ({
+    id: product.slug + '-' + (index + 1),
+    name: variant.name,
+    family: product.slug,
+    familyName: product.name,
+    group: product.group,
+    asset: variant.photo,
+    source: '/products/' + product.slug + '/',
+    number: product.number + '.' + String(index + 1).padStart(2, '0'),
+    imageMatch: variant.imageMatch,
+    imageFallbacks: [],
+  })))
 ];
 export function imageFor(id:string|null){return id?assets[id]:undefined;}

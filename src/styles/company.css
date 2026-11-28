@@ -9,25 +9,28 @@
 
 /* Readable palette tints on dark navigation and footer surfaces.
    Use the same live CSS properties as the rest of the website; no extra JS. */
-.company-logo-vector{
- --logo-word:var(--tone-dce8ff,#dce8ff);
- --logo-secondary:var(--palette-secondary,#52e5ef);
- --logo-accent:var(--palette-accent,#ffab77);
- --logo-caption:var(--tone-f0f7ff,#f0f7ff);
+/* Fixed artwork colors sampled from the supplied homepage reference. */
+.company-logo-vector .logo-wordmark { fill: #bed5cc; }
+.company-logo-vector .logo-energy-primary,
+.company-logo-vector .logo-e-accent { fill: #f8d08c; }
+.company-logo-vector .logo-energy-secondary { fill: #90edc3; }
+.company-logo-vector .logo-subtitle { fill: #dae7e2; }
+
+.home-v3 .system-ribbon {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-@supports(color:color-mix(in srgb,white,black)){
- .company-logo-vector{
-  --logo-word:color-mix(in srgb,var(--palette-primary,#2449c7) 28%,white);
-  --logo-secondary:color-mix(in srgb,var(--palette-secondary,#52e5ef) 72%,white);
-  --logo-accent:color-mix(in srgb,var(--palette-accent,#ffab77) 78%,white);
-  --logo-caption:color-mix(in srgb,var(--palette-primary,#2449c7) 16%,white);
- }
+.home-v3 .system-04 {
+  background: color-mix(in srgb, var(--orange) 69%, white);
+  color: #222719;
+  border-radius: 55px 55px 12px 55px;
 }
-.company-logo-vector .logo-wordmark{fill:var(--logo-word)}
-.company-logo-vector .logo-energy-primary,.company-logo-vector .logo-e-accent{fill:var(--logo-accent)}
-.company-logo-vector .logo-energy-secondary{fill:var(--logo-secondary)}
-.company-logo-vector .logo-subtitle{fill:var(--logo-caption)}
-@media(prefers-reduced-motion:no-preference){.company-logo-vector g,.company-logo-vector path{transition:fill .18s ease}}
+.home-v3 .system-04 p, .home-v3 .system-04 h3 em { color: #444122; }
+@media (max-width: 1100px) {
+  .home-v3 .system-ribbon { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .home-v3 .system-ribbon { grid-template-columns: 1fr; }
+}
 @media(max-width:360px){.header .brand .company-logo{width:158px}}
 
 /* Centralized click-to-call contact details, responsive to the live palette. */

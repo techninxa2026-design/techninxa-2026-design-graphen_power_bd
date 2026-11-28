@@ -1,4 +1,6 @@
-export const products = [
+import { additions } from './expansion';
+
+const originalProducts = [
   {
     "slug": "transformers",
     "name": "Transformers",
@@ -281,4 +283,27 @@ export const products = [
     "number": "12"
   }
 ];
-export const groups = ['Electrical','Mechanical','Thermal'];
+
+type Product = {
+  slug: string;
+  name: string;
+  group: string;
+  description: string;
+  variants: string[];
+  specs: string[];
+  number: string;
+  catalogue?: string;
+};
+
+export const products: Product[] = [
+  ...originalProducts.map(product => ({
+    ...product,
+    catalogue: '/catalogues/graphene-' + product.slug + '.pdf',
+  })),
+  ...additions.map(({ photo, facts, variants, ...product }) => ({
+    ...product,
+    variants: variants.map(variant => variant.name),
+  })),
+];
+
+export const groups = [...new Set(products.map(product => product.group))];
