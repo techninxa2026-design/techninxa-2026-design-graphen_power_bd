@@ -29,7 +29,7 @@ const required = [
   'products/index.html', 'products/gallery/index.html',
   'brand/graphene-icon.png', 'brand/graphene-logo-standard.png',
   'brand/graphene-logo-medium.png', 'brand/graphene-logo.png',
-  '_astro/Site.BgmwTB33.css',
+  '_astro/Site.BgmwTB33.css', '_astro/Site.BVIfO6HQ.css', '_astro/about.CF21wiN3.css',
 ];
 for(const p of required)if(!names.has(p))fail('Missing required file: '+p);
 const sitemap=await readFile(join(dist,'sitemap.xml'),'utf8');

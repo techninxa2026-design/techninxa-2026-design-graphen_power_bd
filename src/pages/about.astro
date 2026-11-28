@@ -173,15 +173,16 @@ const stages = [
     min-height: 240px;
     padding: clamp(1.2rem, 4vw, 3.6rem);
     border-radius: 36px 36px 36px 9px;
-    background: radial-gradient(ellipse at top right, color-mix(in srgb, var(--blue) 65%, transparent), transparent 75%), var(--night);
-    color: #fff;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--ink);
   }
 
-  .leadership :global(.company-logo) { width: min(100%, 290px); }
-  .leadership > div { border-top: 1px solid #ffffff3b; padding-top: .9rem; }
-  .leadership-role { margin: 0 0 .4rem; color: var(--cyan); font: 700 .7rem/1.35 monospace; text-transform: uppercase; letter-spacing: .09em; }
+  .leadership :global(.company-logo) { width: min(100%, 290px); border-radius: 0; }
+  .leadership > div { border-top: 1px solid var(--line); padding-top: .9rem; }
+  .leadership-role { margin: 0 0 .4rem; color: var(--blue); font: 700 .7rem/1.35 monospace; text-transform: uppercase; letter-spacing: .09em; }
   .leadership strong { display: block; font-size: clamp(1.22rem, 2.25vw, 2rem); line-height: 1.15; letter-spacing: -.025em; }
-  .leadership span { display: block; margin-top: .45rem; color: #e1eaf0; font-size: .93rem; }
+  .leadership span { display: block; margin-top: .45rem; color: var(--muted); font-size: .93rem; }
 
   .about-section { border-top: 1px solid var(--line); }
   .capability-grid,

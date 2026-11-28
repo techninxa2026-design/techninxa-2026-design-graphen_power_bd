@@ -13,7 +13,23 @@ const scenes=[
     <div class="journey-pin">
       <div class="journey-backdrop" aria-hidden="true"><svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice"><path d="M-100 495 C120 110 370 650 660 215 S1010 110 1300 400" fill="none" stroke="var(--cyan)" stroke-width="100" opacity=".08"/><path class="journey-trace" pathLength="1" d="M-100 495 C120 110 370 650 660 215 S1010 110 1300 400" fill="none" stroke="var(--cyan)" stroke-width="2.5" opacity=".75"/><path d="M-100 530 C120 145 370 685 660 250 S1010 145 1300 435" fill="none" stroke="var(--orange)" stroke-width="1" opacity=".32"/></svg></div>
       <div class="journey-visuals" aria-hidden="true">{scenes.map((scene,i)=><div class="journey-image" data-journey-image={i}><img src={scene.photo.src} alt="" width={scene.photo.width||800} height={scene.photo.height||600} loading="lazy" decoding="async"/><span>{scene.photo.credit} / REFERENCE IMAGE</span></div>)}</div>
-      <div class="journey-chapters">{scenes.map((scene,i)=><article data-journey-chapter={i} class="journey-chapter"><div class="journey-mobile-image"><img src={scene.photo.src} alt={scene.photo.alt} width={scene.photo.width||800} height={scene.photo.height||600} loading="lazy" decoding="async"/><small>{scene.photo.credit} / REFERENCE</small></div><div class="journey-number">{scene.no} <span>/ {String(scenes.length).padStart(2,'0')}</span></div><div class="journey-label">{scene.label}</div><h3>{scene.title}</h3><p>{scene.description}</p><a href={'/products/?system='+encodeURIComponent(scene.group)}>Explore {scene.group.toLowerCase()} <span>↗</span></a></article>)}</div>
+      <div class="journey-chapters">
+        {scenes.map((scene, i) => (
+          <article data-journey-chapter={i} class="journey-chapter">
+            <div class="journey-chapter-image">
+              <img src={scene.photo.src} alt={scene.photo.alt} width={scene.photo.width || 800} height={scene.photo.height || 600} loading="lazy" decoding="async" />
+              <small>{scene.photo.credit} / REFERENCE</small>
+            </div>
+            <div class="journey-chapter-copy">
+              <div class="journey-number">{scene.no} <span>/ {String(scenes.length).padStart(2, '0')}</span></div>
+              <div class="journey-label">{scene.label}</div>
+              <h3>{scene.title}</h3>
+              <p>{scene.description}</p>
+              <a href={'/products/?system=' + encodeURIComponent(scene.group)}>Explore {scene.group.toLowerCase()} <span>↗</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
       <div class="journey-progress" aria-hidden="true"><div></div></div>
     </div>
   </div>

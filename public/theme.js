@@ -24,7 +24,18 @@ function recolor(hex,palette){
  const out=fromHsl(nh,sat,(low+high)/2).map(v=>Math.round(v*255).toString(16).padStart(2,'0')).join('');
  return '#'+out+alpha;
 }
-function apply(value){current=normalize(value);const original=keys.every(k=>current[k]===basePalette[k]);for(const t of tones){root.style.setProperty('--tone-'+t,original?'#'+t:recolor(t,current));}for(const k of keys)root.style.setProperty('--palette-'+k,current[k]);const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=original?'#101b43':recolor('101b43',current);}
+function apply(value){
+ current=normalize(value);
+ const original=keys.every(key=>current[key]===basePalette[key]);
+ const graphene=!original&&keys.every(key=>current[key]===defaults[key]);
+ root.dataset.palette=graphene?'graphene':'custom';
+ for(const tone of tones){
+  root.style.setProperty('--tone-'+tone,original?'#'+tone:recolor(tone,current));
+ }
+ for(const key of keys)root.style.setProperty('--palette-'+key,current[key]);
+ const meta=document.querySelector('meta[name="theme-color"]');
+ if(meta)meta.content=graphene?current.primary:original?'#101b43':recolor('101b43',current);
+}
 apply(current);
 function init(){const launchers=[...document.querySelectorAll('[data-theme-launch]')],dialog=document.getElementById('theme-dialog');if(!launchers.length||!dialog||typeof dialog.showModal!=='function')return;let activeLauncher;const inputs=[...dialog.querySelectorAll('[data-theme-color]')],presets=[...dialog.querySelectorAll('[data-preset]')],status=dialog.querySelector('.theme-status');function sync(){for(const input of inputs){const key=input.dataset.themeColor;input.value=current[key];const label=dialog.querySelector('[data-hex="'+key+'"]');if(label)label.textContent=current[key].toUpperCase();}for(const b of presets)b.setAttribute('aria-pressed',String(b.dataset.preset===keys.map(k=>current[k]).join(',')));}function save(next){apply(next);sync();try{localStorage.setItem(KEY,JSON.stringify(current));if(status)status.textContent='Palette saved on this browser.';}catch{if(status)status.textContent='Palette applied; browser storage is unavailable.';}}for(const launcher of launchers){launcher.hidden=false;launcher.addEventListener('click',()=>{activeLauncher=launcher;sync();dialog.showModal();});}dialog.querySelector('.theme-close').addEventListener('click',()=>dialog.close());dialog.querySelector('.theme-done').addEventListener('click',()=>dialog.close());dialog.querySelector('.theme-reset').addEventListener('click',()=>save(defaults));dialog.addEventListener('close',()=>{if(activeLauncher?.getClientRects().length)activeLauncher.focus();});dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});let frame=0;for(const input of inputs){input.addEventListener('input',()=>{const next={...current,[input.dataset.themeColor]:input.value};cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>save(next));});input.addEventListener('change',()=>{cancelAnimationFrame(frame);save({...current,[input.dataset.themeColor]:input.value});});}for(const b of presets)b.addEventListener('click',()=>{cancelAnimationFrame(frame);save(Object.fromEntries(keys.map((k,i)=>[k,b.dataset.preset.split(',')[i]])));});window.addEventListener('storage',e=>{if(e.key===KEY||e.key===null){try{apply(normalize(JSON.parse(e.newValue||'null')));sync();}catch{}}});sync();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
