@@ -1,4 +1,5 @@
 ---
+import { brand } from '../data/brand';
 import { company } from '../data/company';
 
 interface Props {
@@ -7,15 +8,15 @@ interface Props {
 }
 
 const { className, sizes = '(max-width: 760px) 116px, 138px' } = Astro.props;
-const standardLogo = '/brand/graphene-logo-standard.png';
+const { src, width, height } = brand.logoFallback;
 ---
 <img
   class:list={['company-logo', className]}
-  src={standardLogo}
-  srcset={`${standardLogo} 239w, /brand/graphene-logo-medium.png 478w, ${company.logo} 956w`}
+  src={src}
+  srcset={brand.logoSrcset}
   sizes={sizes}
-  width="239"
-  height="109"
+  width={width}
+  height={height}
   alt={company.name}
   decoding="async"
 />
