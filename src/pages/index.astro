@@ -21,24 +21,7 @@ const areas=[
 ---
 <Site title="Energy in motion">
 <div class="home-v3">
-<section class="motion-hero" id="overview" data-rail="Home" aria-labelledby="hero-title">
-  <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
-  <svg class="hero-stream" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="flow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--tone-254acb, #254acb)"/><stop offset="1" stop-color="var(--tone-00c5d4, #00c5d4)"/></linearGradient></defs><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="url(#flow)" stroke-width="155" opacity=".16" fill="none"/><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".4" fill="none"/><path d="M-170 820 C250 1010 425 300 820 330 S1260 830 1620 100" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".18" fill="none"/></svg>
-  <div class="wrap motion-hero-inner">
-    <div class="motion-copy">
-      <div class="motion-label"><span class="pulse-dot"></span> EST. 2014 / BANGLADESH <span class="label-line"></span> 01</div>
-      <h1 id="hero-title" aria-label="Energy in motion."><span class="sequence-line" aria-hidden="true"><span class="sequence-word">Energy</span></span><span class="sequence-line" aria-hidden="true"><span class="sequence-word">in <em>motion<span>.</span></em></span></span></h1>
-      <div class="motion-description"><span class="mini-orbit" aria-hidden="true">✳</span><p>Power distribution, industrial machinery and renewable energy for businesses across Bangladesh.</p></div>
-      <div class="motion-actions"><a class="action-primary" href="/products/">Discover our equipment <span aria-hidden="true">→</span></a><a class="action-secondary" href="/services/">Engineering scope <span aria-hidden="true">→</span></a></div>
-    </div>
-    <div class="motion-visual" data-energy-pointer><div class="hero-lens" aria-hidden="true"></div><svg class="sequence-circuit" viewBox="0 0 600 520" aria-hidden="true"><g fill="none" stroke="var(--cyan)" stroke-width="1.3" stroke-linecap="round"><path data-circuit d="M18 340H74L135 278H200"/><path data-circuit d="M330 25H432L490 84H576"/><path data-circuit d="M385 470H465L528 407H585"/></g><g fill="var(--orange)"><circle class="circuit-node" cx="18" cy="340" r="4"/><circle class="circuit-node" cx="200" cy="278" r="4"/><circle class="circuit-node" cx="330" cy="25" r="4"/><circle class="circuit-node" cx="576" cy="84" r="4"/><circle class="circuit-node" cx="385" cy="470" r="4"/><circle class="circuit-node" cx="585" cy="407" r="4"/></g></svg><div class="sequence-matrix" aria-hidden="true">{Array.from({length:48},(_,i)=><i data-dot={i}></i>)}</div>
-      <HeroSlider />
-      <div class="visual-number" aria-hidden="true">G<span>+</span></div>
-    </div>
-  </div>
-  <div class="wrap hero-index"><a href="#explore">SCROLL TO EXPLORE <span>↓</span></a><span>ELECTRICAL / MECHANICAL / THERMAL / RENEWABLE</span><span>{products.length} EQUIPMENT FAMILIES</span></div>
-  <svg class="hero-wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path class="sequence-wave" fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 94 C230 160 445 6 690 52 S1120 166 1440 22 V140 H0Z"/><path class="sequence-wave-target" fill="none" opacity="0" d="M0 60 C230 8 445 148 690 86 S1120 4 1440 58 V140 H0Z"/></svg>
-</section>
+<HeroSlider />
 <section class="systems-intro wrap" id="explore" data-rail="Systems">
   <div class="section-kicker"><span>01</span> / THE INDUSTRIAL ECOSYSTEM</div>
   <div class="intro-layout" data-motion><h2>Built to<br/><em>connect.</em></h2><div><p>Founded in Dhaka in 2014, Graphene Power Engineering designs and integrates industrial power systems, from substations and standby generators to on-grid, off-grid and hybrid solar.</p><p>Our engineering work spans single-line diagrams, equipment selection, resistance testing and turnkey electromechanical installation. Our head office is in Mirpur and our factory is in West Joydevpur, Gazipur.</p><a class="ink-link" href="/about/">Discover our company <span>↗</span></a></div></div>
@@ -79,15 +62,15 @@ tabs.forEach(tab=>tab.addEventListener('click',()=>{const group=tab.dataset.home
   .system-tile p { margin: 0; }
   .story-credit:focus-visible { outline: 2px solid var(--cyan); }
   @media (max-width: 760px) {
-    .motion-visual { height: clamp(285px, 77vw, 475px); }
     .story-orbit { inset-inline-end: 8%; }
-    .motion-hero-inner { gap: 18px; }
-    .motion-visual { margin-top: 0; }
-    .motion-description { margin-block: 17px; }
-    .motion-copy h1 { font-size: clamp(3.4rem, 13vw, 5.5rem); }
-    .motion-actions { column-gap: .65rem; row-gap: .45rem; }
-    .motion-actions a { font-size: .78rem; white-space: nowrap; }
-    .motion-actions .action-primary > span { width: 31px; height: 31px; }
-    .motion-actions .action-primary { padding-left: .9rem; }
+    :global(body:has(.home-hero) .energy-rail:has(.rail-stop:first-child[aria-current])) { display: none; }
+  }
+  @media (max-width: 680px) and (max-height: 760px) {
+    :global(body:has(.home-hero) .theme-launch:has(~ .energy-rail .rail-stop:first-child[aria-current])) {
+      top: 84px;
+      right: 15px;
+      bottom: auto;
+      left: auto;
+    }
   }
 </style>
