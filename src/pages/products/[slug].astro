@@ -3,16 +3,139 @@ import Site from '../../layouts/Site.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import EquipmentPhoto from '../../components/EquipmentPhoto.astro';
 import VisualGallery from '../../components/VisualGallery.astro';
-import {products} from '../../data/catalog';
-import {reference} from '../../data/reference';
-export function getStaticPaths(){return products.map(product=>({params:{slug:product.slug},props:{product}}));}
-const {product:p}=Astro.props;
-const info=reference[p.slug];
-const related=products.filter(x=>x.group===p.group&&x.slug!==p.slug).slice(0,3);
+import { products, type Product } from '../../data/catalog';
+import { categoryUrl, serviceCategory } from '../../data/categories';
+import { reference } from '../../data/reference';
+
+export function getStaticPaths() {
+  return products.map(product => ({ params: { slug: product.slug }, props: { product } }));
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const isService = product.group === serviceCategory;
+const info = reference[product.slug];
+const related = products.filter(item => item.group === product.group && item.slug !== product.slug).slice(0, 3);
+const inquiry = '/contact/?product=' + product.slug;
 ---
-<Site title={p.name} description={p.description}>
-<section class="detail-head" id="overview" data-rail="Overview"><div class="wrap"><div class="breadcrumbs"><a href="/">Home</a> / <a href="/products/">Products</a> / {p.name}</div><div class="detail-grid"><div><div class="eyebrow">{p.number} / {p.group} SYSTEMS</div><h1>{p.name}<em>.</em></h1><p>{info.summary}</p><div class="ref-brand">EQUIPMENT PORTFOLIO / {info.brand}</div><a class="button dark" href={'/contact/?product='+p.slug}>Prepare equipment inquiry ↗</a></div><div class="detail-art"><EquipmentPhoto slug={p.slug} name={p.name}/><small>REFERENCE IMAGERY / NOT VERIFIED GRAPHENE INVENTORY</small></div></div></div></section>
-<section class="wrap section reference-panel" id="technical" data-rail="Technical" data-motion><div class="section-kicker"><span>01</span> / TECHNICAL REFERENCE</div><h2>Know the equipment<em>.</em></h2><p class="ref-intro">Indicative engineering information for equipment selection. Confirm availability, ratings and compliance before ordering.</p><div class="fact-grid">{info.facts.map(([label,value])=><article><small>{label}</small><strong>{value}</strong></article>)}</div>{info.table&&<div class="ref-table" tabindex="0" role="region" aria-label="Reference specification table"><table><thead><tr>{info.table.headers.map(h=><th scope="col">{h}</th>)}</tr></thead><tbody>{info.table.rows.map(row=><tr>{row.map((v,i)=>i===0?<th scope="row">{v}</th>:<td>{v}</td>)}</tr>)}</tbody></table></div>}{info.note&&<p class="ref-note">{info.note}</p>}</section>
-<section class="wrap section variant-showcase" id="equipment-gallery" data-rail="Gallery"><div class="section-heading"><div><div class="section-kicker"><span>02</span> / EQUIPMENT IMAGES</div><h2>Explore each<br/><em>configuration.</em></h2></div><a class="text-link" href="/products/gallery/">All equipment ↗</a></div><VisualGallery family={p.slug}/></section><section class="wrap section detail-body" id="configurations" data-rail="Configurations" data-motion><div><div class="eyebrow">02 / CONFIGURATIONS</div><h2>Explore the range.</h2><div class="variant-list">{p.variants.map((v,i)=><div><small>{String(i+1).padStart(2,'0')}</small><strong>{v}</strong></div>)}</div></div><div><div class="eyebrow">03 / TECHNICAL SELECTION</div><h2>What to specify.</h2><p>Collect these project-specific parameters before requesting a model and quotation.</p><dl class="spec-list">{p.specs.map(s=><div><dt>{s}</dt><dd>Confirm for selected model</dd></div>)}</dl></div></section>
-<section class="wrap reference-download" id="documents" data-rail="Documents" data-motion><div><div class="section-kicker"><span>04</span> / GRAPHENE DOCUMENT LIBRARY</div><h2>Take it with you.</h2><p>Download our own equipment selection brochure, including configurations, indicative specifications and selection requirements.</p></div><div class="ref-links"><a href={'/catalogues/graphene-'+p.slug+'.pdf'} download>Graphene {p.name} catalogue · PDF <span>↓</span></a><a href="/catalogues/graphene-complete-portfolio.pdf" download>Complete Graphene product portfolio · PDF <span>↓</span></a><a href="/resources/">View all Graphene catalogues <span>↗</span></a></div></section>
-<section class="wrap section" id="related" data-rail="Related"><div class="section-heading"><h2>Related equipment.</h2><a class="text-link" href="/products/">All products ↗</a></div><div class="product-grid">{related.map(product=><ProductCard {product}/>)}</div></section></Site>
+
+<Site title={product.name} description={product.description}>
+  <section class="detail-head" id="overview" data-rail="Overview">
+    <div class="wrap">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> / <a href={categoryUrl(product.group)}>{product.group}</a> / {product.name}
+      </div>
+      <div class:list={['detail-grid', isService && 'service-detail']}>
+        <div>
+          <div class="eyebrow">{product.group}</div>
+          <h1>{product.name}<em>.</em></h1>
+          <p>{info.summary}</p>
+          <div class="ref-brand">{isService ? 'ENGINEERING SERVICE' : 'EQUIPMENT PORTFOLIO'} / {info.brand}</div>
+          <a class="button dark" href={inquiry}>Prepare {isService ? 'service' : 'equipment'} inquiry ↗</a>
+        </div>
+        <div class="detail-art">
+          <EquipmentPhoto slug={product.slug} name={product.name} />
+          <small>{isService ? 'REFERENCE IMAGE / EXAMPLE OF THE WORK' : 'REFERENCE IMAGERY / NOT VERIFIED GRAPHENE INVENTORY'}</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reference-panel" id="technical" data-rail="Technical" data-motion>
+    <div class="section-kicker"><span>01</span> / {isService ? 'SERVICE SCOPE' : 'TECHNICAL REFERENCE'}</div>
+    <h2>{isService ? 'What the work covers' : 'Know the equipment'}<em>.</em></h2>
+    <p class="ref-intro">{isService ? 'Use this scope to prepare your project requirements.' : 'Indicative engineering information for equipment selection. Confirm availability, ratings and compliance before ordering.'}</p>
+    <div class="fact-grid">{info.facts.map(([label, value]) => <article><small>{label}</small><strong>{value}</strong></article>)}</div>
+    {info.table && (
+      <div class="ref-table" tabindex="0" role="region" aria-label="Reference specification table">
+        <table>
+          <thead><tr>{info.table.headers.map(header => <th scope="col">{header}</th>)}</tr></thead>
+          <tbody>{info.table.rows.map(row => <tr>{row.map((value, i) => i === 0 ? <th scope="row">{value}</th> : <td>{value}</td>)}</tr>)}</tbody>
+        </table>
+      </div>
+    )}
+    {info.note && <p class="ref-note">{info.note}</p>}
+  </section>
+
+  <section class="wrap section variant-showcase" id="equipment-gallery" data-rail="Gallery">
+    <div class="section-heading">
+      <div>
+        <div class="section-kicker"><span>02</span> / REFERENCE IMAGES</div>
+        <h2>{isService ? 'See examples of the' : 'Explore each'}<br/><em>{isService ? 'engineering work.' : 'configuration.'}</em></h2>
+      </div>
+      <a class="text-link" href="/products/gallery/">Visual catalogue ↗</a>
+    </div>
+    <VisualGallery family={product.slug} />
+  </section>
+
+  <section class="wrap section detail-body" id="configurations" data-rail="Configurations" data-motion>
+    <div>
+      <div class="eyebrow">03 / {isService ? 'WORK OPTIONS' : 'CONFIGURATIONS'}</div>
+      <h2>{isService ? 'Work available.' : 'Explore the range.'}</h2>
+      <div class="variant-list">
+        {product.variants.map((variant, i) => <div><small>{String(i + 1).padStart(2, '0')}</small><strong>{variant}</strong></div>)}
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow">04 / {isService ? 'PROJECT BRIEF' : 'TECHNICAL SELECTION'}</div>
+      <h2>{isService ? 'What to share.' : 'What to specify.'}</h2>
+      {isService ? (
+        <ul class="service-specs">{product.specs.map(spec => <li>{spec}</li>)}</ul>
+      ) : (
+        <>
+          <p>Collect these project-specific parameters before requesting a model and quotation.</p>
+          <dl class="spec-list">{product.specs.map(spec => <div><dt>{spec}</dt><dd>Confirm for selected model</dd></div>)}</dl>
+        </>
+      )}
+    </div>
+  </section>
+
+  <section class="wrap reference-download" id="documents" data-rail={isService ? 'Inquiry' : 'Documents'} data-motion>
+    <div>
+      <div class="section-kicker"><span>05</span> / {isService ? 'PROJECT INQUIRY' : 'GRAPHENE DOCUMENT LIBRARY'}</div>
+      <h2>{isService ? 'Plan your project.' : 'Take it with you.'}</h2>
+      <p>{isService ? 'Prepare a brief with the work required, site details and project timeline.' : product.catalogue ? 'Download the equipment selection guide and technical requirements.' : 'Use the technical guide above to prepare an inquiry for equipment documentation.'}</p>
+    </div>
+    <div class="ref-links">
+      {isService ? (
+        <>
+          <a href={inquiry}>Prepare a service inquiry <span>↗</span></a>
+          <a href="/services/#engineering-services">View all engineering services <span>↗</span></a>
+        </>
+      ) : (
+        <>
+          {product.catalogue ? <a href={product.catalogue} download>Graphene {product.name} catalogue · PDF <span>↓</span></a> : <a href={inquiry}>Prepare a documentation inquiry ↗</a>}
+          <a href="/catalogues/graphene-complete-portfolio.pdf" download>Original equipment portfolio · PDF <span>↓</span></a>
+          <a href="/resources/">View all Graphene catalogues <span>↗</span></a>
+        </>
+      )}
+    </div>
+  </section>
+
+  <section class="wrap section" id="related" data-rail="Related">
+    <div class="section-heading">
+      <h2>Related {isService ? 'services' : 'equipment'}.</h2>
+      <a class="text-link" href={categoryUrl(product.group)}>View {product.group.toLowerCase()} ↗</a>
+    </div>
+    <div class="product-grid">{related.map(item => <ProductCard product={item} />)}</div>
+  </section>
+</Site>
+
+<style>
+  .detail-grid h1 { overflow-wrap: anywhere; }
+  .service-detail h1 { font-size: clamp(2.55rem, 5.8vw, 6.25rem); }
+  .service-specs {
+    display: grid;
+    gap: 0;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .service-specs li {
+    padding: .9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+</style>

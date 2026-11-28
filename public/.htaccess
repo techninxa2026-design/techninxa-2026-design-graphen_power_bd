@@ -1,3 +1,10 @@
 # Graphene Power Engineering - static site at the domain document root
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
+
+# Revalidate pages that link to build-specific CSS, scripts and images.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

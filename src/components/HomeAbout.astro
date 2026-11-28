@@ -1,0 +1,125 @@
+---
+import { company } from '../data/company';
+---
+
+<section class="home-about" aria-labelledby="home-about-title">
+  <div class="about-summary">
+    <p class="about-label">About {company.name}</p>
+    <h2 id="home-about-title">Built to <em>connect.</em></h2>
+    <dl class="about-facts">
+      <div><dt>Established</dt><dd>{company.founded}</dd></div>
+      <div><dt>Head office</dt><dd>{company.officeLocation}</dd></div>
+      <div><dt>Factory</dt><dd>{company.factoryAddress[1]}</dd></div>
+    </dl>
+  </div>
+
+  <div class="about-details">
+    <p class="about-lead">Graphene Power Engineering helps industrial and commercial teams in Bangladesh plan power, backup and facility systems together.</p>
+    <div class="about-item">
+      <h3>Equipment and systems</h3>
+      <p>Our catalogue covers substations, switchgear, busbar trunking and standby generation, alongside industrial cooling, ventilation and machinery. We also support on-grid, off-grid and hybrid solar projects.</p>
+    </div>
+    <div class="about-item">
+      <h3>Engineering support</h3>
+      <p>Work can start with a single-line diagram, equipment schedule or bill of quantities. Our services also cover insulation and earth resistance testing, standards implementation and turnkey electromechanical installation.</p>
+    </div>
+    <a class="ink-link" href="/about/">Discover our company <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<style>
+  .home-about {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(1.5rem, 5vw, 4.5rem);
+    align-items: stretch;
+    margin-bottom: clamp(2.25rem, 6vw, 5rem);
+  }
+
+  .about-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(1rem, 2vw, 2.25rem);
+    padding: clamp(1.25rem, 3.1vw, 3rem);
+    border: 1px solid var(--line);
+    border-radius: 37px 37px 37px 10px;
+    background: color-mix(in srgb, var(--cream) 92%, var(--cyan));
+  }
+
+  .about-label,
+  .about-facts dt {
+    color: var(--muted);
+    font: 700 .72rem/1.4 monospace;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+  }
+
+  .about-summary h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(3.1rem, 6.8vw, 7.25rem);
+    letter-spacing: -.077em;
+    line-height: .9;
+    overflow-wrap: anywhere;
+  }
+
+  .about-summary h2 em {
+    display: block;
+    color: var(--blue);
+  }
+
+  .about-facts {
+    display: grid;
+    gap: .75rem;
+    margin: 0;
+    border-top: 1px solid var(--line);
+    padding-top: .85rem;
+  }
+
+  .about-facts div {
+    display: grid;
+    grid-template-columns: minmax(6rem, .42fr) minmax(0, 1fr);
+    gap: .55rem;
+    align-items: baseline;
+  }
+
+  .about-facts dd {
+    margin: 0;
+    color: var(--ink);
+    font-size: .92rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .about-details {
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    gap: 1.1rem;
+  }
+
+  .about-details p { margin: 0; max-width: 64ch; }
+  .about-details .about-lead {
+    max-width: 40ch;
+    color: var(--ink);
+    font-size: clamp(1.125rem, 2.1vw, 1.625rem);
+    font-weight: 700;
+    line-height: 1.32;
+    letter-spacing: -.023em;
+  }
+
+  .about-item {
+    border-left: 2px solid color-mix(in srgb, var(--blue) 45%, var(--line));
+    padding-left: .9rem;
+  }
+
+  .about-item h3 { margin: 0 0 .3rem; font-size: 1.05rem; letter-spacing: -.018em; }
+  .about-item p { color: var(--muted); font-size: .96rem; line-height: 1.63; }
+  .about-details .ink-link { min-height: 44px; align-self: start; }
+
+  @media (max-width: 760px) {
+    .home-about { grid-template-columns: minmax(0, 1fr); }
+    .about-summary h2 { font-size: clamp(3rem, 12vw, 5.25rem); }
+  }
+</style>

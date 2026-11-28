@@ -1,36 +1,106 @@
-/* Responsive, transparent vector adaptation of the company-supplied identity. */
-.company-logo{display:block;width:220px;height:auto;max-width:100%;flex-shrink:0;overflow:visible}
-.header .brand{flex:0 0 auto;max-width:220px;gap:0;letter-spacing:normal}.header .brand .company-logo{width:clamp(175px,14vw,220px);height:auto;max-height:60px}
-.footer .brand .company-logo{width:252px;max-height:none}.company-address{display:grid;gap:5px;font-style:normal;line-height:1.5;font-size:14px;overflow-wrap:anywhere}.company-address strong{font-size:15px}.company-address-compact{margin-top:18px;color:var(--tone-d0dcf5,#d0dcf5)}.company-address-compact strong{color:white}
-.company-profile{margin-top:40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:14px}.company-profile-logo,.company-profile-facts,.company-profile-location{border-radius:32px 32px 32px 10px;padding:30px;border:1px solid var(--line)}.company-profile-logo{background:var(--night);display:flex;flex-direction:column;gap:20px;align-items:flex-start;justify-content:center}.company-profile-logo .company-logo{width:min(100%,390px)}.company-profile-logo>span,.company-profile-facts small,.company-profile-location>small{font:700 11px monospace;letter-spacing:.08em}.company-profile-logo>span{color:var(--cyan)}.company-profile-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:16px;background:var(--tone-f8f8f5,#f8f8f5)}.company-profile-facts>div{display:flex;flex-direction:column;gap:10px;min-width:0}.company-profile-facts small,.company-profile-location>small{color:var(--muted)}.company-profile-facts strong{font-size:clamp(24px,3vw,43px);line-height:1;letter-spacing:-.06em;color:var(--blue);overflow-wrap:anywhere}.company-profile-facts span{font-size:13px;color:var(--muted)}.company-profile-location{grid-column:1/-1;background:var(--tone-e8edff,#e8edff);display:grid;grid-template-columns:1fr 1.5fr auto;gap:18px;align-items:center}.company-profile-location .text-link{white-space:normal}.contact-office{margin-top:25px;padding:25px;border:1px solid var(--line);border-radius:28px 28px 28px 8px;background:var(--tone-f8f8f5,#f8f8f5)}.contact-office h3{font-size:27px;letter-spacing:-.04em;margin:12px 0}.nav-curtain-content .curtain-company-logo{width:min(320px,78vw)}
-@media(max-width:1250px){.header .brand .company-logo{width:188px}.header .brand{max-width:188px}}
-@media(max-width:1050px){.header .brand .company-logo{width:192px}.header .brand{max-width:192px}}
-@media(max-width:760px){.header .brand .company-logo{width:clamp(160px,48vw,194px);max-height:49px}.header .brand{max-width:194px}.company-profile{grid-template-columns:1fr;margin-top:24px}.company-profile-logo,.company-profile-facts,.company-profile-location{padding:22px;border-radius:25px 25px 25px 8px}.company-profile-location{grid-template-columns:1fr}.company-profile-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.company-profile-facts strong{font-size:clamp(21px,5vw,30px)}.company-profile-facts small{font-size:9px}.footer .brand .company-logo{width:190px}}
+/* A continuous white navigation surface matches the supplied wordmark. */
+.company-logo {
+  display: block;
+  width: 220px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+}
 
-/* Readable palette tints on dark navigation and footer surfaces.
-   Use the same live CSS properties as the rest of the website; no extra JS. */
-.company-logo-vector{
- --logo-word:var(--tone-dce8ff,#dce8ff);
- --logo-secondary:var(--palette-secondary,#52e5ef);
- --logo-accent:var(--palette-accent,#ffab77);
- --logo-caption:var(--tone-f0f7ff,#f0f7ff);
+.header {
+  --nav-text: color-mix(in srgb, var(--palette-primary) 42%, #0c1426);
+  --nav-border: color-mix(in srgb, var(--palette-primary) 16%, #fff);
+  --nav-hover: color-mix(in srgb, var(--palette-primary) 8%, #fff);
+  --nav-action: color-mix(in srgb, var(--palette-secondary) 36%, #0b1429);
+  color: var(--nav-text);
 }
-@supports(color:color-mix(in srgb,white,black)){
- .company-logo-vector{
-  --logo-word:color-mix(in srgb,var(--palette-primary,#2449c7) 28%,white);
-  --logo-secondary:color-mix(in srgb,var(--palette-secondary,#52e5ef) 72%,white);
-  --logo-accent:color-mix(in srgb,var(--palette-accent,#ffab77) 78%,white);
-  --logo-caption:color-mix(in srgb,var(--palette-primary,#2449c7) 16%,white);
- }
+
+[data-palette="graphene"] .header {
+  --nav-action: var(--palette-secondary);
 }
-.company-logo-vector .logo-wordmark{fill:var(--logo-word)}
-.company-logo-vector .logo-energy-primary,.company-logo-vector .logo-e-accent{fill:var(--logo-accent)}
-.company-logo-vector .logo-energy-secondary{fill:var(--logo-secondary)}
-.company-logo-vector .logo-subtitle{fill:var(--logo-caption)}
-@media(prefers-reduced-motion:no-preference){.company-logo-vector g,.company-logo-vector path{transition:fill .18s ease}}
-@media(max-width:360px){.header .brand .company-logo{width:158px}}
+
+.header .nav {
+  background: #fff;
+  border-color: var(--nav-border);
+  box-shadow: 0 12px 36px #0c14261f, 0 1px 3px #0c142616;
+  backdrop-filter: none;
+}
+
+.header .nav > nav {
+  background: transparent;
+  border-color: transparent;
+}
+
+.header .nav > nav > a:hover,
+.header .mega > summary:hover,
+.header .mega[open] > summary {
+  background: var(--nav-hover);
+  color: var(--nav-text);
+}
+
+.header :is(a, button, summary):focus-visible {
+  outline-color: var(--nav-text);
+}
+
+.header :is(.theme-launch, .menu-toggle) {
+  background: var(--nav-hover);
+  border-color: var(--nav-border);
+  color: var(--nav-text);
+}
+
+.header .menu-toggle span {
+  background: currentColor;
+}
+
+.header .brand {
+  flex: 0 0 auto;
+  gap: 0;
+}
+
+.header .brand .company-logo {
+  width: 150px;
+  border-radius: 0;
+}
+
+.footer {
+  background: #fff;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+}
+
+.footer .brand .company-logo {
+  width: 240px;
+  border-radius: 0;
+}
+
+.footer h4,
+.footer a:hover {
+  color: var(--blue);
+}
+
+.footer-main > div > a:not(.brand),
+.footer-bottom,
+.footer .company-address-compact {
+  color: var(--muted);
+}
+
+.footer .company-address-compact strong {
+  color: var(--ink);
+}
+
+.footer-bottom {
+  border-color: var(--line);
+}
+
+@media (max-width: 760px) {
+  .header .brand .company-logo { width: 120px; }
+  .footer .brand .company-logo { width: 190px; }
+}
+
+.company-address{display:grid;gap:5px;font-style:normal;line-height:1.5;font-size:14px;overflow-wrap:anywhere}.company-address strong{font-size:15px}.company-address-compact{margin-top:18px}
+.contact-office{margin-top:25px;padding:25px;border:1px solid var(--line);border-radius:28px 28px 28px 8px;background:var(--tone-f8f8f5,#f8f8f5)}.contact-office h3{font-size:27px;letter-spacing:-.04em;margin:12px 0}.nav-curtain-content .curtain-company-logo{width:min(320px,78vw)}
 
 /* Centralized click-to-call contact details, responsive to the live palette. */
-.company-phone{display:inline-flex;align-items:center;gap:9px;width:fit-content;max-width:100%;font-weight:700;font-size:14px;line-height:1.35;white-space:nowrap;border-radius:100px;padding:10px 14px;color:var(--ink);background:var(--tone-e8edff,#e8edff);border:1px solid var(--line);transition:background .22s,color .22s,border-color .22s}.company-phone svg{flex-shrink:0}.company-phone:hover{background:var(--cyan);color:var(--night);border-color:var(--cyan)}.company-address .company-phone{margin-top:9px}.footer .company-phone{color:var(--cyan);background:transparent;border-color:var(--darkline)}.footer .company-phone:hover{color:var(--night);background:var(--cyan)}.nav-contact-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex-shrink:0}.header .nav-phone{padding:1px 8px;border:0;background:transparent;color:var(--cyan);font-size:12px;min-height:20px}.header .nav-phone svg{width:13px;height:13px}.header .nav-phone:hover{color:var(--orange)}.header .nav-contact-actions .nav-cta{min-height:35px;padding:8px 16px;gap:12px;font-size:12px}.mobile-nav .mobile-contact-phone{display:inline-flex;align-items:center;gap:9px;color:var(--night);background:var(--cyan);padding:12px 16px;margin-top:6px}
-@media(max-width:1050px){.nav-contact-actions{margin-left:auto}.header .nav-phone{width:42px;height:42px;justify-content:center;padding:0;border:1px solid var(--darkline);background:var(--night)}.header .nav-phone svg{width:20px;height:20px}.header .nav-phone span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.header .nav-contact-actions .nav-cta{display:none}}@media(max-width:360px){.header .nav{gap:8px}.header .nav-phone{width:36px;height:36px}}
+.company-phone{display:inline-flex;align-items:center;gap:9px;width:fit-content;max-width:100%;font-weight:700;font-size:14px;line-height:1.35;white-space:nowrap;border-radius:100px;padding:10px 14px;color:var(--ink);background:var(--tone-e8edff,#e8edff);border:1px solid var(--line);transition:background .22s,color .22s,border-color .22s}.company-phone svg{flex-shrink:0}.company-phone:hover{background:var(--cyan);color:var(--night);border-color:var(--cyan)}.company-address .company-phone{margin-top:9px}.footer .company-phone{color:var(--ink);background:transparent;border-color:var(--line)}.footer .company-phone:hover{color:var(--ink);background:var(--paper)}.nav-contact-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex-shrink:0}.header .nav-phone{padding:1px 8px;border:0;background:transparent;color:var(--nav-action);font-size:12px;min-height:20px}.header .nav-phone svg{width:13px;height:13px}.header .nav-phone:hover{color:var(--nav-text)}.header .nav-contact-actions .nav-cta{min-height:35px;padding:8px 16px;gap:12px;font-size:12px;color:white;background:var(--nav-action)}.header .nav-contact-actions .nav-cta:hover{background:color-mix(in srgb,var(--nav-action) 82%,#0b1429)}.mobile-nav .mobile-contact-phone{display:inline-flex;align-items:center;gap:9px;color:var(--night);background:var(--cyan);padding:12px 16px;margin-top:6px}
+@media(max-width:1050px){.nav-contact-actions{margin-left:auto}.header .nav-phone{width:42px;height:42px;justify-content:center;padding:0;border:1px solid var(--nav-border);background:var(--nav-hover)}.header .nav-phone svg{width:20px;height:20px}.header .nav-phone span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.header .nav-contact-actions .nav-cta{display:none}}@media(max-width:360px){.header .nav{gap:8px}.header .nav-phone{width:36px;height:36px}}
 @media(prefers-reduced-motion:reduce){.company-phone{transition:none}}

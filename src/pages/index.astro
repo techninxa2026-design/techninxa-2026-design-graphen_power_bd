@@ -1,66 +1,50 @@
 ---
 import Site from '../layouts/Site.astro';
 import {products,groups} from '../data/catalog';
+import CategoryGrid from '../components/CategoryGrid.astro';
 import EquipmentPhoto from '../components/EquipmentPhoto.astro';
 import EnergyJourney from '../components/EnergyJourney.astro';
-import {heroPhoto,photos} from '../data/photos';
+import HeroSlider from '../components/HeroSlider.astro';
+import HomeAbout from '../components/HomeAbout.astro';
+import {pages} from '../data/pages';
+import { serviceCategory } from '../data/categories';
+import {photos} from '../data/photos';
+import {portfolioPhotos} from '../data/portfolio-photos';
 const featured = [
- {slug:'transformers',label:'01 / POWER TRANSFORMATION',copy:'Power at its source.',photo:photos.transformers},
- {slug:'electrical-panels',label:'02 / INTELLIGENT DISTRIBUTION',copy:'Control every connection.',photo:photos['electrical-panels']},
- {slug:'cooling-towers',label:'03 / THERMAL MANAGEMENT',copy:'Keep industry moving.',photo:photos['cooling-towers']}
-];
-const areas=[
- ['01','Electrical','Power distribution, protection and reliable generation.','Electrical'],
- ['02','Mechanical','Motion, compressed air and industrial processes.','Mechanical'],
- ['03','Thermal','Cooling, ventilation and precision heat transfer.','Thermal']
+ {slug:'substations',label:'ELECTRICAL INFRASTRUCTURE',copy:'Substation systems',photo:photos.substations},
+ {slug:'solar-energy',label:'RENEWABLE ENERGY',copy:'Industrial solar',photo:photos['solar-energy']},
+ {slug:'generator-controls',label:'STANDBY POWER',copy:'Generator controls',photo:photos['generator-controls']}
 ];
 ---
 <Site title="Energy in motion">
 <div class="home-v3">
-<section class="motion-hero" id="overview" data-rail="Home" aria-labelledby="hero-title">
-  <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
-  <svg class="hero-stream" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="flow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--tone-254acb, #254acb)"/><stop offset="1" stop-color="var(--tone-00c5d4, #00c5d4)"/></linearGradient></defs><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="url(#flow)" stroke-width="155" opacity=".16" fill="none"/><path d="M-150 780 C260 970 390 250 830 280 S1260 780 1610 60" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".4" fill="none"/><path d="M-170 820 C250 1010 425 300 820 330 S1260 830 1620 100" stroke="var(--tone-8ce8f1, #8ce8f1)" stroke-width="1" opacity=".18" fill="none"/></svg>
-  <div class="wrap motion-hero-inner">
-    <div class="motion-copy">
-      <div class="motion-label"><span class="pulse-dot"></span> EST. 2014 / BANGLADESH <span class="label-line"></span> 01</div>
-      <h1 id="hero-title" aria-label="Energy in motion."><span class="sequence-line" aria-hidden="true"><span class="sequence-word">Energy</span></span><span class="sequence-line" aria-hidden="true"><span class="sequence-word">in <em>motion<span>.</span></em></span></span></h1>
-      <div class="motion-description"><span class="mini-orbit" aria-hidden="true">✳</span><p>Graphene Power Engineering (GPE) connects power, machinery and thermal systems to the ambitions of modern industry.</p></div>
-      <div class="motion-actions"><a class="action-primary" href="/products/">Discover our equipment <span>↗</span></a><a class="action-secondary" href="/services/">Engineering scope <span>↗</span></a></div>
-    </div>
-    <div class="motion-visual" data-energy-pointer><div class="hero-lens" aria-hidden="true"></div><svg class="sequence-circuit" viewBox="0 0 600 520" aria-hidden="true"><g fill="none" stroke="var(--cyan)" stroke-width="1.3" stroke-linecap="round"><path data-circuit d="M18 340H74L135 278H200"/><path data-circuit d="M330 25H432L490 84H576"/><path data-circuit d="M385 470H465L528 407H585"/></g><g fill="var(--orange)"><circle class="circuit-node" cx="18" cy="340" r="4"/><circle class="circuit-node" cx="200" cy="278" r="4"/><circle class="circuit-node" cx="330" cy="25" r="4"/><circle class="circuit-node" cx="576" cy="84" r="4"/><circle class="circuit-node" cx="385" cy="470" r="4"/><circle class="circuit-node" cx="585" cy="407" r="4"/></g></svg><div class="sequence-matrix" aria-hidden="true">{Array.from({length:48},(_,i)=><i data-dot={i}></i>)}</div>
-      <div class="photo-outline" aria-hidden="true"></div><div class="photo-sculpture"><img src={heroPhoto} alt="Industrial power infrastructure, reference photograph from Powerbreeze" width="612" height="459" fetchpriority="high"/><div class="photo-shade"></div><span class="photo-caption">01 / POWER INFRASTRUCTURE <span>REFERENCE PHOTO</span></span></div>
-      <a class="orb-link" href="/products/" aria-label="Explore twelve equipment families"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="orbit-text" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs><text><textPath href="#orbit-text">EXPLORE EQUIPMENT ✳ EXPLORE EQUIPMENT ✳ </textPath></text></svg><strong>↗</strong></a>
-      <div class="photo-inset"><img src={photos.transformers.src} alt="Transformer installation reference photograph" width="200" height="200" loading="eager"/><span><b>01</b> / POWER SYSTEMS</span></div>
-      <div class="visual-number" aria-hidden="true">G<span>+</span></div>
-    </div>
-  </div>
-  <div class="wrap hero-index"><a href="#explore">SCROLL TO EXPLORE <span>↓</span></a><span>POWER / MECHANICAL / THERMAL</span><span>12 EQUIPMENT FAMILIES</span></div>
-  <svg class="hero-wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path class="sequence-wave" fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 94 C230 160 445 6 690 52 S1120 166 1440 22 V140 H0Z"/><path class="sequence-wave-target" fill="none" opacity="0" d="M0 60 C230 8 445 148 690 86 S1120 4 1440 58 V140 H0Z"/></svg>
-</section>
-<section class="systems-intro wrap" id="explore" data-rail="Systems">
-  <div class="section-kicker"><span>01</span> / THE INDUSTRIAL ECOSYSTEM</div>
-  <div class="intro-layout" data-motion><h2>Built to<br/><em>connect.</em></h2><div><p>Based in Dhaka since 2014, Graphene Power Engineering brings a forward-thinking, sustainable approach to comprehensive power engineering and distribution solutions.</p><a class="ink-link" href="/about/">Discover our company <span>↗</span></a></div></div>
-  <div class="system-ribbon" data-motion>{areas.map(([n,title,desc,group])=><a href={'/products/?system='+group} class={'system-tile system-'+n}><div class="system-top"><span>DOMAIN / {n}</span><span class="system-arrow">↗</span></div><div class="system-glyph" aria-hidden="true">{n==='01'?'↯':n==='02'?'◎':'≋'}</div><h3>{title}<em>.</em></h3><p>{desc}</p></a>)}</div>
-</section>
+<HeroSlider />
+<div class="systems-intro wrap" id="explore" data-rail="About and systems">
+  <HomeAbout />
+  <section class="category-overview" aria-labelledby="category-overview-title">
+    <h2 id="category-overview-title">Products and services</h2>
+    <CategoryGrid />
+  </section>
+</div>
 <EnergyJourney />
 <section class="equipment-stage" id="equipment" data-rail="Equipment">
   <svg class="stage-wave" viewBox="0 0 1440 125" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 0H1440V44C1140 140 948 15 702 60S250 142 0 30Z"/></svg>
   <div class="wrap equipment-inner">
     <div class="section-kicker on-dark"><span>03</span> / PRODUCT PORTFOLIO</div>
-    <div class="stage-heading" data-motion><h2>Meet the<br/><em>machines.</em></h2><p>Explore our reference equipment families, their configurations and technical selection requirements.</p></div>
+    <div class="stage-heading" data-motion><h2>Explore the<br/><em>portfolio.</em></h2><p>Browse equipment, technical guides and engineering services.</p></div>
     <div class="photo-editorial" data-motion>
       {featured.map((item,i)=><a class={'editorial-photo editorial-'+i} href={'/products/'+item.slug+'/'}><img src={item.photo.src} alt={item.photo.alt} loading="lazy" width="600" height="450" class:list={[item.photo.width<400&&"small-source"]}/><div class="editorial-gradient"></div><div class="editorial-caption"><small>{item.label}</small><h3>{item.copy}</h3><span>View product family <b>↗</b></span></div><span class="editorial-credit">{item.photo.credit} / REFERENCE</span></a>)}
     </div>
     <div class="directory-shell" data-motion>
-      <div class="directory-side"><span class="section-kicker"><span>12</span> / PRODUCT FAMILIES</span><h3>Find your<br/>equipment.</h3><div class="directory-tabs" aria-label="Filter equipment directory">{['All',...groups].map((g,i)=><button type="button" data-home-filter={g} aria-pressed={i===0?'true':'false'}>{g==='All'?'All systems':g}<span>↗</span></button>)}</div><a href="/products/gallery/" class="ink-link">View every equipment type <span>↗</span></a></div>
-      <div class="directory-grid photo-directory" id="home-directory" aria-label="Equipment families">{products.map(p=><a href={'/products/'+p.slug+'/'} data-home-product data-system={p.group}><span class="dir-number">{p.number}</span><EquipmentPhoto slug={p.slug} name={p.name}/><div><h4>{p.name}</h4><small>{p.variants.length} configurations · {p.group}</small></div><span class="dir-arrow">↗</span></a>)}</div>
+      <div class="directory-side"><span class="section-kicker"><span>{products.length}</span> / PRODUCTS &amp; SERVICES</span><h3>Find what you need.</h3><div class="directory-tabs" aria-label="Filter the catalogue">{['All',...groups].map((g,i)=><button type="button" data-home-filter={g} aria-pressed={i===0?'true':'false'}>{g==='All'?'All systems':g}<span>↗</span></button>)}</div><a href="/products/gallery/" class="ink-link">Browse equipment &amp; service images <span>↗</span></a></div>
+      <div class="directory-grid photo-directory" id="home-directory" aria-label="Products and services">{products.map(p=><a href={'/products/'+p.slug+'/'} data-home-product data-system={p.group}><span class="dir-number">{p.number}</span><EquipmentPhoto slug={p.slug} name={p.name}/><div><h4>{p.name}</h4><small>{p.variants.length} {p.group === serviceCategory ? 'services' : 'configurations'} · {p.group}</small></div><span class="dir-arrow">↗</span></a>)}</div>
     </div>
   </div>
   <svg class="stage-end" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--tone-f6f5ee, #f6f5ee)" d="M0 90 C320 -20 540 160 850 65 S1260 25 1440 85 V120H0Z"/></svg>
 </section>
 <section class="wrap engineering-story" id="engineering" data-rail="Engineering">
-  <div class="story-visual"><svg class="story-energy-path" viewBox="0 0 550 500" aria-hidden="true"><path d="M18 430 C115 470 105 108 250 84 S424 50 524 150" fill="none" stroke="var(--blue)" stroke-width="1.5" opacity=".24"/><path data-scroll-circuit d="M18 430 C115 470 105 108 250 84 S424 50 524 150" fill="none" stroke="var(--cyan)" stroke-width="4" stroke-linecap="round"/><circle cx="18" cy="430" r="5" fill="var(--orange)"/><circle cx="524" cy="150" r="5" fill="var(--orange)"/></svg><div class="story-orbit"></div><div class="story-photo"><img src={photos.transformers.src} alt={photos.transformers.alt} width="500" height="500" loading="lazy"/></div><div class="story-stamp"><strong>19</strong><span>AREAS OF<br/>ENGINEERING WORK</span></div><span class="story-credit">REFERENCE PHOTOGRAPH / POWERBREEZE</span></div>
-  <div class="story-content" data-motion><div class="section-kicker"><span>04</span> / ENGINEERING SCOPE</div><h2>More than<br/><em>machines.</em></h2><p>Equipment is only one part of the system. Explore the requirements behind industrial installations, power distribution, maintenance and mechanical integration.</p><div class="story-list"><span><b>01</b> Electrical infrastructure</span><span><b>02</b> Mechanical integration</span><span><b>03</b> Service & maintenance</span></div><a class="action-primary dark-action" href="/services/">Explore scope of work <span>↗</span></a></div>
+  <div class="story-visual"><svg class="story-energy-path" viewBox="0 0 550 500" aria-hidden="true"><path d="M18 430 C115 470 105 108 250 84 S424 50 524 150" fill="none" stroke="var(--blue)" stroke-width="1.5" opacity=".24"/><path data-scroll-circuit d="M18 430 C115 470 105 108 250 84 S424 50 524 150" fill="none" stroke="var(--cyan)" stroke-width="4" stroke-linecap="round"/><circle cx="18" cy="430" r="5" fill="var(--orange)"/><circle cx="524" cy="150" r="5" fill="var(--orange)"/></svg><div class="story-orbit"></div><div class="story-photo"><img src={portfolioPhotos.substationTesting.src} alt={portfolioPhotos.substationTesting.alt} width={portfolioPhotos.substationTesting.width} height={portfolioPhotos.substationTesting.height} loading="lazy"/></div><div class="story-stamp"><strong>{(pages.find(page => page.slug === 'services')?.sections.length ?? 0) + products.filter(product => product.group === serviceCategory).length}</strong><span>AREAS OF<br/>ENGINEERING WORK</span></div><a class="story-credit" href={portfolioPhotos.substationTesting.source}>Reference photo / MTA Capital Construction</a></div>
+  <div class="story-content" data-motion><div class="section-kicker"><span>04</span> / ENGINEERING SCOPE</div><h2>More than<br/><em>machines.</em></h2><p>Equipment is only one part of the system. Explore the requirements behind industrial installations, power distribution, maintenance and mechanical integration.</p><div class="story-list"><span><b>01</b> Electrical design & consultancy</span><span><b>02</b> Insulation & earth resistance testing</span><span><b>03</b> Turnkey electromechanical installation</span></div><a class="action-primary dark-action" href="/services/">Explore scope of work <span>↗</span></a></div>
 </section>
 <section class="motion-cta" id="inquiry" data-rail="Inquiry"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="var(--tone-113776, #113776)" stroke-width="150" fill="none" opacity=".23"/><path d="M-100 500C160-160 560 630 1040 85S1470 120 1590-150" stroke="var(--tone-102d65, #102d65)" stroke-width="2" fill="none" opacity=".4"/></svg><div class="wrap motion-cta-inner"><div><div class="section-kicker"><span>05</span> / WHAT'S NEXT</div><h2>Make the next<br/>connection<span>.</span></h2></div><a href="/contact/" class="cta-orb"><span>↗</span><strong>Prepare a<br/>project inquiry</strong></a></div></section>
 </div>
@@ -70,3 +54,16 @@ const tabs=Array.from(document.querySelectorAll<HTMLButtonElement>('[data-home-f
 const items=Array.from(document.querySelectorAll<HTMLElement>('[data-home-product]'));
 tabs.forEach(tab=>tab.addEventListener('click',()=>{const group=tab.dataset.homeFilter;tabs.forEach(b=>b.setAttribute('aria-pressed',String(b===tab)));let n=0;items.forEach(item=>{const wasHidden=item.hidden;item.hidden=group!=='All'&&item.dataset.system!==group;if(!item.hidden){if(wasHidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches){item.classList.remove('filter-enter');void item.offsetWidth;item.style.setProperty('--filter-delay',String(Math.min(n,5)*35)+'ms');item.classList.add('filter-enter');}n++;}});}));
 </script>
+
+<style>
+  .category-overview > h2 {
+    margin: 0 0 clamp(.85rem, 2.3vw, 2rem);
+    font-size: clamp(1.65rem, 3.5vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -.05em;
+  }
+  .story-credit:focus-visible { outline: 2px solid var(--cyan); }
+  @media (max-width: 760px) {
+    .story-orbit { inset-inline: 8%; }
+  }
+</style>

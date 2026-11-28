@@ -1,5 +1,9 @@
-export type EquipmentImage={src:string;alt:string;credit:string;source:string;width:number;height:number;kind:string;fit:string;license?:string};
+import { additions } from './expansion';
+import { portfolioPhotos } from './portfolio-photos';
+
+export type EquipmentImage={src:string;alt:string;credit:string;source:string;width:number;height:number;kind:string;fit:string;license?:string;licenseUrl?:string};
 export const assets:Record<string,EquipmentImage>={
+  ...portfolioPhotos,
   "transformer": {
     "src": "https://www.powerbreezebd.com/wp-content/uploads/2023/03/Powerbreeze.jpeg",
     "alt": "Outdoor transformer installation",
@@ -470,7 +474,10 @@ export const assets:Record<string,EquipmentImage>={
     "fit": "contain"
   }
 };
-const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busHigh","generators":"gen4000","air-compressors":"compressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"towerIndustrial","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool","cable-trays":"trayPerforated"};
+const familyAssets:Record<string,string>={"transformers":"transformer","electrical-panels":"panel","busbar-trunking":"busbarInstallation","generators":"standbyGenerator","air-compressors":"screwCompressor","vacuum-pumps":"vacuum","heat-exchangers":"dry","cooling-towers":"industrialCoolingTower","mechanical-transmission":"helical","ventilation":"fan","industrial-tools":"tool","cable-trays":"cableInstallation"};
 export const photos:Record<string,EquipmentImage>=Object.fromEntries(Object.entries(familyAssets).map(([family,key])=>[family,assets[key]]));
-export const heroPhoto="https://www.powerbreezebd.com/wp-content/uploads/2023/01/product-page.jpg";
 export const source="https://www.powerbreezebd.com/products/";
+
+for (const product of additions) {
+  photos[product.slug] = portfolioPhotos[product.photo];
+}

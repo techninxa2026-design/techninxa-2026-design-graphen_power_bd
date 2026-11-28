@@ -1,0 +1,263 @@
+---
+import Site from '../layouts/Site.astro';
+import BrandLogo from '../components/BrandLogo.astro';
+import CompanyPhone from '../components/CompanyPhone.astro';
+import { company } from '../data/company';
+import { categoryUrl } from '../data/categories';
+
+const capabilities = [
+  {
+    title: 'Power distribution and standby generation',
+    text: 'Plan how power enters, moves through and backs up a facility. The electrical portfolio includes transformers, LT and HT switchgear, power factor improvement panels, busbar trunking and cable supports. Generator sets, synchronization panels and changeover equipment support standby supply.',
+    links: [
+      { label: 'Electrical equipment', href: categoryUrl('Electrical') },
+      { label: 'Standby power', href: categoryUrl('Standby power') },
+    ],
+  },
+  {
+    title: 'Solar and renewable energy',
+    text: 'We help scope on-grid, off-grid and hybrid solar systems around the site’s available space, energy demand and backup needs. The range includes photovoltaic panels, mounting and electrical accessories, and portable power stations.',
+    links: [{ label: 'Renewable energy systems', href: categoryUrl('Renewable energy') }],
+  },
+  {
+    title: 'Mechanical and thermal systems',
+    text: 'Equipment selection starts with the conditions in which the system will operate. Our portfolio includes air compressors, vacuum systems, drives and industrial tooling, as well as cooling towers, heat exchangers and ventilation equipment.',
+    links: [
+      { label: 'Mechanical equipment', href: categoryUrl('Mechanical') },
+      { label: 'Thermal equipment', href: categoryUrl('Thermal') },
+    ],
+  },
+  {
+    title: 'Design, testing and installation',
+    text: 'The engineering team prepares single-line diagrams, electrical designs and project bills of quantities. Work can also include lightning protection and earthing, insulation and earth resistance testing, and turnkey electromechanical installation. Standards implementation can cover facility requirements identified under NFPA, BNBC, ACCORD or RSC.',
+    links: [
+      { label: 'Engineering services', href: '/services/#engineering-services' },
+      { label: 'Standards implementation', href: '/products/standards-implementation/' },
+    ],
+  },
+];
+
+const stages = [
+  {
+    title: 'Define the job',
+    text: 'Share the facility location, equipment or service required, estimated loads, existing drawings and delivery window. For an operating site, include any access or shutdown restrictions.',
+  },
+  {
+    title: 'Develop the scope',
+    text: 'Use site conditions and project priorities to agree on the equipment, interfaces, testing requirements and installation scope. Drawings and a bill of quantities can help document the agreed work.',
+  },
+  {
+    title: 'Coordinate site work',
+    text: 'Plan how electrical and mechanical equipment will be installed and connected. The project brief identifies which inspections or resistance tests are included and when they can take place.',
+  },
+];
+---
+
+<Site title="Company" description={company.profile}>
+  <section class="page-head about-hero" id="about-overview" data-rail="Overview">
+    <div class="wrap">
+      <a class="crumb" href="/">Home</a> / Company
+      <div class="eyebrow light">{company.name}</div>
+      <h1>Engineering with <em>purpose.</em></h1>
+      <p>We bring power distribution, standby generation, solar and industrial equipment into the same project scope, with engineering support from design through installation.</p>
+      <a class="button" href="#capabilities">Explore our capabilities <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <section class="wrap section about-profile" id="profile" data-rail="Company" aria-labelledby="profile-title">
+    <div class="about-prose">
+      <h2 id="profile-title">Who we are.</h2>
+      <p class="profile-lead">Founded in Dhaka in {company.founded}, {company.name} supports industrial and commercial projects across Bangladesh.</p>
+      <p>Our team works with clients planning new facilities, upgrading existing installations or adding equipment to an operating site. That can mean a new substation or generator, a solar system that works alongside existing supply, or testing on an electrical installation already in use.</p>
+      <p>From our head office in {company.officeLocation}, we discuss project requirements, equipment selection and the scope of work. Our factory is in {company.factoryAddress[1]}.</p>
+    </div>
+    <aside class="leadership" aria-label="Company leadership">
+      <BrandLogo sizes="(max-width: 400px) 70vw, 290px" />
+      <div>
+        <p class="leadership-role">Proprietor &amp; CEO</p>
+        <strong>{company.proprietor}</strong>
+        <span>{company.proprietorQualification}</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="wrap section about-section" id="capabilities" data-rail="Capabilities" aria-labelledby="capabilities-title">
+    <div class="section-heading">
+      <h2 id="capabilities-title">What we deliver.</h2>
+      <a class="ink-link" href="/products/">View products and services <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="capability-grid">
+      {capabilities.map(capability => (
+        <article class="company-panel">
+          <h3>{capability.title}</h3>
+          <p>{capability.text}</p>
+          <div class="capability-links">
+            {capability.links.map(link => <a href={link.href}>{link.label} <span aria-hidden="true">→</span></a>)}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap section about-section" id="project-approach" data-rail="Project approach" aria-labelledby="approach-title">
+    <div class="section-heading">
+      <h2 id="approach-title">How projects come together.</h2>
+    </div>
+    <ol class="project-stages">
+      {stages.map((stage, i) => (
+        <li>
+          <span class="stage-number" aria-hidden="true">{i + 1}</span>
+          <h3>{stage.title}</h3>
+          <p>{stage.text}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap section about-section" id="locations" data-rail="Locations" aria-labelledby="locations-title">
+    <div class="section-heading"><h2 id="locations-title">Where to find us.</h2></div>
+    <div class="location-grid">
+      <article class="company-panel">
+        <h3>Head office · {company.officeLocation}</h3>
+        <address>{company.address.map(line => <span>{line}</span>)}<span>Bangladesh</span></address>
+        <div class="company-contact">
+          <CompanyPhone />
+          <a class="company-email" href={`mailto:${company.email}`}>{company.email}</a>
+        </div>
+      </article>
+      <article class="company-panel">
+        <h3>Factory · {company.factoryAddress[1]}</h3>
+        <address>{company.factoryAddress.map(line => <span>{line}</span>)}<span>Bangladesh</span></address>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Discuss your project.</h2>
+      <a class="button dark" href="/contact/">Prepare a project enquiry <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</Site>
+
+<style>
+  .about-hero h1 { max-width: 18ch; }
+  .about-hero .button { margin-top: 1.1rem; }
+  .about-profile,
+  .about-section { padding-block: clamp(2.2rem, 5vw, 4.7rem); }
+
+  .about-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+    gap: clamp(1.5rem, 5.6vw, 5rem);
+    align-items: center;
+  }
+
+  .about-prose h2,
+  .about-section h2 {
+    color: var(--ink);
+    font-size: clamp(2rem, 4.95vw, 4.9rem);
+    line-height: 1.03;
+    letter-spacing: -.06em;
+  }
+
+  .about-prose h2 { margin: 0 0 .9rem; }
+  .about-prose p { max-width: 65ch; margin: 0 0 .9rem; }
+  .about-prose p:last-child { margin-bottom: 0; }
+  .about-prose .profile-lead { color: var(--ink); font-size: clamp(1.07rem, 1.7vw, 1.3rem); font-weight: 700; line-height: 1.48; }
+
+  .leadership {
+    display: grid;
+    align-content: center;
+    gap: clamp(1.1rem, 5vw, 3rem);
+    min-height: 240px;
+    padding: clamp(1.2rem, 4vw, 3.6rem);
+    border-radius: 36px 36px 36px 9px;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+
+  .leadership :global(.company-logo) { width: min(100%, 290px); border-radius: 0; }
+  .leadership > div { border-top: 1px solid var(--line); padding-top: .9rem; }
+  .leadership-role { margin: 0 0 .4rem; color: var(--blue); font: 700 .7rem/1.35 monospace; text-transform: uppercase; letter-spacing: .09em; }
+  .leadership strong { display: block; font-size: clamp(1.22rem, 2.25vw, 2rem); line-height: 1.15; letter-spacing: -.025em; }
+  .leadership span { display: block; margin-top: .45rem; color: var(--muted); font-size: .93rem; }
+
+  .about-section { border-top: 1px solid var(--line); }
+  .capability-grid,
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(.8rem, 1.7vw, 1.5rem);
+  }
+
+  .company-panel {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+    padding: clamp(1rem, 2.6vw, 2.3rem);
+    border: 1px solid var(--line);
+    border-radius: 27px 27px 27px 8px;
+    background: color-mix(in srgb, var(--cream) 95%, var(--cyan));
+  }
+
+  .company-panel h3,
+  .project-stages h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.14rem, 2vw, 1.7rem);
+    line-height: 1.18;
+    letter-spacing: -.028em;
+  }
+
+  .company-panel p,
+  .project-stages p {
+    margin: 0;
+    max-width: 64ch;
+    color: var(--muted);
+    line-height: 1.64;
+  }
+
+  .capability-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .1rem 1.15rem;
+    margin-top: auto;
+  }
+
+  .capability-links a, .company-email {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    min-height: 44px;
+    color: var(--night);
+    font-size: .92rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: .32em;
+    overflow-wrap: anywhere;
+  }
+
+  .project-stages {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.8vw, 2.7rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .project-stages li { display: grid; align-content: start; gap: .75rem; border-top: 2px solid var(--line); padding-top: 1rem; }
+  .stage-number { display: grid; place-items: center; width: 33px; height: 33px; border-radius: 50%; background: var(--night); color: var(--cyan); font: 700 .8rem monospace; }
+  .location-grid address { display: grid; gap: .2rem; font-style: normal; color: var(--muted); line-height: 1.5; }
+  .company-contact { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem 1rem; }
+
+  @media (max-width: 760px) {
+    .about-profile,
+    .capability-grid,
+    .location-grid,
+    .project-stages { grid-template-columns: minmax(0, 1fr); }
+    .leadership { min-height: auto; }
+  }
+</style>

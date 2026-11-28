@@ -1,4 +1,7 @@
-export const products = [
+import { categories, type CategoryName } from './categories';
+import { additions } from './expansion';
+
+const originalProducts = [
   {
     "slug": "transformers",
     "name": "Transformers",
@@ -45,7 +48,7 @@ export const products = [
   {
     "slug": "cable-trays",
     "name": "Cable tray systems",
-    "group": "Electrical",
+    "group": "Busbar & cable systems",
     "description": "Structured cable routing and support for complex facilities.",
     "variants": [
       "Perforated trays",
@@ -66,7 +69,7 @@ export const products = [
   {
     "slug": "busbar-trunking",
     "name": "Busbar trunking",
-    "group": "Electrical",
+    "group": "Busbar & cable systems",
     "description": "Modular high-current power distribution within buildings and plants.",
     "variants": [
       "Feeder busbar",
@@ -89,7 +92,7 @@ export const products = [
   {
     "slug": "generators",
     "name": "Generators",
-    "group": "Electrical",
+    "group": "Standby power",
     "description": "On-site power for standby, prime and continuous-duty applications.",
     "variants": [
       "Standby diesel generators",
@@ -280,5 +283,28 @@ export const products = [
     ],
     "number": "12"
   }
+] satisfies Product[];
+
+export type Product = {
+  slug: string;
+  name: string;
+  group: CategoryName;
+  description: string;
+  variants: string[];
+  specs: string[];
+  number: string;
+  catalogue?: string;
+};
+
+export const products: Product[] = [
+  ...originalProducts.map(product => ({
+    ...product,
+    catalogue: '/catalogues/graphene-' + product.slug + '.pdf',
+  })),
+  ...additions.map(({ photo, facts, variants, ...product }) => ({
+    ...product,
+    variants: variants.map(variant => variant.name),
+  })),
 ];
-export const groups = ['Electrical','Mechanical','Thermal'];
+
+export const groups = categories.map(category => category.name);

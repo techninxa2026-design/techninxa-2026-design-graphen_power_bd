@@ -1,29 +1,5 @@
 export const pages = [
   {
-    "slug": "about",
-    "label": "Company",
-    "heading": "Engineering with purpose.",
-    "intro": "Founded in 2014 and based in Dhaka, Bangladesh, Graphene Power Engineering (GPE) is a pioneering power solutions venture established by a team of highly experienced professional engineers. Backed by over a decade of industry expertise, the company is committed to delivering comprehensive power engineering and distribution solutions with a forward-thinking, sustainable approach.",
-    "sections": [
-      [
-        "Our beginnings",
-        "Established in 2014 in Dhaka, Bangladesh, GPE was founded by a team of highly experienced professional engineers."
-      ],
-      [
-        "Our expertise",
-        "Comprehensive power engineering and distribution solutions, backed by over a decade of industry expertise."
-      ],
-      [
-        "Our approach",
-        "A forward-thinking, sustainable approach to industrial power solutions."
-      ],
-      [
-        "Our portfolio",
-        "Explore electrical, mechanical and thermal engineering equipment, including power distribution, industrial machinery and thermal systems."
-      ]
-    ]
-  },
-  {
     "slug": "services",
     "label": "Scope of work",
     "heading": "From equipment to systems.",
@@ -104,7 +80,8 @@ export const pages = [
       [
         "Mechanical installation",
         "Mechanical equipment integration."
-      ]
+      ],
+      ["Solar project engineering", "Project planning for on-grid, off-grid and hybrid solar installations."]
     ]
   },
   {
@@ -128,7 +105,8 @@ export const pages = [
       [
         "HVAC & thermal systems",
         "Cooling towers, ventilation, dry coolers and heat exchangers."
-      ]
+      ],
+      ["Renewable energy", "On-grid, off-grid and hybrid solar systems, from rooftop photovoltaic arrays to portable backup power."]
     ]
   },
   {
