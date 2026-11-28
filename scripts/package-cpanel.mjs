@@ -22,7 +22,7 @@ await copyFile('public/.htaccess',join(dist,'.htaccess'));
 const paths=(await walk(dist)).sort();
 const rel=p=>relative(dist,p).split(sep).join('/');
 const names=new Set(paths.map(rel));
-const required=['index.html','404.html','.htaccess','robots.txt','sitemap.xml','theme.js','navigation-bootstrap.js','brand/graphene-icon.svg','brand/graphene-logo.svg','about/index.html','contact/index.html','services/index.html','solutions/index.html','resources/index.html','products/index.html','products/gallery/index.html'];
+const required=['index.html','404.html','.htaccess','robots.txt','sitemap.xml','theme.js','navigation-bootstrap.js','brand/graphene-icon.png','brand/graphene-logo.png','brand/graphene-logo-standard.png','about/index.html','contact/index.html','services/index.html','solutions/index.html','resources/index.html','products/index.html','products/gallery/index.html'];
 for(const p of required)if(!names.has(p))fail('Missing required file: '+p);
 const sitemap=await readFile(join(dist,'sitemap.xml'),'utf8');
 const routes=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(x=>new URL(x[1]));

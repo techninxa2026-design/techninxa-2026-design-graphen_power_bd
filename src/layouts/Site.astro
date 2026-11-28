@@ -16,6 +16,7 @@ import BrandLogo from '../components/BrandLogo.astro';
 import CompanyAddress from '../components/CompanyAddress.astro';
 import CompanyPhone from '../components/CompanyPhone.astro';
 import {company} from '../data/company';
+import { brandPalette } from '../data/theme';
 import NavigationCurtain from '../components/NavigationCurtain.astro';
 import ThemePanel from '../components/ThemePanel.astro';
 import { portfolioPhotos } from '../data/portfolio-photos';
@@ -24,10 +25,11 @@ import { serviceCategory } from '../data/categories';
 const {title='Industrial power & engineering', description='Graphene Power Engineering (GPE), established in 2014 in Dhaka, Bangladesh, provides power engineering and distribution solutions.'}=Astro.props;
 const isNotFound=/^\/404(?:\.html|\/)?$/.test(Astro.url.pathname);
 const canonical=new URL(isNotFound?'/404.html':Astro.url.pathname, company.website);
+const paletteStyle = Object.fromEntries(Object.entries(brandPalette).map(([name, color]) => ['--palette-' + name, color]));
 const organization={ '@context':'https://schema.org','@type':'Organization',name:company.name,alternateName:company.shortName,url:company.website,logo:new URL(company.logo,company.website).href,foundingDate:String(company.founded),telephone:company.phoneHref,address:{'@type':'PostalAddress',streetAddress:company.address.join(' '),addressLocality:company.city,postalCode:company.postalCode,addressCountry:'BD'},description:company.profile};
 ---
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#101b43"/><link rel="canonical" href={canonical}/>{isNotFound&&<meta name="robots" content="noindex, follow"/>}<link rel="icon" href="/brand/graphene-icon.svg" type="image/svg+xml"/><meta property="og:site_name" content={company.name}/><meta property="og:title" content={title+' | '+company.name}/><meta property="og:description" content={description}/><meta property="og:image" content={new URL(company.socialLogo,company.website).href}/><meta property="og:url" content={canonical.href}/><script type="application/ld+json" set:html={JSON.stringify(organization)} /><title>{title} | {company.name}</title><script is:inline src="/theme.js"></script><script is:inline src="/navigation-bootstrap.js"></script></head>
+<html lang="en" style={paletteStyle}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content={brandPalette.primary}/><link rel="canonical" href={canonical}/>{isNotFound&&<meta name="robots" content="noindex, follow"/>}<link rel="icon" href="/brand/graphene-icon.png" type="image/png"/><meta property="og:site_name" content={company.name}/><meta property="og:title" content={title+' | '+company.name}/><meta property="og:description" content={description}/><meta property="og:image" content={new URL(company.logo,company.website).href}/><meta property="og:url" content={canonical.href}/><script type="application/ld+json" set:html={JSON.stringify(organization)} /><title>{title} | {company.name}</title><script is:inline src="/theme.js"></script><script is:inline src="/navigation-bootstrap.js"></script></head>
 <body>
 <NavigationCurtain />
 <a class="skip" href="#main">Skip to content</a>
@@ -67,7 +69,7 @@ const organization={ '@context':'https://schema.org','@type':'Organization',name
 <main id="main"><slot/></main>
 <ThemePanel />
 <aside class="energy-rail" aria-label="Page navigation" hidden><span class="rail-count" aria-hidden="true">01</span><div class="rail-track" aria-hidden="true"><div class="rail-fill"></div></div><nav class="rail-stops" aria-label="Page sections"></nav><button type="button" class="rail-top" aria-label="Scroll to top">↑</button></aside>
-<footer class="footer"><div class="wrap footer-main"><div><a class="brand" href="/"><BrandLogo /></a><h2>Powering what<br/>comes next.</h2><CompanyAddress compact={true}/></div><div><h4>Explore</h4><a href="/products/">Product catalogue</a><a href="/products/gallery/">Visual equipment library</a><a href="/services/">Engineering services</a><a href="/solutions/">Industrial solutions</a></div><div><h4>Company</h4><a href="/about/">About</a><a href="/resources/">Resources & media</a><a href="/contact/">Contact</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} {company.name}</span><a href="#main">Back to top ↑</a></div></footer>
+<footer class="footer"><div class="wrap footer-main"><div><a class="brand" href="/"><BrandLogo sizes="(max-width: 760px) 190px, 240px" /></a><h2>Powering what<br/>comes next.</h2><CompanyAddress compact={true}/></div><div><h4>Explore</h4><a href="/products/">Product catalogue</a><a href="/products/gallery/">Visual equipment library</a><a href="/services/">Engineering services</a><a href="/solutions/">Industrial solutions</a></div><div><h4>Company</h4><a href="/about/">About</a><a href="/resources/">Resources & media</a><a href="/contact/">Contact</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} {company.name}</span><a href="#main">Back to top ↑</a></div></footer>
 <script>
 const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
 const mobile = document.querySelector<HTMLElement>('#mobile-nav');

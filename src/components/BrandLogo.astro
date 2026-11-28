@@ -1,16 +1,21 @@
 ---
-import {company} from '../data/company';
-const {className=''}=Astro.props;
+import { company } from '../data/company';
+
+interface Props {
+  className?: string;
+  sizes?: string;
+}
+
+const { className, sizes = '(max-width: 760px) 116px, 138px' } = Astro.props;
+const standardLogo = '/brand/graphene-logo-standard.png';
 ---
-<svg class:list={['company-logo','company-logo-vector',className]} viewBox="0 0 364 90" width="364" height="90" role="img" aria-label={company.name} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" focusable="false">
-<path class="logo-energy-primary" d="M66 5C43 0 19 9 9 30C1 47 7 65 22 76L12 66L31 68L27 87L23 79C11 71 3 61 2 47C-1 24 21 2 48 2C55 2 61 3 66 5Z"/><path class="logo-energy-secondary" d="M17 26C24 11 43 6 60 9C69 11 76 15 81 20C65 11 41 10 27 20Z M24 76C39 84 58 82 73 73C64 86 43 90 24 82Z"/><path class="logo-energy-primary" d="M10 58L29 60L23 69L39 70L27 87L30 73L17 72Z"/><g class="logo-wordmark" fill-rule="evenodd">
-<path d="M54 28C49 23 43 21 36 21C24 21 16 30 16 42C16 54 24 63 36 63C44 63 50 60 56 56V40H35V48H47V52C44 54 40 55 36 55C29 55 25 50 25 42C25 34 30 29 37 29C41 29 45 31 49 34Z"/>
-<path d="M66 23H84C95 23 101 29 101 38C101 45 97 49 91 51L103 62H91L79 51H76V62H66ZM76 31V43H84C89 43 91 41 91 37C91 33 88 31 84 31Z"/>
-<path d="M106 62L124 23H134L152 62H141L137 53H121L117 62ZM124 45H134L129 33Z"/>
-<path d="M157 23H175C186 23 192 29 192 38C192 47 186 53 175 53H167V62H157ZM167 31V45H175C180 45 182 42 182 38C182 34 180 31 175 31Z"/>
-<path d="M198 23H208V38H225V23H235V62H225V47H208V62H198Z"/>
-<path d="M242 38H272V46H252V54H274V62H242Z"/>
-<path d="M281 23H290L310 46V23H320V62H311L291 39V62H281Z"/>
-<path d="M328 38H358V46H338V54H360V62H328Z"/>
-</g><g class="logo-e-accent"><path d="M242 23H274V31H242Z M328 23H360V31H328Z"/></g><g class="logo-subtitle"><path d="M83 73H101V74.5H83Z M342 73H360V74.5H342Z"/><text x="221" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="12" letter-spacing="2.1" textLength="226" lengthAdjust="spacing">POWER ENGINEERING</text></g>
-</svg>
+<img
+  class:list={['company-logo', className]}
+  src={standardLogo}
+  srcset={`${standardLogo} 239w, /brand/graphene-logo-medium.png 478w, ${company.logo} 956w`}
+  sizes={sizes}
+  width="239"
+  height="109"
+  alt={company.name}
+  decoding="async"
+/>

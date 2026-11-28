@@ -21,6 +21,5 @@ export const company = {
   "phone": "+880-1816166322",
   "phoneHref": "+8801816166322",
   "website": "https://graphenepowerbd.com",
-  "logo": "/brand/graphene-logo.svg",
-  "socialLogo": "/brand/graphene-logo.webp"
+  "logo": "/brand/graphene-logo.png"
 } as const;

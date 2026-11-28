@@ -1,12 +1,18 @@
 ---
-const presets=[{name:'Energy',colors:['#2449c7','#52e5ef','#ffab77']},{name:'Emerald',colors:['#176848','#65e6ac','#f6c36b']},{name:'Solar',colors:['#a13b16','#ffca67','#ef8ca9']},{name:'Aurora',colors:['#6836b8','#a6c9ff','#f39ad2']},{name:'Graphite',colors:['#435466','#b8e6ed','#e2b77b']}];
+import { brandPalette, themePresets } from '../data/theme';
+
+const fields = [
+  ['primary', 'Primary', 'Backgrounds & gradients'],
+  ['secondary', 'Secondary', 'Actions & highlights'],
+  ['accent', 'Accent', 'Details & accents'],
+] as const;
 ---
 <dialog id="theme-dialog" class="theme-dialog" aria-labelledby="theme-title">
  <div class="theme-top"><div><div class="theme-kicker">GRAPHENE / PERSONALIZE</div><h2 id="theme-title">Make it<br/><em>yours.</em></h2></div><button type="button" class="theme-close" aria-label="Close theme editor">×</button></div>
  <div class="theme-preview" aria-hidden="true"><div class="theme-preview-wave"></div><span>YOUR PALETTE</span><strong>Energy in<br/>motion<span>.</span></strong><i>Explore ↗</i></div>
- <div class="palette-live" aria-label="Your selected colors"><span></span><span></span><span></span></div><p>Choose three colors. The website adapts instantly and remembers your palette on this browser. Readable shades are derived automatically.</p>
- <div class="theme-inputs">{[['primary','Primary','Backgrounds & gradients','#2449c7'],['secondary','Secondary','Actions & highlights','#52e5ef'],['accent','Accent','Details & accents','#ffab77']].map(([key,label,help,value])=><label class="theme-field"><span><strong>{label}</strong><small>{help}</small></span><output data-hex={key}>{value.toUpperCase()}</output><input type="color" data-theme-color={key} value={value} aria-label={label+' color'}/></label>)}</div>
- <div class="theme-presets-label">Curated palettes</div><div class="theme-presets">{presets.map(p=><button type="button" data-preset={p.colors.join(',')} aria-label={p.name+' palette'} aria-pressed={p.name==='Energy'?'true':'false'}><span>{p.colors.map(c=><i style={'background:'+c}></i>)}</span><small>{p.name}</small></button>)}</div>
- <div class="theme-actions"><button type="button" class="theme-reset">Reset default</button><button type="button" class="theme-done">Done <span>↗</span></button></div>
+ <div class="palette-live" aria-label="Your selected colors"><span></span><span></span><span></span></div><p>Start with Graphene’s navy, green and red, or choose your own colors.</p>
+ <div class="theme-inputs">{fields.map(([key,label,help])=><label class="theme-field"><span><strong>{label}</strong><small>{help}</small></span><output data-hex={key}>{brandPalette[key].toUpperCase()}</output><input type="color" data-theme-color={key} value={brandPalette[key]} aria-label={label+' color'}/></label>)}</div>
+ <div class="theme-presets-label">Curated palettes</div><div class="theme-presets">{themePresets.map(p=><button type="button" data-preset={p.colors.join(',')} aria-label={p.name+' palette'} aria-pressed={p.name==='Graphene'?'true':'false'}><span>{p.colors.map(c=><i style={'background:'+c}></i>)}</span><small>{p.name}</small></button>)}</div>
+ <div class="theme-actions"><button type="button" class="theme-reset">Reset to Graphene</button><button type="button" class="theme-done">Done <span>↗</span></button></div>
  <p class="theme-status" role="status">Preferences stay on this device.</p>
 </dialog>

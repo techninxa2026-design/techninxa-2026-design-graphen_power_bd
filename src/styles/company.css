@@ -1,22 +1,32 @@
-/* Responsive, transparent vector adaptation of the company-supplied identity. */
-.company-logo{display:block;width:220px;height:auto;max-width:100%;flex-shrink:0;overflow:visible}
-.header .brand{flex:0 0 auto;max-width:220px;gap:0;letter-spacing:normal}.header .brand .company-logo{width:clamp(175px,14vw,220px);height:auto;max-height:60px}
-.footer .brand .company-logo{width:252px;max-height:none}.company-address{display:grid;gap:5px;font-style:normal;line-height:1.5;font-size:14px;overflow-wrap:anywhere}.company-address strong{font-size:15px}.company-address-compact{margin-top:18px;color:var(--tone-d0dcf5,#d0dcf5)}.company-address-compact strong{color:white}
+/* Company artwork uses its own white background in every palette. */
+.company-logo {
+  display: block;
+  width: 220px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.header .brand {
+  flex: 0 0 auto;
+  gap: 0;
+}
+
+.header .brand .company-logo {
+  width: 138px;
+}
+
+.footer .brand .company-logo {
+  width: 240px;
+}
+
+@media (max-width: 760px) {
+  .header .brand .company-logo { width: 116px; }
+  .footer .brand .company-logo { width: 190px; }
+}
+
+.company-address{display:grid;gap:5px;font-style:normal;line-height:1.5;font-size:14px;overflow-wrap:anywhere}.company-address strong{font-size:15px}.company-address-compact{margin-top:18px;color:var(--tone-d0dcf5,#d0dcf5)}.company-address-compact strong{color:white}
 .contact-office{margin-top:25px;padding:25px;border:1px solid var(--line);border-radius:28px 28px 28px 8px;background:var(--tone-f8f8f5,#f8f8f5)}.contact-office h3{font-size:27px;letter-spacing:-.04em;margin:12px 0}.nav-curtain-content .curtain-company-logo{width:min(320px,78vw)}
-@media(max-width:1250px){.header .brand .company-logo{width:188px}.header .brand{max-width:188px}}
-@media(max-width:1050px){.header .brand .company-logo{width:192px}.header .brand{max-width:192px}}
-@media(max-width:760px){.header .brand .company-logo{width:clamp(160px,48vw,194px);max-height:49px}.header .brand{max-width:194px}.footer .brand .company-logo{width:190px}}
-
-/* Readable palette tints on dark navigation and footer surfaces.
-   Use the same live CSS properties as the rest of the website; no extra JS. */
-/* Fixed artwork colors sampled from the supplied homepage reference. */
-.company-logo-vector .logo-wordmark { fill: #bed5cc; }
-.company-logo-vector .logo-energy-primary,
-.company-logo-vector .logo-e-accent { fill: #f8d08c; }
-.company-logo-vector .logo-energy-secondary { fill: #90edc3; }
-.company-logo-vector .logo-subtitle { fill: #dae7e2; }
-
-@media(max-width:360px){.header .brand .company-logo{width:158px}}
 
 /* Centralized click-to-call contact details, responsive to the live palette. */
 .company-phone{display:inline-flex;align-items:center;gap:9px;width:fit-content;max-width:100%;font-weight:700;font-size:14px;line-height:1.35;white-space:nowrap;border-radius:100px;padding:10px 14px;color:var(--ink);background:var(--tone-e8edff,#e8edff);border:1px solid var(--line);transition:background .22s,color .22s,border-color .22s}.company-phone svg{flex-shrink:0}.company-phone:hover{background:var(--cyan);color:var(--night);border-color:var(--cyan)}.company-address .company-phone{margin-top:9px}.footer .company-phone{color:var(--cyan);background:transparent;border-color:var(--darkline)}.footer .company-phone:hover{color:var(--night);background:var(--cyan)}.nav-contact-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex-shrink:0}.header .nav-phone{padding:1px 8px;border:0;background:transparent;color:var(--cyan);font-size:12px;min-height:20px}.header .nav-phone svg{width:13px;height:13px}.header .nav-phone:hover{color:var(--orange)}.header .nav-contact-actions .nav-cta{min-height:35px;padding:8px 16px;gap:12px;font-size:12px}.mobile-nav .mobile-contact-phone{display:inline-flex;align-items:center;gap:9px;color:var(--night);background:var(--cyan);padding:12px 16px;margin-top:6px}
