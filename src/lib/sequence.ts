@@ -53,7 +53,7 @@ function startScrollScene(){
 }
 function startSections(){
   if(!('IntersectionObserver' in window))return;
-  const groups=[...document.querySelectorAll<HTMLElement>('.intro-layout,.system-ribbon,.stage-heading,.photo-editorial,.directory-shell,.story-content,.story-visual,.motion-cta-inner,.reference-panel,.detail-body,.reference-download,.section-heading,.editorial-list,.brochure-grid,.contact-grid,.page-head .wrap,.detail-head .detail-grid')];
+  const groups=[...document.querySelectorAll<HTMLElement>('.home-about,.system-ribbon,.stage-heading,.photo-editorial,.directory-shell,.story-content,.story-visual,.motion-cta-inner,.reference-panel,.detail-body,.reference-download,.section-heading,.editorial-list,.brochure-grid,.contact-grid,.page-head .wrap,.detail-head .detail-grid')];
   observer=new IntersectionObserver(entries=>{
     const cards:HTMLElement[]=[];
     for(const e of entries){if(!e.isIntersecting)continue;const el=e.target as HTMLElement;observer?.unobserve(el);

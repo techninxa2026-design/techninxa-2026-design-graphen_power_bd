@@ -11,6 +11,3 @@ const requestedSystem=new URLSearchParams(location.search).get('system');
 if(requestedSystem&&Array.from(buttons).some(b=>b.dataset.filter===requestedSystem)){group=requestedSystem;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===group)));filter();}
 search?.addEventListener('input',filter);buttons.forEach(b=>b.addEventListener('click',()=>{group=b.dataset.filter||'All';buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filter();}));
 </script>
-<style>
-  .catalogue { scroll-margin-top: 115px; }
-</style>

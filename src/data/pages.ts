@@ -1,32 +1,4 @@
-import { company } from './company';
-
 export const pages = [
-  {
-    "slug": "about",
-    "label": "Company",
-    "heading": "Engineering with purpose.",
-    "intro": company.profile,
-    "sections": [
-      [
-        "Our beginnings",
-        "Established in 2014 in Dhaka, Bangladesh, GPE was founded by a team of highly experienced professional engineers."
-      ],
-      [
-        "Our expertise",
-        "Our engineers help clients define load requirements and select equipment for substations, standby power, distribution, industrial machinery and thermal systems."
-      ],
-      [
-        "Our approach",
-        "We start with the site and how it operates. Grid availability, backup priorities and the installation environment inform equipment selection and the scope of engineering work."
-      ],
-      [
-        "Our portfolio",
-        "Explore electrical, mechanical and thermal engineering equipment, including substations, standby power, solar systems, industrial machinery and thermal systems."
-      ],
-      ["Engineering and installation", "Our scope covers design, single-line diagrams, bills of quantities, resistance testing and turnkey electromechanical installation."],
-      ["Renewable energy", "We plan grid-connected, off-grid and hybrid solar projects and help specify modules, installation accessories and portable power equipment."]
-    ]
-  },
   {
     "slug": "services",
     "label": "Scope of work",
